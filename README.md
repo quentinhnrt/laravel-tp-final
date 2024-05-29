@@ -1,66 +1,134 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Dashboard de Gestion de Projet
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Table des Matières
 
-## About Laravel
+1. [Installation](#installation)
+2. [Utilisation](#utilisation)
+3. [Fonctionnalités](#fonctionnalités)
+    - [Administration](#administration)
+        - [Ajouter un projet](#ajouter-un-projet)
+        - [Ajouter un client](#ajouter-un-client)
+        - [Ajouter un chef de projet](#ajouter-un-chef-de-projet)
+        - [Ajouter un développeur](#ajouter-un-développeur)
+        - [Ajouter une tâche](#ajouter-une-tâche)
+    - [Chef de projet](#chef-de-projet)
+    - [Développeur](#développeur)
+4. [Bonus](#bonus)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Clonez le repository.
+    ```bash
+    git clone https://github.com/quentinhnrt/laravel-tp-final.git
+    cd laravel-tp-final
+    ```
+2. Installez les dépendances.
+    ```bash
+    npm install
+    ```
+3. Lancer la compilation
+    ```bash
+    npm run dev
+    ```
+4. Lancer les migrations
+    ```bash
+    php artisan migrate
+    ```
+5. Lancer le serveur
+    ```bash
+    php artisan serve
+    ```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Utilisation
 
-## Learning Laravel
+### Page de Garde
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+La page de garde vous permet d'accéder aux différentes sections de l'application :
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   [ ] Administration
+-   [ ] Chef de projet
+-   [ ] Développeur
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Administration
 
-## Laravel Sponsors
+Dans cette section, vous pouvez gérer les projets, les clients, les chefs de projet, les développeurs et les tâches.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#### Ajouter un projet
 
-### Premium Partners
+-   [ ] Affiche la liste des projets existants.
+-   [ ] Permet d'ajouter un nouveau projet avec les champs suivants :
+    -   [ ] Nom
+    -   [ ] Description
+    -   [ ] Client
+    -   [ ] Chef de projet
+-   [ ] Possibilité d'éditer les projets.
+-   [ ] Accès à la page dédiée du client et du chef de projet depuis la fiche du projet.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+#### Ajouter un client
 
-## Contributing
+-   [ ] Affiche la liste des clients existants.
+-   [ ] Permet d'ajouter un nouveau client avec les champs suivants :
+    -   [ ] Nom de la société
+    -   [ ] Adresse
+    -   [ ] Site web
+    -   [ ] Liste de ses projets
+-   [ ] Possibilité d'éditer les clients.
+-   [ ] Accès à la page dédiée d'un projet depuis la fiche du client.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Ajouter un chef de projet
 
-## Code of Conduct
+-   [ ] Affiche la liste des chefs de projet existants.
+-   [ ] Permet d'ajouter un nouveau chef de projet avec les champs suivants :
+    -   [ ] Nom
+    -   [ ] Prénom
+    -   [ ] Fonction
+    -   [ ] Liste des projets qu'il gère
+    -   [ ] Liste des tâches qui lui sont affiliées
+-   [ ] Possibilité d'éditer les chefs de projet.
+-   [ ] Accès à la page dédiée d'un projet depuis la fiche du chef de projet.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### Ajouter un développeur
 
-## Security Vulnerabilities
+-   [ ] Affiche la liste des développeurs existants.
+-   [ ] Permet d'ajouter un nouveau développeur avec les champs suivants :
+    -   [ ] Nom
+    -   [ ] Prénom
+    -   [ ] Fonction
+    -   [ ] Liste des tâches auxquelles il est affilié
+-   [ ] Possibilité d'éditer les développeurs.
+-   [ ] Accès à la page d'une tâche depuis la fiche du développeur.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### Ajouter une tâche
 
-## License
+-   [ ] Affiche la liste des tâches existantes.
+-   [ ] Permet d'ajouter une nouvelle tâche avec les champs suivants :
+    -   [ ] Projet affilié
+    -   [ ] Nom
+    -   [ ] Description
+    -   [ ] Développeurs ou Chefs de projets affiliés
+    -   [ ] Liste de tags (Front/Back)
+    -   [ ] Liste de tags pour les phases : TODO, En cours, Bloqué, A livrer en préproduction, A livrer en production, A recetter, A voir avec le client.
+-   [ ] Possibilité de modifier les tâches.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Chef de projet
+
+-   [ ] Affiche une liste des chefs de projet.
+-   [ ] En cliquant sur un chef de projet, on accède à une vue détaillée comprenant :
+    -   [ ] Informations sur les projets auxquels le chef de projet est affilié : Nom du projet, liste des tâches affiliées.
+-   [ ] En cliquant sur une tâche, on accède à la page dédiée à la tâche.
+
+### Développeur
+
+-   [ ] Affiche une liste des développeurs.
+-   [ ] En cliquant sur un développeur, on accède à une vue détaillée comprenant :
+    -   [ ] Liste des tâches affiliées, rangées par projet.
+-   [ ] En cliquant sur une tâche, on accède à la page dédiée à la tâche.
+
+## Bonus
+
+-   [ ] Design de l'interface avec Bootstrap, Tailwind, ou autre framework CSS (+2).
+-   [ ] Navigation intuitive entre les éléments (+2).
+
+---
+
+Merci d'utiliser le Dashboard de Gestion de Projet. Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue sur le repository GitHub.
