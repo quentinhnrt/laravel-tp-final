@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
 
+    @bukStyles
 </head>
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
 <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
@@ -234,6 +235,7 @@
                     </div>
                 </div>
             </main>
+            
 
             <footer class="py-16 text-center text-sm text-black dark:text-white/70">
                 Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
@@ -241,5 +243,6 @@
         </div>
     </div>
 </div>
+@bukScripts
 </body>
 </html>
