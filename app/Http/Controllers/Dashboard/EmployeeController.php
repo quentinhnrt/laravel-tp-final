@@ -12,19 +12,31 @@ class EmployeeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $role = $request->attributes->get('role');
+
+        if ($role === Employee::DEVELOPER_ROLE) {
+            $employees = Employee::developers()->paginate(10);
+        } elseif ($role === Employee::PROJECT_MANAGER_ROLE) {
+            $employees = Employee::projectManagers()->paginate(10);
+        } else {
+            $employees = Employee::paginate(10);
+        }
+
         return view('dashboard.employees.index', [
-            'employees' => Employee::paginate(10),
+            'employees' => $employees
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('dashboard.employees.create');
+        return view('dashboard.employees.create', [
+            'role' => $request->attributes->get('role') ?? Employee::DEVELOPER_ROLE
+        ]);
     }
 
     /**
@@ -34,15 +46,15 @@ class EmployeeController extends Controller
     {
         Employee::create($request->validated());
 
-        return redirect()->route('administration.developers.index');
-    }
+        $role = $request->attributes->get('role');
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Employee $employee)
-    {
-        //
+        if ($role === Employee::DEVELOPER_ROLE) {
+            return redirect()->route('administration.developers.index');
+        } elseif ($role === Employee::PROJECT_MANAGER_ROLE) {
+            return redirect()->route('administration.project-managers.index');
+        } else {
+            return redirect()->route('administration.developers.index');
+        }
     }
 
     /**
@@ -60,7 +72,15 @@ class EmployeeController extends Controller
     {
         $employee->update($request->validated());
 
-        return redirect()->route('administration.developers.index');
+        $role = $request->attributes->get('role');
+
+        if ($role === Employee::DEVELOPER_ROLE) {
+            return redirect()->route('administration.developers.index');
+        } elseif ($role === Employee::PROJECT_MANAGER_ROLE) {
+            return redirect()->route('administration.project-managers.index');
+        } else {
+            return redirect()->route('administration.developers.index');
+        }
     }
 
     /**
@@ -70,6 +90,6 @@ class EmployeeController extends Controller
     {
         $employee->delete();
 
-        return redirect()->route('administration.developers.index');
+        return back();
     }
 }

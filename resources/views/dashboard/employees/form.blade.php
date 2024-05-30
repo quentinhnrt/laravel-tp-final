@@ -1,7 +1,4 @@
-<form
-    action="{{ isset($employee) ? route('administration.developers.update', $employee) : route('administration.developers.store') }}"
-    method="POST"
->
+<form action="{{ $action }}" method="POST">
     @csrf
 
     @if (isset($employee))
@@ -46,6 +43,10 @@
             <div>{{ $message }}</div>
         @enderror
     </div>
-    <input type="hidden" name="role" value="{{ App\Models\Employee::DEVELOPER_ROLE }}" />
+    <input
+        type="hidden"
+        name="role"
+        value="{{ isset($employee) ? $employee->role : $role ?? App\Models\Employee::DEVELOPER_ROLE }}"
+    />
     <button type="submit">Save</button>
 </form>

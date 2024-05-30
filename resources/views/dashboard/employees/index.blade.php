@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('base')
 
 @section('title', 'Employees')
 
@@ -60,18 +60,18 @@
                                     <td class="flex items-center gap-4">
                                         <a
                                             class="text-indigo-600 hover:text-indigo-900"
-                                            href="{{ route('developers.show', $employee) }}"
+                                            href="{{ request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('developers.show', $employee) : route('project-managers.show', $employee) }}"
                                         >
                                             View
                                         </a>
                                         <a
                                             class="text-indigo-600 hover:text-indigo-900"
-                                            href="{{ route('administration.developers.edit', $employee) }}"
+                                            href="{{ request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.edit', $employee) : route('administration.project-managers.edit', $employee) }}"
                                         >
                                             Edit
                                         </a>
                                         <form
-                                            action="{{ route('administration.developers.destroy', $employee) }}"
+                                            action="{{ request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.destroy', $employee) : route('administration.project-managers.destroy', $employee) }}"
                                             method="POST"
                                         >
                                             @csrf
