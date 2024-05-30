@@ -34,7 +34,11 @@
     ```bash
     php artisan migrate
     ```
-5. Lancer le serveur
+5. Lancer les migrations
+    ```bash
+    php artisan key:generate
+    ```
+6. Lancer le serveur
     ```bash
     php artisan serve
     ```
