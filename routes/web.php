@@ -5,37 +5,14 @@ use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    dd(Employee::developers()->get());
-    $dev = Employee::create([
-        'firstname' => 'John',
-        'lastname' => 'Doe',
-        'function' => 'Developer',
-        'role' => Employee::DEVELOPER_ROLE,
-    ]);
-
-    $pm = Employee::create([
-        'firstname' => 'Jane',
-        'lastname' => 'Doe',
-        'function' => 'Project Manager',
-        'role' => Employee::PROJECT_MANAGER_ROLE,
-    ]);
-
-    $dev->tasks()->create([]);
-
-    $pm->tasks()->create([]);
-
-    $pm->projects()->create([]);
-
     return view('welcome');
 });
 
-Route::get('/developers', function () {
-    return 'Developers';
-})->name('developers');
+Route::prefix('developers')->name('developers.')->group(function () {
+    Route::get('/', [App\Http\Controllers\EmployeeController::class, 'index'])->name('index');
+    Route::get('/{employee:slug}', [App\Http\Controllers\EmployeeController::class, 'show'])->name('show');
+});
 
-Route::get('/developers/{name}', function ($name) {
-    return 'Developer: ' . $name;
-})->name('developers.detail');
 
 Route::get('/project-managers', function () {
     return 'Project Managers';
@@ -49,6 +26,10 @@ Route::prefix('administration')->name('administration.')->group(function () {
     Route::prefix('developers')->name('developers.')->group(function () {
         Route::get('/', [EmployeeController::class, 'index'])->name('index');
         Route::delete('/{employee:id}', [EmployeeController::class, 'destroy'])->name('destroy');
+        Route::get('/create', [EmployeeController::class, 'create'])->name('create');
+        Route::post('/store', [EmployeeController::class, 'store'])->name('store');
+        Route::get('/edit/{employee:slug}', [EmployeeController::class, 'edit'])->name('edit');
+        Route::put('/update/{employee:slug}', [EmployeeController::class, 'update'])->name('update');
 
         Route::get('/{name}', function ($name) {
             return 'Developer administration: ' . $name;
