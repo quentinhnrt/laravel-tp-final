@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dashboard\ClientController;
 
 Route::get('/developers', function () {
     return 'Developers';
@@ -19,4 +20,22 @@ Route::get('/project-managers/{name}', function ($name) {
 })->name('project-managers.detail');
 
 Route::prefix('administration')->name('administration.')->group(function () {
+});
+
+Route::prefix('/clients')->name('clients.')->controller(ClientController::class)->group(function () {
+
+    Route::get('/', 'index')->name('index');
+
+    Route::get('/create', 'create')->name('create');
+
+    Route::post('/create', 'store');
+
+    Route::get('/{client}/edit', 'edit')->name('edit');
+
+    Route::put('/{post:slug}/edit', 'update')->name('update');
+
+    Route::delete('/{client}/destroy', 'destroy')->name('destroy');
+
+    Route::get('/{client}', 'show')->name('show');
+
 });
