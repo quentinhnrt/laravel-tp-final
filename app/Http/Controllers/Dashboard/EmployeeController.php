@@ -24,7 +24,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.employees.create');
     }
 
     /**
@@ -32,7 +32,9 @@ class EmployeeController extends Controller
      */
     public function store(CreateEmployeeRequest $request)
     {
-        //
+        Employee::create($request->validated());
+
+        return redirect()->route('administration.developers.index');
     }
 
     /**
@@ -48,7 +50,7 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        return view('dashboard.employees.edit', compact('employee'));
     }
 
     /**
@@ -56,7 +58,9 @@ class EmployeeController extends Controller
      */
     public function update(CreateEmployeeRequest $request, Employee $employee)
     {
-        //
+        $employee->update($request->validated());
+
+        return redirect()->route('administration.developers.index');
     }
 
     /**
@@ -65,5 +69,7 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         $employee->delete();
+
+        return redirect()->route('administration.developers.index');
     }
 }

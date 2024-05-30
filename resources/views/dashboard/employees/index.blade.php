@@ -26,6 +26,12 @@
                                     scope="col"
                                     class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
                                 >
+                                    Fonction
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
+                                >
                                     Role
                                 </th>
                                 <th
@@ -46,12 +52,28 @@
                                         {{ $employee->lastname }}
                                     </td>
                                     <td class="whitespace-nowrap px-6 py-4">
+                                        {{ $employee->function }}
+                                    </td>
+                                    <td class="whitespace-nowrap px-6 py-4">
                                         {{ $employee->role }}
                                     </td>
                                     <td class="flex items-center gap-4">
-                                        <a class="text-indigo-600 hover:text-indigo-900">View</a>
-                                        <a class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                        <form>
+                                        <a
+                                            class="text-indigo-600 hover:text-indigo-900"
+                                            href="{{ route('developers.show', $employee) }}"
+                                        >
+                                            View
+                                        </a>
+                                        <a
+                                            class="text-indigo-600 hover:text-indigo-900"
+                                            href="{{ route('administration.developers.edit', $employee) }}"
+                                        >
+                                            Edit
+                                        </a>
+                                        <form
+                                            action="{{ route('administration.developers.destroy', $employee) }}"
+                                            method="POST"
+                                        >
                                             @csrf
                                             @method('DELETE')
                                             <input type="hidden" name="id" value="{{ $employee->id }}" />

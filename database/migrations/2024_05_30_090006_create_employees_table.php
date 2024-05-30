@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('function');
             $table->enum('role', ['developer', 'project_manager']);
+            $table->string('slug')->unique();
             $table->timestamps();
         });
 

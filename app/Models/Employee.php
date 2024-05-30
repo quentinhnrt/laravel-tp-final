@@ -14,10 +14,13 @@ class Employee extends Model
         'lastname',
         'function',
         'role',
+        'slug',
     ];
 
     const DEVELOPER_ROLE = 'developer';
+    const DEVELOPER_ROLE_LABEL = 'Developpeur';
     const PROJECT_MANAGER_ROLE = 'project_manager';
+    const PROJECT_MANAGER_ROLE_LABEL = 'Chef de projet';
 
     public function scopeDevelopers($query)
     {
@@ -51,5 +54,13 @@ class Employee extends Model
         }
 
         return false;
+    }
+
+    public function getRoles()
+    {
+        return [
+            self::DEVELOPER_ROLE => self::DEVELOPER_ROLE_LABEL,
+            self::PROJECT_MANAGER_ROLE => self::PROJECT_MANAGER_ROLE_LABEL,
+        ];;
     }
 }
