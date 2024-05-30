@@ -26,6 +26,11 @@ Route::get('/project-managers/{name}', function ($name) {
 Route::prefix('administration')->name('administration.')->group(function () {
 });
 
+
+Route::fallback(function () {
+    return view('errors.404');
+});
+
 Route::prefix('/clients')->name('clients.')->controller(ClientController::class)->group(function () {
 
     Route::get('/', 'index')->name('index');
