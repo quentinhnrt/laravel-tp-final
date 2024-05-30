@@ -24,3 +24,7 @@ Route::get('/project-managers/{name}', function ($name) {
 
 Route::prefix('administration')->name('administration.')->group(function () {
 });
+
+Route::fallback(function () {
+    return view('errors.404');
+});
