@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\ClientController;
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/developers', function () {
     return 'Developers';
 })->name('developers');
