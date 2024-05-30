@@ -18,6 +18,8 @@
         @enderror
     </div>
 
+    <x-inputs.text label="dqsdqs" inputStyle="red" />
+    <x-inputs.text label="dqsdqs" inputStyle="blue" />
     <div>
         <label for="lastname">Prénom:</label>
         <input
