@@ -24,21 +24,25 @@
     ```
 2. Installez les dépendances.
     ```bash
+    composer install
+    ```
+3. Installez les dépendances.
+    ```bash
     npm install
     ```
-3. Lancer la compilation
+4. Lancer la compilation
     ```bash
     npm run dev
     ```
-4. Lancer les migrations
+5. Lancer les migrations
     ```bash
     php artisan migrate
     ```
-5. Lancer les migrations
+6. Lancer les migrations
     ```bash
     php artisan key:generate
     ```
-6. Lancer le serveur
+7. Lancer le serveur
     ```bash
     php artisan serve
     ```
@@ -132,7 +136,3 @@ Dans cette section, vous pouvez gérer les projets, les clients, les chefs de pr
 
 -   [ ] Design de l'interface avec Bootstrap, Tailwind, ou autre framework CSS (+2).
 -   [ ] Navigation intuitive entre les éléments (+2).
-
----
-
-Merci d'utiliser le Dashboard de Gestion de Projet. Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue sur le repository GitHub.
