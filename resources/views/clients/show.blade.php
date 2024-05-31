@@ -4,12 +4,16 @@
 
 @section('content')
 <article>
-    <h1>{{ $client->name }} {{ $client->address }}</h1>
+    <h1>{{ $client->name }}</h1>
+    <h2> {{ $client->address }}</h2>
     <p>
         {!! $client->contentclient !!}
     </p>
     <p>
         {!! $client->website !!}
+    </p>
+    <p>
+        {!! $client->projectlist !!}
     </p>
 </article>
 @endsection
