@@ -12,6 +12,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// UI Kit
+Route::get('uikit', function () {
+    return view('uikit', ['title' => 'UI Kit', 'description' => 'UI Kit - Laravel 11', 'image' => 'https://picsum.photos/id/237/200/300', 'color' => 'red'])->with('success', 'UI Kit - Laravel 11');
+});
+
 Route::prefix('developers')->name('developers.')->middleware(DeveloperMiddleware::class)->group(function () {
     Route::get('/', [App\Http\Controllers\EmployeeController::class, 'index'])->name('index');
     Route::get('/{employee:slug}', [App\Http\Controllers\EmployeeController::class, 'show'])->name('show');
