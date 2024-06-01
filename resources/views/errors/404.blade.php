@@ -19,21 +19,15 @@
     </head>
     <body class="bg-white font-spacemono" data-barba="wrapper">
         <div
-            class="grid h-screen place-content-center bg-white px-4"
+            class="flex min-h-screen flex-col items-center justify-center px-4 pb-4 pt-20 md:px-16 md:pb-16"
             data-barba="container"
             data-barba-namespace="with-cover"
         >
-            <div
-                class="lav-transition fixed left-0 top-0 z-10 h-screen w-screen translate-y-full bg-lav-blue-500"
-            ></div>
-            <div class="text-center">
-                <div class="text-center">
-                    <h1 class="text-9xl font-black text-gray-200">404</h1>
-                    <p class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Uh-oh!</p>
-                    <p class="mt-4 text-gray-500">Nous avons perdu la page quelque part.</p>
-                    <x-link href="{{ url()->previous() }}" class="mt-6">Revenir sur la page précédente</x-link>
-                </div>
-            </div>
+            <x-atoms.barba />
+            <h1 class="text-9xl font-black text-gray-200">404</h1>
+            <p class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Uh-oh!</p>
+            <p class="mt-4 text-gray-500">Nous avons perdu la page quelque part.</p>
+            <x-atoms.link href="{{ url()->previous() }}" class="mt-6">Revenir sur la page précédente</x-atoms.link>
         </div>
         @vite('resources/js/app.js')
         @bukScripts
