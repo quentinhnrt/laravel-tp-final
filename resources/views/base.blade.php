@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
     <x-templates.head
         title="{{ $title ?? 'No Title' }}"
         description="{{ $description ?? 'No description' }}"
         image="{{ $image ?? 'No image' }}"
     />
-    <x-templates.body />
+    <x-templates.body color="{{ $color ?? 'blue' }}" />
 </html>

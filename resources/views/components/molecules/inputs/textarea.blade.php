@@ -1,10 +1,9 @@
 @props([
-    "name" => "emailnovalue",
-    "label" => "emailnovalue",
+    "name" => "textareanovalue",
+    "label" => "textareanovalue",
     "class" => "w-full",
     "color" => "blue",
     "required" => false,
-    "autocomplete" => "email",
 ])
 <div @class([
     "flex flex-col gap-2 text-lav-red-600",
@@ -13,7 +12,7 @@
     <x-label for="{{ $name }}" class="text-lg text-black">
         {{ $label }}
     </x-label>
-    <x-email
+    <x-textarea
         name="{{ $name }}"
         @class([
             "text-black border-gray-200 border-2 rounded-[5px] px-4 py-2 font-rubik font-[350] leading-relaxed transition duration-300 ease-in-out hover:border-gray-300 hover:bg-gray-50",
@@ -28,7 +27,6 @@
             "!bg-lav-red-50" => $errors->has($name),
         ])
         required="{{ $required }}"
-        autocomplete="{{ $autocomplete }}"
     />
     @error("{{ $name }}")
         {{ $message }}
