@@ -7,12 +7,9 @@
 ])
 <a
     href="{{ $href }}" @if($target === '_blank') target="_blank" rel="noopener" @endif @class([
-        '!outline-none inline-flex min-h-12 items-center justify-center rounded-[5px] px-12 py-2 text-lg no-underline transition duration-300 ease-in-out' => $type === 'button',
-        'relative inline-flex items-center justify-center overflow-hidden text-black no-underline !outline-none transition duration-300 ease-in-out after:absolute after:bottom-0.5 after:left-0 after:h-0.5 after:w-full after:-translate-x-full after:rounded-lg after:transition after:duration-300 after:ease-in-out focus-within:after:translate-x-0 hover:after:translate-x-0 focus:after:translate-x-0 focus-visible:after:translate-x-0' => $type === 'link',
-        'after:bg-theme-500' => $type === 'link',
-        'bg-theme-500 text-white hover:bg-theme-600 focus-visible:border-theme-600 focus-visible:bg-theme-50 focus-visible:text-black focus:border-theme-600 focus:bg-theme-50 focus:text-black focus-within:border-theme-600 focus-within:bg-theme-50 focus-within:text-black' => $variant === 'solid' && $type === 'button',
-        'border-2 border-theme-500 bg-transparent text-theme-500 hover:border-theme-600 hover:text-theme-600 focus-visible:border-theme-600 focus-visible:bg-theme-50 focus-visible:text-black focus:border-theme-600 focus:bg-theme-50 focus:text-black focus-within:border-theme-600 focus-within:bg-theme-50 focus-within:text-black' =>
-            $variant === 'outline' && $type === 'button',
+        'h-fit block px-2 py-1 md:px-5 md:py-2  text-white transition-colors duration-300 transform bg-theme-600 rounded-md hover:bg-theme-400 border border-theme-600 hover:border-theme-400 focus:outline-none focus:bg-theme-400 text-center' => $type === 'button' && $variant === 'solid',
+        'h-fit dark:border-background-600 block px-2 py-1 md:px-5 md:py-2  text-center text-background-700 transition-colors duration-300 transform border rounded-md dark:hover:bg-background-700 dark:text-white lg:mt-0 hover:bg-background-100 lg:w-auto' => $variant === 'outline' && $type === 'button',
+        'inline-block mt-2 text-theme-500 underline hover:text-theme-400' => $type === 'link' && $variant === 'solid',
         $class,
     ])"
 >{{ $slot }}</a>

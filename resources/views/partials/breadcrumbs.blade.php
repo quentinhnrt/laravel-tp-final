@@ -9,7 +9,7 @@
                 <li class="breadcrumb-item flex items-center">
                     <a
                         href="{{ $breadcrumb->url }}"
-                        class="text-background-600 dark:text-background-200"
+                        class="text-background-600 dark:text-background-200 ml-1"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

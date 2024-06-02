@@ -1,7 +1,7 @@
 <form
     action="{{ $action }}"
     method="POST"
-    class="mx-[-8px] my-4 flex flex-wrap gap-y-4"
+    class="mx-[-8px] my-6 flex flex-wrap gap-y-4"
 >
     @csrf
 

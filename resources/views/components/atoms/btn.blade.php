@@ -5,9 +5,8 @@
 ])
 <button
     type="{{ $type }}" @class([
-        'inline-flex min-h-12 items-center justify-center rounded-[5px] px-12 py-2 text-lg no-underline transition duration-300 ease-in-out !outline-none',
-        'bg-theme-500 text-white hover:bg-theme-600 focus-visible:border-theme-600 focus-visible:bg-theme-50 focus-visible:text-black focus:border-theme-600 focus:bg-theme-50 focus:text-black focus-within:border-theme-600 focus-within:bg-theme-50 focus-within:text-black' => $variant === 'solid',
-        'border-2 border-theme-500 bg-transparent text-theme-500 hover:border-theme-600 hover:text-theme-600 focus-visible:border-theme-600 focus-visible:bg-theme-50 focus-visible:text-black focus:border-theme-600 focus:bg-theme-50 focus:text-black focus-within:border-theme-600 focus-within:bg-theme-50 focus-within:text-black' => $variant === 'outline',
+        'h-fit block px-2 py-1 md:px-5 md:py-2 text-white transition-colors duration-300 transform bg-theme-600 rounded-md hover:bg-theme-400 border border-theme-600 hover:border-theme-400 focus:outline-none focus:bg-theme-400 text-center' => $variant === 'solid',
+        'h-fit block px-2 py-1 md:px-5 md:py-2 dark:border-background-600 text-center text-background-700 transition-colors duration-300 transform border rounded-md dark:hover:bg-background-700 dark:text-white lg:mt-0 hover:bg-background-100 lg:w-auto' => $variant === 'outline',
         $class,
     ])"
 >{{ $slot }}</button>

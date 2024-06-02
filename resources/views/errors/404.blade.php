@@ -15,7 +15,7 @@
         <div
             class="container mx-auto h-fit px-6 pb-12 pt-4 lg:flex lg:items-center lg:gap-12"
         >
-            <div class="wf-ull lg:w-1/2">
+            <div class="w-full lg:w-1/2">
                 <p
                     class="dark:text-theme-400 text-sm font-medium text-theme-500"
                 >
