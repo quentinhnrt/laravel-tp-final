@@ -1,14 +1,17 @@
-<body class="scroll-smooth bg-white font-spacemono" data-barba="wrapper">
+<body
+    class="theme-{{ $theme ?? "blue" }} scroll-smooth bg-white font-spacemono"
+    data-barba="wrapper"
+>
     <div
         data-barba="container"
         data-barba-namespace="with-cover"
-        data-background="--{{ $color }}"
-        class="min-h-screen px-4 pb-10 pt-24 md:px-16 md:pb-20 md:pt-32"
+        data-background="--{{ $theme ?? "blue" }}"
+        class="min-h-screen px-4 pb-10 pt-36 md:px-16 md:pb-20 md:pt-32"
     >
         {{-- Page transition --}}
         <x-atoms.barba />
         {{-- Header --}}
-        <x-organisms.header color="{{ $color }}" />
+        <x-organisms.header />
         {{-- Content --}}
         <main id="main" class="mx-auto max-w-screen-lg">
             @section("content")

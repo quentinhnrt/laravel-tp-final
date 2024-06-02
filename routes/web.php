@@ -14,7 +14,7 @@ Route::get('/', function () {
 
 // UI Kit
 Route::get('uikit', function () {
-    return view('uikit', ['title' => 'UI Kit', 'description' => 'UI Kit - Laravel 11', 'image' => 'https://picsum.photos/id/237/200/300', 'color' => 'red'])->with('success', 'UI Kit - Laravel 11');
+    return view('uikit', ['title' => 'UI Kit', 'description' => 'UI Kit - Laravel 11', 'image' => 'https://picsum.photos/id/237/200/300'])->with('success', 'UI Kit - Laravel 11');
 });
 
 Route::prefix('developers')->name('developers.')->middleware(DeveloperMiddleware::class)->group(function () {
@@ -59,7 +59,6 @@ Route::prefix('/clients')->name('clients.')->controller(ClientController::class)
     Route::get('/{client}/edit', 'edit')->name('edit');
     Route::delete('/{client}/destroy', 'destroy')->name('destroy');
     Route::get('/{client}', 'show')->name('show');
-
 });
 
 Route::prefix('/projects')->name('projects.')->controller(ProjectController::class)->group(function () {

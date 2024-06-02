@@ -1,3 +1,7 @@
+@props([
+    "color" => "green",
+])
+
 @extends("base")
 
 @section("content")
@@ -12,10 +16,13 @@
         <x-atoms.p>
             Lorem ipsum
             <x-atoms.code>dolor</x-atoms.code>
-            sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+            sit amet, consectetur adipiscing
+            <x-atoms.link href="#" type="link" color="{{ $color }}">
+                elit
+            </x-atoms.link>
+            , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
         </x-atoms.p>
         <x-atoms.title type="h2">Title 2</x-atoms.title>
         <x-atoms.title type="h3">Title 3</x-atoms.title>
