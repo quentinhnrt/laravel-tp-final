@@ -20,15 +20,6 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->timestamps();
         });
-
-        // can have multiple tasks assigned
-
-        Schema::create('employee_task', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('employee_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('task_id')->constrained()->cascadeOnDelete();
-            $table->timestamps();
-        });
     }
 
     /**
