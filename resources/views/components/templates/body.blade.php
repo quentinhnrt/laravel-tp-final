@@ -1,32 +1,28 @@
 <body
-    class="theme-{{ $theme ?? "blue" }} scroll-smooth bg-white font-spacemono"
-    data-barba="wrapper"
+    class="theme- font-roboto dark:bg-background-900 theme-red min-h-screen bg-white"
 >
-    <div
-        data-barba="container"
-        data-barba-namespace="with-cover"
-        data-background="--{{ $theme ?? "blue" }}"
-        class="min-h-screen px-4 pb-10 pt-36 md:px-16 md:pb-20 md:pt-32"
-    >
-        {{-- Page transition --}}
-        <x-atoms.barba />
-        {{-- Header --}}
-        <x-organisms.header />
-        {{-- Content --}}
-        <main id="main" class="mx-auto max-w-screen-lg">
-            @section("content")
-                <div class="flex w-full items-center justify-center">
-                    <h1 class="text-5xl font-black text-gray-200 md:text-7xl">
-                        No content
-                    </h1>
-                </div>
-            @endsection
+    {{-- Header --}}
+    <x-organisms.header />
+    {{-- Content --}}
+    <main id="main">
+        @section("breadcrumb")
+            {{ Breadcrumbs::render("home") }}
+        @endsection
 
-            @yield("content")
-        </main>
-        {{-- Footer --}}
-        <x-organisms.footer />
-    </div>
+        @yield("breadcrumb")
+
+        @section("content")
+            <div class="flex w-full items-center justify-center">
+                <h1 class="text-5xl font-black text-gray-200 md:text-7xl">
+                    No content
+                </h1>
+            </div>
+        @endsection
+
+        @yield("content")
+    </main>
+    {{-- Footer --}}
+    <x-organisms.footer />
 
     {{-- Script --}}
     @vite("resources/js/app.js")

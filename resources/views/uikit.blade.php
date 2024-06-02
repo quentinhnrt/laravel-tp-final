@@ -6,12 +6,6 @@
 
 @section("content")
     <div class="flex flex-col">
-        @if (session()->has("success"))
-            <div class="alert alert-success">
-                {{ session()->get("success") }}
-            </div>
-        @endif
-
         <x-atoms.title color="{{ $color }}">Title 1</x-atoms.title>
         <x-atoms.p>
             Lorem ipsum

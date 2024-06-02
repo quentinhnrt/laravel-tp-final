@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\EmployeeController;
+use App\Http\Controllers\HomeController;
 use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\ClientController;
@@ -11,6 +12,8 @@ use App\Http\Middleware\ProjectManagerMiddleware;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('home', [HomeController::class, 'index'])->name('home');
 
 // UI Kit
 Route::get('uikit', function () {

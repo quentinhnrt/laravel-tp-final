@@ -1,129 +1,94 @@
-<header
-    id="header"
-    class="fixed left-0 top-0 z-10 block w-screen border-t-2 bg-white px-4 py-4 md:px-10 md:py-8"
+<nav
+    x-data="{ isOpen: false }"
+    class="dark:bg-background-800 relative bg-white shadow"
 >
-    <div
-        class="mx-auto flex max-w-screen-lg flex-col items-center md:flex-row md:justify-between"
-    >
-        <div class="flex w-full flex-nowrap items-center gap-3 md:w-fit">
-            <a
-                class="bg-theme-500 hover:bg-theme-600 flex w-fit rounded-full p-3 outline-none transition duration-300 ease-in-out focus-within:bg-gray-700 focus:bg-gray-700 focus-visible:bg-gray-700"
-                href=""
-            >
-                <span class="sr-only">Retour à l'accueil</span>
-                <img
-                    src="{{ asset("logo.svg") }}"
-                    alt=""
-                    width="32"
-                    height="32"
-                />
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <x-atoms.logo class="h-7 w-auto fill-theme-500" />
+                <span
+                    class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 mx-2 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                >
+                    / Dash
+                </span>
             </a>
-            <span
-                class="none text-theme-500 font-rubik text-2xl font-normal uppercase leading-relaxed md:inline"
-            >
-                / Dash
-            </span>
-        </div>
-        <div class="flex flex-wrap items-center gap-x-4">
-            <div class="dropdown relative inline-block">
-                <button
-                    class="after:bg-theme-500 relative inline-flex min-h-12 items-center justify-center overflow-hidden bg-transparent text-lg text-black no-underline !outline-none transition duration-300 ease-in-out after:absolute after:bottom-1.5 after:left-0 after:h-1 after:w-full after:-translate-x-full after:rounded-lg after:transition after:duration-300 after:ease-in-out focus-within:after:translate-x-0 hover:after:translate-x-0 focus:after:translate-x-0 focus-visible:after:translate-x-0"
-                >
-                    <span>Administration</span>
-                </button>
-                <ul
-                    class="dropdown-content absolute right-0 hidden min-w-[150px] rounded-[5px] border-2 border-gray-200 bg-white text-black"
-                >
-                    <li>
-                        <a
-                            class="whitespace-no-wrap hover:bg-theme-50 hover:text-theme-600 block bg-gray-50 px-6 py-2"
-                            href="#"
-                        >
-                            Option 1
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="whitespace-no-wrap hover:bg-theme-50 hover:text-theme-600 block bg-gray-50 px-6 py-2"
-                            href="#"
-                        >
-                            Option 2
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="whitespace-no-wrap hover:bg-theme-50 hover:text-theme-600 block bg-gray-50 px-6 py-2"
-                            href="#"
-                        >
-                            Option 3
-                        </a>
-                    </li>
-                    {{-- <li class="dropdown relative"> --}}
-                    {{-- <a --}}
-                    {{-- class="whitespace-no-wrap block bg-gray-50 px-6 py-2 hover:bg-theme-50 hover:text-theme-600" --}}
-                    {{-- href="#" --}}
-                    {{-- > --}}
-                    {{-- Option 4 ? --}}
-                    {{-- </a> --}}
-                    {{-- <ul --}}
-                    {{-- class="dropdown-content absolute right-full top-0 hidden min-w-[150px] rounded-[5px] border-2 border-gray-200 bg-white text-black" --}}
-                    {{-- > --}}
-                    {{-- <li> --}}
-                    {{-- <a --}}
-                    {{-- class="whitespace-no-wrap block bg-gray-50 px-6 py-2 hover:bg-theme-50 hover:text-theme-600" --}}
-                    {{-- href="#" --}}
-                    {{-- > --}}
-                    {{-- Option 3-1 --}}
-                    {{-- </a> --}}
-                    {{-- </li> --}}
 
-                    {{-- <li> --}}
-                    {{-- <a --}}
-                    {{-- class="whitespace-no-wrap block bg-gray-50 px-6 py-2 hover:bg-theme-50 hover:text-theme-600" --}}
-                    {{-- href="#" --}}
-                    {{-- > --}}
-                    {{-- Option 3-2 --}}
-                    {{-- </a> --}}
-                    {{-- </li> --}}
-                    {{-- </ul> --}}
-                    {{-- </li> --}}
-                </ul>
-            </div>
-            <div class="dropdown relative inline-block">
+            <!-- Mobile menu button -->
+            <div class="flex">
                 <button
-                    class="after:bg-theme-500 relative inline-flex min-h-12 items-center justify-center overflow-hidden bg-transparent text-lg text-black no-underline !outline-none transition duration-300 ease-in-out after:absolute after:bottom-1.5 after:left-0 after:h-1 after:w-full after:-translate-x-full after:rounded-lg after:transition after:duration-300 after:ease-in-out focus-within:after:translate-x-0 hover:after:translate-x-0 focus:after:translate-x-0 focus-visible:after:translate-x-0"
+                    x-cloak
+                    @click="isOpen = !isOpen"
+                    type="button"
+                    class="text-background-500 hover:text-background-600 focus:text-background-600 dark:text-background-200 dark:hover:text-background-400 dark:focus:text-background-400 focus:outline-none"
+                    aria-label="toggle menu"
                 >
-                    <span>Autres</span>
+                    <svg
+                        x-show="!isOpen"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-7 w-7"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4 8h16M4 16h16"
+                        />
+                    </svg>
+
+                    <svg
+                        x-show="isOpen"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-7 w-7"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
                 </button>
-                <ul
-                    class="dropdown-content absolute right-0 hidden min-w-[150px] rounded-[5px] border-2 border-gray-200 bg-white text-black"
+            </div>
+        </div>
+
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div
+            x-cloak
+            :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+            class="dark:bg-background-800 absolute inset-x-0 z-20 w-full bg-white transition-all duration-300 ease-in-out"
+        >
+            <div class="container mx-auto flex flex-col px-6 py-12">
+                <a
+                    class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                    href="#"
                 >
-                    <li>
-                        <a
-                            class="whitespace-no-wrap hover:bg-theme-50 hover:text-theme-600 block bg-gray-50 px-6 py-2"
-                            href="#"
-                        >
-                            Option 1
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="whitespace-no-wrap hover:bg-theme-50 hover:text-theme-600 block bg-gray-50 px-6 py-2"
-                            href="#"
-                        >
-                            Option 2
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="whitespace-no-wrap hover:bg-theme-50 hover:text-theme-600 block bg-gray-50 px-6 py-2"
-                            href="#"
-                        >
-                            Option 3
-                        </a>
-                    </li>
-                </ul>
+                    Home
+                </a>
+                <a
+                    class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                    href="#"
+                >
+                    Shop
+                </a>
+                <a
+                    class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                    href="#"
+                >
+                    Contact
+                </a>
+                <a
+                    class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                    href="#"
+                >
+                    About
+                </a>
             </div>
         </div>
     </div>
-</header>
+</nav>

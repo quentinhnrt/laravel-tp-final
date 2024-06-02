@@ -1,7 +1,3 @@
-@props([
-    "theme" => "blue",
-])
-
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
     <x-templates.head
@@ -9,5 +5,5 @@
         description="{{ $description ?? 'No description' }}"
         image="{{ $image ?? 'No image' }}"
     />
-    <x-templates.body color="{{ $theme }}" />
+    <x-templates.body />
 </html>

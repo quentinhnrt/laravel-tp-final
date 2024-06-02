@@ -9,34 +9,34 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                spacemono: ['"Space Mono"', ...defaultTheme.fontFamily.mono],
-                rubik: ['"Rubik"', ...defaultTheme.fontFamily.sans],
+                roboto: ['"Roboto"', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                "lav-blue": {
-                    50: "rgba(56, 209, 241, 0.2)",
-                    500: "#38d1f1",
-                    600: "#05afd5",
-                },
-                "lav-green": {
-                    50: "rgba(4, 191, 12, 0.2)",
-                    500: "#04bf0c",
-                    600: "#078e0e",
-                },
-                "lav-orange": {
-                    50: "rgba(255, 165, 67, 0.2)",
-                    500: "#ffa543",
-                    600: "#ff8a20",
-                },
-                "lav-red": {
-                    50: "rgba(236, 67, 67, 0.2)",
-                    500: "#ec4343",
-                    600: "#d92929",
-                },
                 theme: {
                     50: "var(--theme-50)",
-                    500: "var(--theme)",
+                    100: "var(--theme-100)",
+                    200: "var(--theme-200)",
+                    300: "var(--theme-300)",
+                    400: "var(--theme-400)",
+                    500: "var(--theme-500)",
                     600: "var(--theme-600)",
+                    700: "var(--theme-700)",
+                    800: "var(--theme-800)",
+                    900: "var(--theme-900)",
+                    950: "var(--theme-950)",
+                },
+
+                background: {
+                    50: "var(--background-50)",
+                    100: "var(--background-100)",
+                    200: "var(--background-200)",
+                    300: "var(--background-300)",
+                    400: "var(--background-400)",
+                    500: "var(--background-500)",
+                    600: "var(--background-600)",
+                    700: "var(--background-700)",
+                    800: "var(--background-800)",
+                    900: "var(--background-900)",
                 },
             },
         },
