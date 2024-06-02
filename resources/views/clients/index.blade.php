@@ -4,15 +4,17 @@
 
 @section('content')
 
-<h1>Liste des Auteurs</h1>
+<h1>Liste des Clients</h1>
 
 @foreach ($clients as $client)
     <article>
-        <h2>{{ $client->lastname }} {{ $client->firstname }}</h2>
+        <h1>{{ $client->name }} {{ $client->address }}</h1>
+        <h2> {{ $client->address }}</h2>
+        <p>{{ $client->website }}</p>
+        <p>{{ $client->projectlist }}</p>
         <p>{{ $client->contentauthor }}</p>
-        <!-- Vous pouvez ajouter d'autres champs ici selon vos besoins -->
         <p>
-            <a href="{{ route('clients.show', ['client' => $client]) }}" class="btn btn-primary">
+            <a href="{{ route('administration.clients.show', ['client' => $client]) }}" class="btn btn-primary">
                 Voir les détails
             </a>
         </p>
@@ -20,7 +22,6 @@
 @endforeach
 
 <div class="pagination">
-    <!-- Si vous souhaitez ajouter une pagination, vous pouvez le faire ici -->
 </div>
 
 @endsection

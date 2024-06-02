@@ -1,54 +1,45 @@
-<form action="{{ $action }}" method="POST">
+<form
+    action="{{ $action }}"
+    method="POST"
+    class="mx-[-8px] my-4 flex flex-wrap gap-y-4"
+>
     @csrf
 
     @if (isset($employee))
-        @method('PUT')
+        @method("PUT")
     @endif
 
-    <div>
-        <label for="firstname">Nom:</label>
-        <input
-            type="text"
-            name="firstname"
-            id="firstname"
-            value="{{ isset($employee) ? $employee->firstname : old('firstname') }}"
-        />
-        @error('firstname')
-            <div>{{ $message }}</div>
-        @enderror
-    </div>
+    @php
+        $firstname = isset($employee) ? $employee->firstname : old("firstname");
+        $lastname = isset($employee) ? $employee->lastname : old("lastname");
+        $function = isset($employee) ? $employee->function : old("function");
+    @endphp
 
-    <x-inputs.text label="dqsdqs" inputStyle="red" />
-    <x-inputs.text label="dqsdqs" inputStyle="blue" />
-    <div>
-        <label for="lastname">Prénom:</label>
-        <input
-            type="text"
-            name="lastname"
-            id="lastname"
-            value="{{ isset($employee) ? $employee->lastname : old('lastname') }}"
-        />
-        @error('lastname')
-            <div>{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div>
-        <label for="function">Fonction:</label>
-        <input
-            type="text"
-            name="function"
-            id="function"
-            value="{{ isset($employee) ? $employee->function : old('function') }}"
-        />
-        @error('function')
-            <div>{{ $message }}</div>
-        @enderror
-    </div>
+    <x-molecules.inputs.text
+        label="Nom:"
+        name="firstname"
+        class="w-full px-2 md:w-1/2"
+        :value="$firstname"
+        required="true"
+    />
+    <x-molecules.inputs.text
+        label="Prénom:"
+        name="lastname"
+        class="w-full px-2 md:w-1/2"
+        :value="$lastname"
+        required="true"
+    />
+    <x-molecules.inputs.text
+        label="Fonction:"
+        name="function"
+        class="w-full px-2"
+        :value="$function"
+        required="true"
+    />
     <input
         type="hidden"
         name="role"
         value="{{ isset($employee) ? $employee->role : $role ?? App\Models\Employee::DEVELOPER_ROLE }}"
     />
-    <button type="submit">Save</button>
+    <x-atoms.btn type="submit" class="mx-2 mt-4 w-full">Save</x-atoms.btn>
 </form>

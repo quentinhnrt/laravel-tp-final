@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Dashboard;
-
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ClientRequest;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -16,11 +16,13 @@ class ClientController extends Controller
         return view('clients.index', ['clients' => $clients]);
     }
     
+
     public function show(Client $client)
     {
         return view('clients.show', ['client' => $client]);
     }
     
+
     public function create(): View
     {
         return view('clients.create');
@@ -29,35 +31,37 @@ class ClientController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'address' => 'nullable|string|max:255',
-            'website' => 'nullable|string|max:255|unique:clients,website',
-            'projectlist' => 'nullable|string'
+            'name' => 'string|max:255',
+            'address' => 'string|max:255',
+            'website' => 'string|max:255|unique:clients,website',
+            'projectlist' => 'string'
         ]);
 
         $client = Client::create($validated);
 
-        return redirect()->route('clients.show', ['client' => $client->id])
+        return redirect()->route('administration.clients.show', ['client' => $client->id])
             ->with('success', "Le client a bien été créé");
     }
 
     public function edit(Client $client): View
     {
-        return view('clients.edit', ['client' => $client]);
+        return view('clients.edit', [
+            'client' => $client
+        ]);
     }
 
-    public function update(Request $request, Client $client): RedirectResponse
+    public function update(ClientRequest $request, Client $client): RedirectResponse
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'address' => 'nullable|string|max:255',
-            'website' => 'nullable|string|max:255|unique:clients,website,' . $client->id,
-            'projectlist' => 'nullable|string'
+            'name' => 'string|max:255',
+            'address' => 'string|max:255',
+            'website' => 'string|max:255' . $client->id,
+            'projectlist' => 'string'
         ]);
 
         $client->update($validated);
 
-        return redirect()->route('clients.show', ['client' => $client->id])
+        return redirect()->route('administration.clients.show', ['client' => $client->id])
             ->with('success', "Le client a bien été modifié");
     }
 
@@ -65,7 +69,7 @@ class ClientController extends Controller
     {
         $client->delete();
 
-        return redirect()->route('clients.index')
+        return redirect()->route('administration.clients.index')
             ->with('success', "Le client a bien été supprimé");
     }
 }
