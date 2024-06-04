@@ -33,7 +33,7 @@
                 Test
             </x-atoms.link>
         </div>
-        <x-form
+        <form
             action="http://example.com"
             class="mx-[-8px] my-4 mt-6 flex flex-wrap gap-y-4"
         >
@@ -47,24 +47,61 @@
                 name="email"
                 class="w-full px-2 md:w-1/2"
             />
-            <x-molecules.inputs.radio
+            <x-molecules.inputs.radio-container
                 label="Radio"
                 name="radio"
                 class="w-full px-2 md:w-1/2"
-            />
+            >
+                <x-molecules.inputs.radio
+                    label="Radio"
+                    name="radio"
+                    class="w-full px-2 md:w-1/2"
+                />
+            </x-molecules.inputs.radio-container>
             <x-molecules.inputs.textarea
                 label="Textarea"
                 name="textarea"
                 class="w-full px-2 md:w-1/2"
+                disabled="true"
             />
             <x-molecules.inputs.select
                 label="Select"
                 name="select"
                 class="w-full px-2 md:w-1/2"
-            />
+            >
+                <option value="">Select a person...</option>
+                <option value="4" selected>Thomas Edison</option>
+                <option value="1">Nikola</option>
+                <option value="3">Nikola Tesla</option>
+                <option value="5">Arnold Schwarzenegger</option>
+            </x-molecules.inputs.select>
+            <x-molecules.inputs.select
+                label="Test"
+                name="test"
+                class="w-full px-2 md:w-1/2"
+                jsoverride="false"
+            >
+                <option value="" selected>Select a person...</option>
+                <option value="4">Thomas Edison</option>
+                <option value="1">Nikola</option>
+                <option value="3">Nikola Tesla</option>
+                <option value="5">Arnold Schwarzenegger</option>
+            </x-molecules.inputs.select>
+            <x-molecules.inputs.select
+                label="Test"
+                name="test"
+                class="w-full px-2 md:w-1/2"
+                multiple="true"
+            >
+                <option value="" selected>Select a person...</option>
+                <option value="4">Thomas Edison</option>
+                <option value="1">Nikola</option>
+                <option value="3">Nikola Tesla</option>
+                <option value="5">Arnold Schwarzenegger</option>
+            </x-molecules.inputs.select>
             <x-atoms.btn type="submit" class="mx-2 mt-6 w-full">
                 Submit
             </x-atoms.btn>
-        </x-form>
+        </form>
     </x-organisms.container>
 @endsection

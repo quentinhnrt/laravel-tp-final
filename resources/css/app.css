@@ -1,3 +1,5 @@
+@import 'tom-select/dist/css/tom-select';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -57,5 +59,90 @@ select {
     background-position: right 0.5rem center;
     background-repeat: no-repeat;
     background-size: 1.5em 1.5em;
+    print-color-adjust: exact;
     -webkit-appearance: none;
+}
+
+/*
+  Use the following to reproduce a Tailwind UI Select field with Tom Select
+*/
+
+.ts-wrapper.error {
+    @apply border-red-400 focus:border-red-300 focus:ring-red-300;
+}
+
+.ts-wrapper {
+    @apply relative;
+}
+
+.ts-wrapper.input-active .ts-control {
+    @apply border-theme-400 outline-none ring ring-theme-300 ring-opacity-40 dark:border-theme-300;
+}
+
+.ts-wrapper .ts-control {
+    @apply gap-y-1 flex items-center placeholder-background-400 mt-2 w-full rounded-lg border border-background-200 bg-white px-5 !pr-8 py-2.5 text-background-700 focus:border-theme-400 focus:outline-none focus:ring focus:ring-theme-300 focus:ring-opacity-40 dark:border-background-600 dark:bg-background-900 dark:text-background-300 dark:focus:border-theme-300;
+}
+
+.ts-wrapper .ts-control .clear-button {
+    @apply !text-2xl absolute right-8 flex items-center text-background-700 dark:text-background-600 pb-2;
+}
+
+.ts-wrapper .ts-control input {
+    @apply !pr-5 !text-base !m-0 text-background-700 dark:text-background-300;
+}
+
+.ts-wrapper .ts-control .item {
+    @apply !pr-2 !text-base !m-0 text-background-700 dark:text-background-300;
+}
+
+.ts-control, .ts-wrapper.single.input-active .ts-control {
+    @apply !bg-transparent;
+}
+
+.ts-wrapper.plugin-remove_button .item {
+    @apply rounded-[4px] !pl-2 !border !border-background-200 !mr-2 !bg-white !text-background-700 focus:border-theme-400 focus:outline-none focus:ring focus:ring-theme-300 focus:ring-opacity-40 dark:!border-background-600 dark:!bg-background-900 dark:!text-background-300 dark:focus:border-theme-300;
+}
+
+.ts-wrapper.multi .ts-control > div {
+    @apply p-0 m-0 pl-1;
+}
+
+.ts-wrapper.plugin-remove_button .item .remove {
+    @apply !border-none text-lg leading-none !ml-0 py-1 rounded-r-lg !border-background-200 dark:!text-background-300;
+}
+
+.ts-dropdown {
+    @apply text-sm !border-background-200 dark:!border-background-600 bg-white dark:bg-background-900 rounded-md border text-background-700 dark:text-background-300;
+}
+
+.ts-dropdown [data-selectable].option, .ts-dropdown .no-results {
+    @apply py-2;
+}
+
+.ts-dropdown [data-selectable].option:first-child {
+    @apply rounded-t-md;
+}
+
+.ts-dropdown [data-selectable].option:last-child {
+    @apply rounded-b-md;
+}
+
+.ts-dropdown .create:hover, .ts-dropdown .option:hover, .ts-dropdown .active {
+    @apply bg-theme-600 text-white ;
+}
+
+.ts-dropdown .spinner {
+    @apply h-auto w-auto;
+}
+
+.ts-dropdown .spinner:after {
+    @apply h-5 w-5 border-2 p-0 my-0 inline-block;
+}
+
+.ts-wrapper:not(.form-control):not(.form-select).single .ts-control {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    print-color-adjust: exact;
 }

@@ -7,11 +7,14 @@
     <title>{{ $title }}</title>
     <link rel="icon" href="{{ asset("favicon.ico") }}" />
     {{-- SEO Meta --}}
-    <x-social-meta
-        title="{{ $title }}"
-        description="{{ $description }}"
-        image="{{ $image }}"
-    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ $title }}" />
+    <meta name="description" content="{{ $description }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property="og:image" content="{{ $image }}" />
+    <meta property="og:url" content="{{ request()->host() }}" />
+    <meta property="og:locale" content="{{ url()->current() }}" />
     @yield("meta")
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,5 +26,4 @@
     {{-- Styles --}}
     @vite("resources/css/app.css")
     @yield("cdn")
-    @bukStyles
 </head>
