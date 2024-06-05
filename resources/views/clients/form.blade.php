@@ -1,41 +1,50 @@
-<form action="" method="post" class="vstack gap-2">
+<form action="" method="POST" class="mx-[-8px] my-6 flex flex-wrap gap-y-4">
     @csrf
-    @isset($client)
+
+    @if (isset($client))
         @method('PUT')
     @endif
-    <div class="form-group">
-        <label for="name">Nom :</label>
-        <input type="text" class="form-control" name="name" value="{{ isset($client) ? $client->name : old('name') }}">
-        @error("name")
-        {{ $message }}
-        @enderror
-    </div>
-    <div class="form-group">
-        <label for="address">Address :</label>
-        <input type="text" class="form-control" name="address" value="{{ isset($client) ? $client->address : old('address') }}">
-        @error("address")
-        {{ $message }}
-        @enderror
-    </div>
-    <div class="form-group">
-        <label for="website">Website :</label>
-        <input type="website" class="form-control" name="website" value="{{ isset($client) ? $client->website : old('website') }}">
-        @error("website")
-        {{ $message }}
-        @enderror
-    </div>
-    <div class="form-group">
-        <label for="projectlist">Project list :</label>
-        <textarea name="projectlist" class="form-control">{{ isset($client) ? $client->projectlist : old('projectlist') }}</textarea>
-        @error("projectlist")
-        {{ $message }}
-        @enderror
-    </div>
-    <button class="btn btn-primary">
-        @if(isset($client))
-        Modifier
+
+    @php
+        $name = isset($client) ? $client->name : old('name');
+        $website = isset($client) ? $client->website : old('website');
+        $address = isset($client) ? $client->address : old('address');
+        $projectlist = isset($client) ? $client->projectlist : old('projectlist');
+    @endphp
+
+    <x-molecules.inputs.text
+        label="Nom:"
+        name="name"
+        class="w-full px-2 md:w-1/2"
+        :value="$name"
+        required="true"
+    />
+    <x-molecules.inputs.text
+        label="Site web:"
+        name="website"
+        class="w-full px-2 md:w-1/2"
+        :value="$website"
+        required="true"
+    />
+    <x-molecules.inputs.textarea
+        label="Adresse:"
+        name="description"
+        class="w-full px-2"
+        :value="$address"
+        required="true"
+    />
+    <x-molecules.inputs.text
+        label="liste de projets:"
+        name="projectlist"
+        class="w-full px-2"
+        :value="$projectlist"
+        required="true"
+    />
+    <x-atoms.btn type="submit" class="mx-2 mt-4 w-full">
+        @if (isset($project))
+            Modifier
         @else
-        Créer
+            Créer
         @endif
-    </button>
+    </x-atoms.btn>
 </form>

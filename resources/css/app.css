@@ -1,3 +1,4 @@
+/* Select library */
 @import 'tom-select/dist/css/tom-select';
 
 @tailwind base;
@@ -5,18 +6,17 @@
 @tailwind utilities;
 
 /* Custom CSS */
-body, .theme-blue {
-    --theme-50: #f0f9ff;
-    --theme-100: #e0f2fe;
-    --theme-200: #bae6fd;
-    --theme-300: #7dd3fc;
-    --theme-400: #38bdf8;
-    --theme-500: #0ea5e9;
-    --theme-600: #0284c7;
-    --theme-700: #0369a1;
-    --theme-800: #075985;
-    --theme-900: #0c4a6e;
-    --theme-950: #082f49;
+body, .theme-purple {
+    --theme-50: #f5f3ff;
+    --theme-100: #ede9fe;
+    --theme-200: #ddd6fe;
+    --theme-300: #c4b5fd;
+    --theme-400: #a78bfa;
+    --theme-500: #8b5cf6;
+    --theme-600: #7c3aed;
+    --theme-800: #6d28d9;
+    --theme-900: #4c1d95;
+    --theme-950: #2e1065;
     --background-50: #fafafa;
     --background-100: #f5f5f5;
     --background-200: #e5e5e5;
@@ -28,6 +28,20 @@ body, .theme-blue {
     --background-800: #262626;
     --background-900: #171717;
     --background-950: #0a0a0a;
+}
+
+.theme-blue {
+    --theme-50: #f0f9ff;
+    --theme-100: #e0f2fe;
+    --theme-200: #bae6fd;
+    --theme-300: #7dd3fc;
+    --theme-400: #38bdf8;
+    --theme-500: #0ea5e9;
+    --theme-600: #0284c7;
+    --theme-700: #0369a1;
+    --theme-800: #075985;
+    --theme-900: #0c4a6e;
+    --theme-950: #082f49;
 }
 
 .theme-red {
@@ -63,10 +77,7 @@ select {
     -webkit-appearance: none;
 }
 
-/*
-  Use the following to reproduce a Tailwind UI Select field with Tom Select
-*/
-
+/* Tailwind UI Select field with Tom Select */
 .ts-wrapper.error {
     @apply border-red-400 focus:border-red-300 focus:ring-red-300;
 }

@@ -1,30 +1,30 @@
 <body
-    class="theme- font-roboto dark:bg-background-900 theme-red min-h-screen bg-white"
+    class="@yield('theme', 'theme-purple') min-h-screen bg-white font-roboto dark:bg-background-900"
 >
-{{-- Header --}}
-<x-organisms.header/>
-{{-- Content --}}
-<main id="main">
-    @section("breadcrumb")
-        {{ Breadcrumbs::render("home") }}
-    @endsection
+    {{-- Header --}}
+    <x-organisms.header />
+    {{-- Content --}}
+    <main id="main">
+        @section('breadcrumb')
+            {{ Breadcrumbs::render('home') }}
+        @endsection
 
-    @yield("breadcrumb")
+        @yield('breadcrumb')
 
-    @section("content")
-        <div class="flex w-full items-center justify-center">
-            <h1 class="text-5xl font-black text-gray-200 md:text-7xl">
-                No content
-            </h1>
-        </div>
-    @endsection
+        @section('content')
+            <div class="flex w-full items-center justify-center">
+                <h1 class="text-5xl font-black text-gray-200 md:text-7xl">
+                    No content
+                </h1>
+            </div>
+        @endsection
 
-    @yield("content")
-</main>
-{{-- Footer --}}
-<x-organisms.footer/>
+        @yield('content')
+    </main>
+    {{-- Footer --}}
+    <x-organisms.footer />
 
-{{-- Script --}}
-@vite("resources/js/app.js")
-@yield("scripts")
+    {{-- Script --}}
+    @vite('resources/js/app.js')
+    @yield('scripts')
 </body>

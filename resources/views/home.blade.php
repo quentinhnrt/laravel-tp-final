@@ -1,22 +1,28 @@
-@extends("base")
+@extends('base')
 
-@section("breadcrumb")
-    {{ Breadcrumbs::render("home") }}
+@section('title', 'Accueil')
+@section('description', 'Page d\'accueil de l\'application Dash')
+@section('image', asset('logo.svg'))
+@section('theme', 'theme-purple')
+
+@section('breadcrumb')
+    {{ Breadcrumbs::render('home') }}
 @endsection
 
-@section("content")
+@section('content')
     <x-organisms.container>
         <div class="mx-auto max-w-lg">
             <h1
-                class="text-background-800 text-3xl font-semibold lg:text-4xl dark:text-white"
+                class="text-3xl font-semibold text-background-800 lg:text-4xl dark:text-white"
             >
-                Building Your Next App with our Awesome components
+                Une plateforme professionnelle pour manager vos projets.
             </h1>
-            <p class="text-background-500 dark:text-background-300 mt-6">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-                similique obcaecati illum mollitia.
+            <p class="mt-6 text-background-500 dark:text-background-300">
+                Organiser, manager tout en gardant le sourire. Rejoignez
+                <strong>Dash</strong>
+                et grandissez avec nous. Nous sommes là pour vous aider.
             </p>
-            <x-atoms.btn class="mx-auto mt-6">Test</x-atoms.btn>
+            <x-atoms.btn class="mx-auto mt-6">Commencer</x-atoms.btn>
         </div>
 
         <div
@@ -24,46 +30,46 @@
         >
             <a
                 href="#"
-                class="theme-blue dark:border-background-700 group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600"
+                class="theme-blue group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
             >
                 <div
-                    class="bg-background-700 flex h-32 w-32 items-center justify-center rounded-full p-6 group-hover:bg-theme-600"
+                    class="flex h-32 w-32 items-center justify-center rounded-full bg-background-700 p-6 group-hover:bg-theme-600"
                 >
                     <x-atoms.logo
                         class="h-full w-full fill-white"
                     ></x-atoms.logo>
                 </div>
                 <h2
-                    class="text-background-700 mt-4 text-2xl font-semibold capitalize dark:text-white"
+                    class="mt-4 text-2xl font-semibold capitalize text-background-700 dark:text-white"
                 >
                     Nos projets
                 </h2>
 
                 <p
-                    class="text-background-500 dark:text-background-300 mt-2 capitalize"
+                    class="mt-2 capitalize text-background-500 dark:text-background-300"
                 >
                     Voir plus ...
                 </p>
             </a>
             <a
                 href="#"
-                class="theme-red dark:border-background-700 group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600"
+                class="theme-red group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
             >
                 <div
-                    class="bg-background-700 flex h-32 w-32 items-center justify-center rounded-full p-6 group-hover:bg-theme-600"
+                    class="flex h-32 w-32 items-center justify-center rounded-full bg-background-700 p-6 group-hover:bg-theme-600"
                 >
                     <x-atoms.logo
                         class="h-full w-full fill-white"
                     ></x-atoms.logo>
                 </div>
                 <h2
-                    class="text-background-700 mt-4 text-2xl font-semibold capitalize dark:text-white"
+                    class="mt-4 text-2xl font-semibold capitalize text-background-700 dark:text-white"
                 >
                     Nos projets
                 </h2>
 
                 <p
-                    class="text-background-500 dark:text-background-300 mt-2 capitalize"
+                    class="mt-2 capitalize text-background-500 dark:text-background-300"
                 >
                     Voir plus ...
                 </p>

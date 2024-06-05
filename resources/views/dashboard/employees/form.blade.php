@@ -6,13 +6,13 @@
     @csrf
 
     @if (isset($employee))
-        @method("PUT")
+        @method('PUT')
     @endif
 
     @php
-        $firstname = isset($employee) ? $employee->firstname : old("firstname");
-        $lastname = isset($employee) ? $employee->lastname : old("lastname");
-        $function = isset($employee) ? $employee->function : old("function");
+        $firstname = isset($employee) ? $employee->firstname : old('firstname');
+        $lastname = isset($employee) ? $employee->lastname : old('lastname');
+        $function = isset($employee) ? $employee->function : old('function');
     @endphp
 
     <x-molecules.inputs.text
@@ -41,5 +41,11 @@
         name="role"
         value="{{ isset($employee) ? $employee->role : $role ?? App\Models\Employee::DEVELOPER_ROLE }}"
     />
-    <x-atoms.btn type="submit" class="mx-2 mt-4 w-full">Save</x-atoms.btn>
+    <x-atoms.btn type="submit" class="mx-2 mt-4 w-full">
+        @if (isset($employee))
+            Modifier
+        @else
+            Créer
+        @endif
+    </x-atoms.btn>
 </form>

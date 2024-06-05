@@ -1,38 +1,41 @@
-@extends("base")
+@extends('base')
 
-@section("meta")
-    <meta name="robots" content="noindex, nofollow" />
+@section('title', '404')
+@section('description', 'Erreur 404')
+@section('image', asset('logo.svg'))
+@section('theme', 'theme-purple')
+
+@section('breadcrumb')
+    {{ Breadcrumbs::render('home') }}
 @endsection
 
-@section("breadcrumb")
-    {{ Breadcrumbs::render("home") }}
-@endsection
-
-@section("content")
+@section('content')
     <section
-        class="section dark:bg-background-900 flex bg-white md:items-center"
+        class="section flex bg-white md:items-center dark:bg-background-900"
     >
         <div
             class="container mx-auto h-fit px-6 pb-12 pt-4 lg:flex lg:items-center lg:gap-12"
         >
             <div class="w-full lg:w-1/2">
                 <p
-                    class="dark:text-theme-400 text-sm font-medium text-theme-500"
+                    class="text-sm font-medium text-theme-500 dark:text-theme-400"
                 >
-                    404 error
+                    Erreur 404
                 </p>
                 <h1
-                    class="text-background-800 mt-3 text-2xl font-semibold md:text-3xl dark:text-white"
+                    class="mt-3 text-2xl font-semibold text-background-800 md:text-3xl dark:text-white"
                 >
-                    We lost this page
+                    Nos avons perdu la page !
                 </h1>
-                <p class="text-background-500 dark:text-background-400 mt-4">
-                    Sorry, the page you are looking for doesn't exist.
+                <p class="mt-4 text-background-500 dark:text-background-400">
+                    Désolé, la page que vous recherchez n'existe pas
                 </p>
 
                 <div class="mt-6 flex items-center gap-x-3">
-                    <button
-                        class="text-background-700 hover:bg-background-100 dark:border-background-700 dark:bg-background-900 dark:text-background-200 dark:hover:bg-background-800 flex w-1/2 items-center justify-center gap-x-2 rounded-lg border bg-white px-5 py-2 text-sm transition-colors duration-200 sm:w-auto"
+                    <x-atoms.link
+                        href="{{ url()->previous() }}"
+                        type="button"
+                        variant="outline"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -49,23 +52,20 @@
                             />
                         </svg>
 
-                        <span>Go back</span>
-                    </button>
-
-                    <button
-                        class="w-1/2 shrink-0 rounded-lg bg-theme-500 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 hover:bg-theme-600 sm:w-auto dark:bg-theme-600 dark:hover:bg-theme-500"
-                    >
-                        Take me home
-                    </button>
+                        <span>Revenir en arrière</span>
+                    </x-atoms.link>
+                    <x-atoms.link href="{{ route('home') }}" type="button">
+                        Retour à l'accueil
+                    </x-atoms.link>
                 </div>
 
                 <div class="mt-10 space-y-6">
                     <div>
                         <a
-                            href="#"
-                            class="dark:text-theme-400 inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline"
+                            href="{{ route('projects.index') }}"
+                            class="inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
                         >
-                            <span>Documentation</span>
+                            <span>Les projets</span>
 
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -84,18 +84,18 @@
                         </a>
 
                         <p
-                            class="text-background-500 dark:text-background-400 mt-2 text-sm"
+                            class="mt-2 text-sm text-background-500 dark:text-background-400"
                         >
-                            Dive in to learn all about our product.
+                            Plongez pour tout savoir sur les projets.
                         </p>
                     </div>
 
                     <div>
                         <a
-                            href="#"
-                            class="dark:text-theme-400 inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline"
+                            href="{{ route('developers.index') }}"
+                            class="inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
                         >
-                            <span>Our blog</span>
+                            <span>Les développeurs</span>
 
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -114,18 +114,18 @@
                         </a>
 
                         <p
-                            class="text-background-500 dark:text-background-400 mt-2 text-sm"
+                            class="mt-2 text-sm text-background-500 dark:text-background-400"
                         >
-                            Read the latest posts on our blog.
+                            Voir l'ensemble des développeurs.
                         </p>
                     </div>
 
                     <div>
                         <a
-                            href="#"
-                            class="dark:text-theme-400 inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline"
+                            href="{{ route('project-managers.index') }}"
+                            class="inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
                         >
-                            <span>Chat to support</span>
+                            <span>Les chefs de projets</span>
 
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -144,9 +144,9 @@
                         </a>
 
                         <p
-                            class="text-background-500 dark:text-background-400 mt-2 text-sm"
+                            class="mt-2 text-sm text-background-500 dark:text-background-400"
                         >
-                            Our friendly team is here to help.
+                            Voir l'ensemble des chefs de projets.
                         </p>
                     </div>
                 </div>

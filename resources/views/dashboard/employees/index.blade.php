@@ -1,36 +1,43 @@
-@extends("base")
+@extends('base')
 
-@section("title", "Employees")
+@php
+    $isDeveloper = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE;
+@endphp
 
-@section("content")
+@section('title', 'Liste des ' . ($isDeveloper ? 'developpeurs' : 'chefs de projet'))
+@section('description', 'Liste des ' . ($isDeveloper ? 'developpeurs' : 'chefs de projet'))
+@section('image', asset('logo.svg'))
+@section('theme', 'theme-red')
+
+@section('breadcrumb')
+    {{ Breadcrumbs::render($isDeveloper ? 'administration.developers' : 'administration.project-managers') }}
+@endsection
+
+@section('content')
     <x-organisms.container>
         <div class="mx-auto max-w-lg">
             <h1
-                class="text-background-800 text-3xl font-semibold lg:text-4xl dark:text-white"
+                class="text-3xl font-semibold text-background-800 lg:text-4xl dark:text-white"
             >
-                Listes de
-                @if (request()->attributes->get("role") === App\Models\Employee::DEVELOPER_ROLE)
-                    developpeur
-                @else
-                        chefs de projet
-                @endif
+                Listes des
+                {{ $isDeveloper ? 'développeurs' : 'chefs de projet' }}
             </h1>
             {{-- <p --}}
             {{-- class="text-background-500 dark:text-background-300 mt-6" --}}
             {{-- ></p> --}}
         </div>
-        <ul
+        <div
             class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 xl:mt-16 xl:grid-cols-2"
         >
             @if (! empty($employees))
                 @foreach ($employees as $employee)
-                    <li
-                        class="dark:bg-background-800 dark:border-background-700 w-full rounded-lg border bg-white text-left shadow-md hover:border-theme-600"
+                    <article
+                        class="w-full rounded-lg border bg-white text-left shadow-md hover:border-theme-600 dark:border-background-700 dark:bg-background-800"
                     >
                         <div class="p-6">
                             <div>
                                 <span
-                                    class="dark:text-theme-400 text-xs font-medium uppercase text-theme-600"
+                                    class="text-xs font-medium uppercase text-theme-600 dark:text-theme-400"
                                 >
                                     {{-- @if ($employee->role === "project_manager") --}}
                                     {{-- Chef de projet --}}
@@ -39,7 +46,7 @@
                                     {{-- @endif --}}
                                 </span>
                                 <span
-                                    class="text-background-800 mt-2 block transform text-xl font-semibold transition-colors duration-300 dark:text-white"
+                                    class="mt-2 block transform text-xl font-semibold text-background-800 transition-colors duration-300 dark:text-white"
                                     tabindex="0"
                                     role="link"
                                 >
@@ -47,7 +54,7 @@
                                     {{ $employee->lastname }}
                                 </span>
                                 <p
-                                    class="text-background-600 dark:text-background-400 mt-2 text-sm"
+                                    class="mt-2 text-sm text-background-600 dark:text-background-400"
                                 >
                                     Fonction : {{ $employee->function }}
                                 </p>
@@ -58,9 +65,9 @@
                                     class="flex flex-wrap items-center justify-end gap-3 sm:gap-x-5"
                                 >
                                     @php
-                                        $viewUrl = request()->attributes->get("role") === App\Models\Employee::DEVELOPER_ROLE ? route("developers.show", $employee) : route("project-managers.show", $employee);
-                                        $editUrl = request()->attributes->get("role") === App\Models\Employee::DEVELOPER_ROLE ? route("administration.developers.edit", $employee) : route("administration.project-managers.edit", $employee);
-                                        $actionForm = request()->attributes->get("role") === App\Models\Employee::DEVELOPER_ROLE ? route("administration.developers.destroy", $employee) : route("administration.project-managers.destroy", $employee);
+                                        $viewUrl = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('developers.show', $employee) : route('project-managers.show', $employee);
+                                        $editUrl = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.edit', $employee) : route('administration.project-managers.edit', $employee);
+                                        $actionForm = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.destroy', $employee) : route('administration.project-managers.destroy', $employee);
                                     @endphp
 
                                     <x-atoms.link
@@ -82,7 +89,7 @@
                                         method="POST"
                                     >
                                         @csrf
-                                        @method("DELETE")
+                                        @method('DELETE')
                                         <input
                                             type="hidden"
                                             name="id"
@@ -99,9 +106,9 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </article>
                 @endforeach
             @endif
-        </ul>
+        </div>
     </x-organisms.container>
 @endsection

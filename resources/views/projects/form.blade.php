@@ -1,41 +1,50 @@
-<form action="" method="post" class="vstack gap-2">
+<form action="" method="POST" class="mx-[-8px] my-6 flex flex-wrap gap-y-4">
     @csrf
-    @isset($client)
+
+    @if (isset($project))
         @method('PUT')
     @endif
-    <div class="form-group">
-        <label for="name">Nom :</label>
-        <input type="text" class="form-control" name="name" value="{{ isset($project) ? $project->name : old('name') }}">
-        @error("name")
-            {{ $message }}
-        @enderror
-    </div>
-    <div class="form-group">
-        <label for="description">Description :</label>
-        <input type="text" class="form-control" name="description" value="{{ isset($project) ? $project->description : old('description') }}">
-        @error("description")
-            {{ $message }}
-        @enderror
-    </div>
-    <div class="form-group">
-        <label for="client">Client :</label>
-        <input type="text" class="form-control" name="client" value="{{ isset($project) ? $project->client : old('client') }}">
-        @error("client")
-            {{ $message }}
-        @enderror
-    </div>
-    <div class="form-group">
-        <label for="project_manager_id">Chef de projet :</label>
-        <input type="text" class="form-control" name="project_manager_id" value="{{ isset($project) ? $project->project_manager_id : old('project_manager_id') }}">
-        @error("project_manager_id")
-            {{ $message }}
-        @enderror
-    </div>
-    <button class="btn btn-primary">
-        @if(isset($project))
+
+    @php
+        $name = isset($project) ? $project->name : old('name');
+        $client = isset($project) ? $project->client : old('client');
+        $description = isset($project) ? $project->description : old('description');
+        $project_manager_id = isset($project) ? $project->project_manager_id : old('project_manager_id');
+    @endphp
+
+    <x-molecules.inputs.text
+        label="Nom:"
+        name="name"
+        class="w-full px-2 md:w-1/2"
+        :value="$name"
+        required="true"
+    />
+    <x-molecules.inputs.text
+        label="Client:"
+        name="client"
+        class="w-full px-2 md:w-1/2"
+        :value="$client"
+        required="true"
+    />
+    <x-molecules.inputs.textarea
+        label="description:"
+        name="description"
+        class="w-full px-2"
+        :value="$description"
+        required="true"
+    />
+    <x-molecules.inputs.text
+        label="Chef de projet:"
+        name="project_manager_id"
+        class="w-full px-2"
+        :value="$project_manager_id"
+        required="true"
+    />
+    <x-atoms.btn type="submit" class="mx-2 mt-4 w-full">
+        @if (isset($project))
             Modifier
         @else
             Créer
         @endif
-    </button>
+    </x-atoms.btn>
 </form>
