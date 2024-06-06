@@ -24,10 +24,10 @@ class ClientRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required'],
-            'address' => ['required'],
-            'website' => ['required'],
-            'projectlist' => ['required']
+            'name' => ['required', 'max:255', 'string'],
+            'address' => ['required', 'max:255', 'string'],
+            'website' => ['required', 'max:255', 'string'],
+            'slug' => ['required', 'max:255', 'string', Rule::unique('clients', 'slug')->ignore($this->client)],
         ];
     }
 

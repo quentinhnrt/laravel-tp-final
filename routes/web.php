@@ -6,6 +6,7 @@ use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\ClientController;
 use App\Http\Controllers\Dashboard\ProjectController;
+use App\Http\Controllers\Dashboard\TaskController;
 use App\Http\Middleware\DeveloperMiddleware;
 use App\Http\Middleware\ProjectManagerMiddleware;
 
@@ -48,28 +49,37 @@ Route::prefix('administration')->name('administration.')->group(function () {
         Route::get('/edit/{employee:slug}', [EmployeeController::class, 'edit'])->name('edit');
         Route::put('/update/{employee:slug}', [EmployeeController::class, 'update'])->name('update');
     });
+
+    Route::prefix('/clients')->name('clients.')->controller(ClientController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/create', 'store');
+        Route::put('/{client}/edit', 'update')->name('update');
+        Route::get('/{client}/edit', 'edit')->name('edit');
+        Route::delete('/{client}/destroy', 'destroy')->name('destroy');
+        Route::get('/{client}', 'show')->name('show');
+    });
+
+    Route::prefix('/projects')->name('projects.')->controller(ProjectController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/create', 'store');
+        Route::get('/{project}/edit', 'edit')->name('edit');
+        Route::put('/{project}/edit', 'update')->name('update');
+        Route::delete('/{project}/destroy', 'destroy')->name('destroy');
+        Route::get('/{project}', 'show')->name('show');
+    });
+
+    Route::prefix('/tasks')->name('tasks.')->controller(TaskController::class)->group(function () {
+        Route::get('/create', 'create')->name('create');
+        Route::post('/create', 'store');
+        Route::get('/{project}/edit', 'edit')->name('edit');
+        Route::put('/{project}/edit', 'update')->name('update');
+        Route::delete('/{project}/destroy', 'destroy')->name('destroy');
+        Route::get('/{project}', 'show')->name('show');
+    });
 });
 
 Route::fallback(function () {
     return view('errors.404');
-});
-
-Route::prefix('/clients')->name('clients.')->controller(ClientController::class)->group(function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/create', 'create')->name('create');
-    Route::post('/create', 'store');
-    Route::put('/{client}/edit', 'update')->name('update');
-    Route::get('/{client}/edit', 'edit')->name('edit');
-    Route::delete('/{client}/destroy', 'destroy')->name('destroy');
-    Route::get('/{client}', 'show')->name('show');
-});
-
-Route::prefix('/projects')->name('projects.')->controller(ProjectController::class)->group(function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/create', 'create')->name('create');
-    Route::post('/create', 'store');
-    Route::get('/{project}/edit', 'edit')->name('edit');
-    Route::put('/{project}/edit', 'update')->name('update');
-    Route::delete('/{project}/destroy', 'destroy')->name('destroy');
-    Route::get('/{project}', 'show')->name('show');
 });

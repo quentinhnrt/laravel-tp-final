@@ -12,7 +12,22 @@ class Project extends Model
     protected $fillable = [
         'name',
         'description',
-        'client',
+        'client_id',
         'project_manager_id'
     ];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function projectManager()
+    {
+        return $this->belongsTo(Employee::class);
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }

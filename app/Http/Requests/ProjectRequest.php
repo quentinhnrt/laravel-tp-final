@@ -25,7 +25,7 @@ class ProjectRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'client' => ['nullable', 'string', 'max:255'],
+            'client_id' => ['nullable', 'string', 'max:255'],
             'project_manager_id' => ['required', 'exists:employees,id']
         ];
     }

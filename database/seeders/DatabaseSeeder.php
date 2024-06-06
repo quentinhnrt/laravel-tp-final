@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tag;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,11 +14,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $status = [
+            'TODO',
+            'En cours',
+            'Bloqué',
+            'A livrer en préproduction',
+            'A livrer en production',
+            'A recetter',
+            'A voir avec le client',
+        ];
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $nature = [
+            'Front',
+            'Back',
+        ];
+
+        foreach ($status as $label) {
+            Tag::create([
+                'label' => $label,
+                'type' => 'status',
+            ]);
+        }
+
+        foreach ($nature as $label) {
+            Tag::create([
+                'label' => $label,
+                'type' => 'nature',
+            ]);
+        }
     }
 }

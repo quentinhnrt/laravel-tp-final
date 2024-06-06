@@ -13,6 +13,6 @@ class Client extends Model
         'name',
         'address',
         'website',
-        'projectlist'
+        'slug'
     ];
 }
