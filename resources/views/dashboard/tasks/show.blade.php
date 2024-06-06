@@ -1,6 +1,6 @@
 @extends("base")
 
-@section("title", $project->name . " " . $project->client->description)
+@section("title", $task->name . " " . $task->project->name . " " . $task->project->client->description)
 
 @section("content")
     <x-organisms.container>
@@ -9,7 +9,13 @@
                 <h1
                     class="text-left text-3xl font-semibold text-background-800 lg:text-4xl dark:text-white"
                 >
-                    {{ $project->name }}
+                    {{ $task->name }} -
+                    <a
+                        class="text-red-500 underline"
+                        href="{{ route("administration.projects.show", $task->project) }}"
+                    >
+                        {{ $task->project->name }}
+                    </a>
                 </h1>
             </div>
             <div>
@@ -17,22 +23,26 @@
                     <p
                         class="mt-2 text-left text-sm text-background-600 dark:text-background-400"
                     >
-                        {{ $project->description }}
+                        {{ $task->description }}
                     </p>
                     <p
                         class="mt-2 text-left text-sm text-background-600 dark:text-background-400"
                     >
-                        Client : {{ $project->client->name }}
+                        {{ $task->getStatus()?->label }}
                     </p>
                     <p
                         class="mt-2 text-left text-sm text-background-600 dark:text-background-400"
                     >
-                        Chef de projet :
-                        {{ $project->projectManager->firstname }}
-                        {{ $project->projectManager->lastname }}
+                        {{ $task->getNature()?->label }}
                     </p>
                 </div>
             </div>
+            <p class="mb-4 mt-8 text-left text-white">
+                Developpeurs : {{ $task->getDevelopersList() }}
+            </p>
+            <p class="text-left text-white">
+                Chefs de projets : {{ $task->getManagersList() }}
+            </p>
         </div>
     </x-organisms.container>
 @endsection

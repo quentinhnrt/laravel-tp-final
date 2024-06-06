@@ -53,6 +53,41 @@
                         >
                             {{ $task->getStatus()?->label }}
                         </p>
+                        <p
+                            class="mt-2 text-sm text-background-600 dark:text-background-400"
+                        >
+                            {{ $task->getNature()?->label }}
+                        </p>
+                        <div>
+                            <a
+                                href="{{ route("administration.tasks.show", $task) }}"
+                                class="mt-2 text-sm text-blue-500 hover:text-blue-700"
+                            >
+                                Voir la tâche
+                            </a>
+
+                            <a
+                                href="{{ route("administration.tasks.edit", $task) }}"
+                                class="mt-2 text-sm text-blue-500 hover:text-blue-700"
+                            >
+                                Modifier la tâche
+                            </a>
+
+                            <form
+                                action="{{ route("administration.tasks.destroy", $task) }}"
+                                method="POST"
+                                class="mt-2"
+                            >
+                                @csrf
+                                @method("DELETE")
+                                <button
+                                    type="submit"
+                                    class="text-sm text-red-500 hover:text-red-700"
+                                >
+                                    Supprimer la tâche
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 @endforeach
             </div>

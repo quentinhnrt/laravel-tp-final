@@ -59,4 +59,28 @@ class Task extends Model
     {
         return $this->statusTag()->first();
     }
+
+    public function getNature(): ?Tag
+    {
+        return $this->natureTags()->first();
+    }
+
+    public function project(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Project::class);
+    }
+
+    public function getDevelopersList()
+    {
+        return $this->developers->implode(function ($developer) {
+            return $developer->firstname . ' ' . $developer->lastname;
+        }, ', ');
+    }
+
+    public function getManagersList()
+    {
+        return $this->projectManagers->implode(function ($manager) {
+            return $manager->firstname . ' ' . $manager->lastname;
+        }, ', ');
+    }
 }

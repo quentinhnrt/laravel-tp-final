@@ -1,22 +1,22 @@
 <form action="" method="post" class="mx-[-8px] my-6 flex flex-wrap gap-y-4">
     @csrf
-    @isset($client)
+    @isset($task)
         @method("PUT")
     @endif
 
     <x-molecules.inputs.text
         label="Nom:"
         name="name"
-        class="w-full px-2 md:w-1/2"
+        class="w-full px-2"
         :value="isset($task) ? $task->name : old('name')"
         required="true"
         placeholder="Nom de la tâche"
     />
 
-    <x-molecules.inputs.text
+    <x-molecules.inputs.textarea
         label="Description:"
         name="description"
-        class="w-full px-2 md:w-1/2"
+        class="w-full px-2"
         :value="isset($task) ? $task->description : old('description')"
         required="true"
         placeholder="Description de la tâche"

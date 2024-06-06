@@ -73,10 +73,10 @@ Route::prefix('administration')->name('administration.')->group(function () {
     Route::prefix('/tasks')->name('tasks.')->controller(TaskController::class)->group(function () {
         Route::get('/create', 'create')->name('create');
         Route::post('/create', 'store');
-        Route::get('/{project}/edit', 'edit')->name('edit');
-        Route::put('/{project}/edit', 'update')->name('update');
-        Route::delete('/{project}/destroy', 'destroy')->name('destroy');
-        Route::get('/{project}', 'show')->name('show');
+        Route::get('/{task}/edit', 'edit')->name('edit');
+        Route::put('/{task}/edit', 'update')->name('update');
+        Route::delete('/{task}/destroy', 'destroy')->name('destroy');
+        Route::get('/{task}', 'show')->name('show');
     });
 });
 
