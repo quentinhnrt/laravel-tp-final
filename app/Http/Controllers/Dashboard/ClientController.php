@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Dashboard;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClientRequest;
 use App\Models\Client;
@@ -13,31 +14,24 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::all();
-        return view('clients.index', ['clients' => $clients]);
+        return view('dashboard.clients.index', ['clients' => $clients]);
     }
-    
+
 
     public function show(Client $client)
     {
-        return view('clients.show', ['client' => $client]);
+        return view('dashboard.clients.show', ['client' => $client]);
     }
-    
+
 
     public function create(): View
     {
-        return view('clients.create');
+        return view('dashboard.clients.create');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(ClientRequest $request): RedirectResponse
     {
-        $validated = $request->validate([
-            'name' => 'string|max:255',
-            'address' => 'string|max:255',
-            'website' => 'string|max:255|unique:clients,website',
-            'projectlist' => 'string'
-        ]);
-
-        $client = Client::create($validated);
+        $client = Client::create($request->validated());
 
         return redirect()->route('administration.clients.show', ['client' => $client->id])
             ->with('success', "Le client a bien été créé");
@@ -45,21 +39,14 @@ class ClientController extends Controller
 
     public function edit(Client $client): View
     {
-        return view('clients.edit', [
+        return view('dashboard.clients.edit', [
             'client' => $client
         ]);
     }
 
     public function update(ClientRequest $request, Client $client): RedirectResponse
     {
-        $validated = $request->validate([
-            'name' => 'string|max:255',
-            'address' => 'string|max:255',
-            'website' => 'string|max:255' . $client->id,
-            'projectlist' => 'string'
-        ]);
-
-        $client->update($validated);
+        $client->update($request->validated());
 
         return redirect()->route('administration.clients.show', ['client' => $client->id])
             ->with('success', "Le client a bien été modifié");

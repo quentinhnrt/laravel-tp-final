@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\View\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Employee;
+use App\Models\Tag;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -47,6 +48,28 @@ class AppServiceProvider extends ServiceProvider
             }
 
             $view->with('action', $action);
+        });
+
+        \Illuminate\Support\Facades\View::composer('dashboard.projects.form', function (View $view) {
+            $clients = \App\Models\Client::all();
+            $projectManagers = Employee::projectManagers()->get();
+
+            $view->with('clients', $clients);
+            $view->with('projectManagers', $projectManagers);
+        });
+
+        \Illuminate\Support\Facades\View::composer('dashboard.tasks.form', function (View $view) {
+            $projectManagers = Employee::projectManagers()->get();
+            $developers = Employee::developers()->get();
+            $projects = \App\Models\Project::all();
+            $natureTags = Tag::nature()->get();
+            $statusTags = Tag::status()->get();
+
+            $view->with('projectManagers', $projectManagers);
+            $view->with('developers', $developers);
+            $view->with('projects', $projects);
+            $view->with('natureTags', $natureTags);
+            $view->with('statusTags', $statusTags);
         });
     }
 }

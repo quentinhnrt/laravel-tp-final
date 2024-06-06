@@ -16,14 +16,14 @@
     @endphp
 
     <x-molecules.inputs.text
-        label="Nom:"
+        label="Prénom:"
         name="firstname"
         class="w-full px-2 md:w-1/2"
         :value="$firstname"
         required="true"
     />
     <x-molecules.inputs.text
-        label="Prénom:"
+        label="Nom:"
         name="lastname"
         class="w-full px-2 md:w-1/2"
         :value="$lastname"

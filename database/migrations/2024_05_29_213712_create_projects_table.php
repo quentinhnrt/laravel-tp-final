@@ -13,8 +13,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('client')->nullable();
-            $table->foreignId('project_manager_id')->constrained('employees')->cascadeOnDelete();
+            $table->string('client_id')->foreignId('client_id')->constrained('clients');
+            $table->foreignId('project_manager_id')->constrained('employees');
             $table->timestamps();
         });
     }

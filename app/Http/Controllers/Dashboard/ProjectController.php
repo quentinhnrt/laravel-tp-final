@@ -14,23 +14,22 @@ class ProjectController extends Controller
     public function index(): View
     {
         $projects = Project::all();
-        return view('projects.index', ['projects' => $projects]);
+        return view('dashboard.projects.index', ['projects' => $projects]);
     }
-    
+
     public function show(Project $project): View
     {
-        return view('projects.show', ['project' => $project]);
+        return view('dashboard.projects.show', ['project' => $project]);
     }
-    
+
     public function create(): View
     {
-        return view('projects.create');
+        return view('dashboard.projects.create');
     }
 
     public function store(ProjectRequest $request): RedirectResponse
     {
-        $validated = $request->validated();
-        $project = Project::create($validated);
+        $project = Project::create($request->validated());
 
         return redirect()->route('administration.projects.show', ['project' => $project->id])
             ->with('success', "Le projet a bien été créé");
