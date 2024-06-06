@@ -81,5 +81,9 @@
                 @endforeach
             @endif
         </div>
+        <!-- Pagination Links -->
+        <div class="pagination">
+            {{ $employees->links() }}
+        </div>
     </x-organisms.container>
 @endsection
