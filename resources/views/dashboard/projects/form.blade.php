@@ -1,7 +1,7 @@
 <form action="" method="post" class="mx-[-8px] my-6 flex flex-wrap gap-y-4">
     @csrf
     @isset($project)
-        @method("PUT")
+        @method('PUT')
     @endif
 
     <x-molecules.inputs.text

@@ -1,6 +1,15 @@
-@extends("base")
+@extends('base')
 
-@section("content")
+@section('title', 'Création d\'un projet')
+@section('description', 'Création d\'un projet')
+@section('image', asset('logo.svg'))
+@section('theme', 'theme-red')
+
+@section('breadcrumb')
+    {{ Breadcrumbs::render('administration.projects.create') }}
+@endsection
+
+@section('content')
     <x-organisms.container>
         <div class="mx-auto max-w-lg">
             <h1
@@ -9,6 +18,6 @@
                 Créer un projet
             </h1>
         </div>
-        @include("dashboard.projects.form")
+        @include('dashboard.projects.form')
     </x-organisms.container>
 @endsection

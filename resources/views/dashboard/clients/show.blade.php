@@ -1,6 +1,13 @@
 @extends('base')
 
 @section('title', $client->name . ' ' . $client->address)
+@section('description', $client->name . ' ' . $client->address)
+@section('image', asset('logo.svg'))
+@section('theme', 'theme-blue')
+
+@section('breadcrumb')
+    {{ Breadcrumbs::render('clients.show', $client) }}
+@endsection
 
 @section('content')
 <x-organisms.container>

@@ -37,7 +37,7 @@ class ProjectController extends Controller
 
     public function edit(Project $project): View
     {
-        return view('projects.edit', ['project' => $project]);
+        return view('dashboard.projects.edit', ['project' => $project]);
     }
 
     public function update(ProjectRequest $request, Project $project): RedirectResponse

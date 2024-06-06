@@ -16,25 +16,25 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
 // Home > Clients
 Breadcrumbs::for('clients', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push('Les clients', route('clients.index'));
+    $trail->push('Les clients', route('administration.clients.index'));
 });
 
 // Home > Clients > [Client]
 Breadcrumbs::for('clients.show', function (BreadcrumbTrail $trail, $variable) {
     $trail->parent('clients');
-    $trail->push($variable->name, route('clients.show', $variable));
+    $trail->push($variable->name, route('administration.clients.show', $variable));
 });
 
 // Home > Projects
 Breadcrumbs::for('projects', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push('Les projets', route('projects.index'));
+    $trail->push('Les projets', route('administration.projects.index'));
 });
 
 // Home > Projects > [Project]
-Breadcrumbs::for('projects.show', function (BreadcrumbTrail $trail, $variable) {
-    $trail->parent('project');
-    $trail->push($variable->firstname, route('projects.show', $variable));
+Breadcrumbs::for('administration.projects.show', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('projects');
+    $trail->push($variable->name, route('administration.projects.show', $variable));
 });
 
 // Home > Developers
@@ -106,35 +106,35 @@ Breadcrumbs::for('administration.project-managers.edit', function (BreadcrumbTra
 // Administering > Projects
 Breadcrumbs::for('administration.projects', function (BreadcrumbTrail $trail) {
     $trail->parent('administration');
-    $trail->push('Les projets', route('projects.index'));
+    $trail->push('Les projets', route('administration.projects.index'));
 });
 
 // Administering > Projects > Create
 Breadcrumbs::for('administration.projects.create', function (BreadcrumbTrail $trail) {
     $trail->parent('administration.projects');
-    $trail->push('Création', route('projects.create'));
+    $trail->push('Création', route('administration.projects.create'));
 });
 
 // Administering > Projects > [Project]
 Breadcrumbs::for('administration.projects.edit', function (BreadcrumbTrail $trail, $variable) {
     $trail->parent('administration.projects');
-    $trail->push($variable->name, route('projects.edit'), $variable);
+    $trail->push($variable->name, route('administration.projects.edit', $variable));
 });
 
 // Administering > Clients
 Breadcrumbs::for('administration.clients', function (BreadcrumbTrail $trail) {
     $trail->parent('administration');
-    $trail->push('Les clients', route('clients.index'));
+    $trail->push('Les clients', route('administration.clients.index'));
 });
 
 // Administering > Clients > Create
 Breadcrumbs::for('administration.clients.create', function (BreadcrumbTrail $trail) {
     $trail->parent('administration.clients');
-    $trail->push('Création', route('clients.create'));
+    $trail->push('Création', route('administration.clients.create'));
 });
 
 // Administering > Clients > [Project]
 Breadcrumbs::for('administration.clients.edit', function (BreadcrumbTrail $trail, $variable) {
     $trail->parent('administration.clients');
-    $trail->push($variable->name, route('clients.edit'), $variable);
+    $trail->push($variable->name, route('administration.clients.edit', $variable));
 });

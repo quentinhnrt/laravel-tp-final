@@ -1,8 +1,15 @@
-@extends("base")
+@extends('base')
 
-@section("title", $project->name . " " . $project->client->description)
+@section('title', $project->name . ' ' . $project->client->description)
+@section('description', $project->name . ' ' . $project->client->description)
+@section('image', asset('logo.svg'))
+@section('theme', 'theme-blue')
 
-@section("content")
+@section('breadcrumb')
+    {{ Breadcrumbs::render('administration.projects.show', $project) }}
+@endsection
+
+@section('content')
     <x-organisms.container>
         <div>
             <div class="mx-auto mb-4">
@@ -60,26 +67,26 @@
                         </p>
                         <div>
                             <a
-                                href="{{ route("administration.tasks.show", $task) }}"
+                                href="{{ route('administration.tasks.show', $task) }}"
                                 class="mt-2 text-sm text-blue-500 hover:text-blue-700"
                             >
                                 Voir la tâche
                             </a>
 
                             <a
-                                href="{{ route("administration.tasks.edit", $task) }}"
+                                href="{{ route('administration.tasks.edit', $task) }}"
                                 class="mt-2 text-sm text-blue-500 hover:text-blue-700"
                             >
                                 Modifier la tâche
                             </a>
 
                             <form
-                                action="{{ route("administration.tasks.destroy", $task) }}"
+                                action="{{ route('administration.tasks.destroy', $task) }}"
                                 method="POST"
                                 class="mt-2"
                             >
                                 @csrf
-                                @method("DELETE")
+                                @method('DELETE')
                                 <button
                                     type="submit"
                                     class="text-sm text-red-500 hover:text-red-700"

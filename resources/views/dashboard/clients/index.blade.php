@@ -1,8 +1,15 @@
-@extends("base")
+@extends('base')
 
-@section("title", "Accueil des Clients")
+@section('title', 'Les clients')
+@section('description', 'Liste des clients')
+@section('image', asset('logo.svg'))
+@section('theme', 'theme-blue')
 
-@section("content")
+@section('breadcrumb')
+    {{ Breadcrumbs::render('clients') }}
+@endsection
+
+@section('content')
     <x-organisms.container>
         <div class="mx-auto max-w-lg">
             <h1
@@ -46,9 +53,9 @@
                                     class="flex flex-wrap items-center justify-end gap-3 sm:gap-x-5"
                                 >
                                     @php
-                                        $viewUrl = route("administration.clients.show", $client);
-                                        $editUrl = route("administration.clients.edit", $client);
-                                        $actionForm = route("administration.clients.destroy", $client);
+                                        $viewUrl = route('administration.clients.show', $client);
+                                        $editUrl = route('administration.clients.edit', $client);
+                                        $actionForm = route('administration.clients.destroy', $client);
                                     @endphp
 
                                     <x-atoms.link
@@ -70,7 +77,7 @@
                                         method="POST"
                                     >
                                         @csrf
-                                        @method("DELETE")
+                                        @method('DELETE')
                                         <input
                                             type="hidden"
                                             name="id"
