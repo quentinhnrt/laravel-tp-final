@@ -63,7 +63,8 @@ Breadcrumbs::for('project-managers.show', function (BreadcrumbTrail $trail, $var
 
 // Administering
 Breadcrumbs::for('administration', function (BreadcrumbTrail $trail) {
-    $trail->push('Accueil', route('home'));
+    $trail->parent('home');
+    $trail->push('Administration', route('home'));
 });
 
 // Administering > Developers
