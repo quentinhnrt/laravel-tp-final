@@ -9,6 +9,10 @@
     {{ Breadcrumbs::render('home') }}
 @endsection
 
+@section('header')
+    <x-organisms.header-front />
+@endsection
+
 @section('content')
     <section
         class="section flex bg-white md:items-center dark:bg-background-900"

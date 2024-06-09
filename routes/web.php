@@ -18,7 +18,7 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
 
 // UI Kit
 Route::get('uikit', function () {
-    return view('uikit', ['title' => 'UI Kit', 'description' => 'UI Kit - Laravel 11', 'image' => 'https://picsum.photos/id/237/200/300'])->with('success', 'UI Kit - Laravel 11');
+    return view('uikit');
 });
 
 Route::prefix('developers')->name('developers.')->middleware(DeveloperMiddleware::class)->group(function () {

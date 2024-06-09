@@ -1,11 +1,13 @@
-<footer class="bg-white dark:bg-background-900">
-    @section("footer")
-        <div class="container px-6 py-8 mx-auto">
-            <hr class="mb-10 mt-0 border-background-200 dark:border-background-700"/>
+@section('footer')
+    <footer class="bg-white dark:bg-background-900">
+        <div class="container mx-auto px-6 py-8">
+            <hr
+                class="mb-10 mt-0 border-background-200 dark:border-background-700"
+            />
 
             <div class="flex items-center justify-between">
-                <p class="text-sm text-background-300 w-fit">
-                    ecv &copy;{{ date("Y") }}
+                <p class="w-fit text-sm text-background-300">
+                    ecv &copy;{{ date('Y') }}
                 </p>
                 <a
                     href="https://github.com/quentinhnrt/laravel-tp-final"
@@ -24,7 +26,8 @@
                     </svg>
                 </a>
             </div>
-    @endsection
+        </div>
+    </footer>
+@endsection
 
-    @yield("footer")
-</footer>
+@yield('footer')

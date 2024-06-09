@@ -1,4 +1,4 @@
-<header class="fixed">
+<header id="header" class="fixed z-50 w-screen">
     <nav
         x-data="{ isOpen: false }"
         class="relative bg-white shadow dark:bg-background-800"
@@ -93,9 +93,9 @@
                     >
                         About
                     </a>
-                    <x-atoms.btn class="mt-4 w-full md:w-fit">
-                        Get started
-                    </x-atoms.btn>
+                    {{-- <x-atoms.btn class="mt-4 w-full md:w-fit"> --}}
+                    {{-- Get started --}}
+                    {{-- </x-atoms.btn> --}}
                 </div>
             </div>
         </div>

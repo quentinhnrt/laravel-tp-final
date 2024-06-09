@@ -9,6 +9,10 @@
     {{ Breadcrumbs::render('home') }}
 @endsection
 
+@section('header')
+    <x-organisms.header-front />
+@endsection
+
 @section('content')
     <x-organisms.container>
         <div class="mx-auto max-w-lg">
@@ -26,7 +30,7 @@
         </div>
 
         <div
-            class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-16 xl:grid-cols-2"
+            class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-16 xl:grid-cols-3"
         >
             <a
                 href="#"
@@ -42,14 +46,8 @@
                 <h2
                     class="mt-4 text-2xl font-semibold capitalize text-background-700 dark:text-white"
                 >
-                    Nos projets
+                    Administration
                 </h2>
-
-                <p
-                    class="mt-2 capitalize text-background-500 dark:text-background-300"
-                >
-                    Voir plus ...
-                </p>
             </a>
             <a
                 href="#"
@@ -65,14 +63,25 @@
                 <h2
                     class="mt-4 text-2xl font-semibold capitalize text-background-700 dark:text-white"
                 >
-                    Nos projets
+                    Chef de projet
                 </h2>
-
-                <p
-                    class="mt-2 capitalize text-background-500 dark:text-background-300"
+            </a>
+            <a
+                href="#"
+                class="theme-green group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
+            >
+                <div
+                    class="flex h-32 w-32 items-center justify-center rounded-full bg-background-700 p-6 group-hover:bg-theme-600"
                 >
-                    Voir plus ...
-                </p>
+                    <x-atoms.logo
+                        class="h-full w-full fill-white"
+                    ></x-atoms.logo>
+                </div>
+                <h2
+                    class="mt-4 text-2xl font-semibold capitalize text-background-700 dark:text-white"
+                >
+                    Développeur
+                </h2>
             </a>
         </div>
     </x-organisms.container>
