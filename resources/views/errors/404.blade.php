@@ -9,6 +9,10 @@
     {{ Breadcrumbs::render('home') }}
 @endsection
 
+@section('header')
+    <x-organisms.header-front />
+@endsection
+
 @section('content')
     <section
         class="section flex bg-white md:items-center dark:bg-background-900"
@@ -62,7 +66,7 @@
                 <div class="mt-10 space-y-6">
                     <div>
                         <a
-                            href="{{ route('projects.index') }}"
+                            href="{{ route('administration.projects.index') }}"
                             class="inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
                         >
                             <span>Les projets</span>

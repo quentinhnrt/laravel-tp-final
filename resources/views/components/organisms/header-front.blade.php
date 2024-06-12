@@ -1,14 +1,14 @@
-<header>
+<header id="header" class="fixed z-50 w-screen">
     <nav
         x-data="{ isOpen: false }"
-        class="dark:bg-background-800 relative bg-white shadow"
+        class="relative bg-white shadow dark:bg-background-800"
     >
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="#" class="flex items-center">
                     <x-atoms.logo class="h-7 w-auto fill-theme-500" />
                     <span
-                        class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 mx-2 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                        class="mx-2 my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
                     >
                         / Dash
                     </span>
@@ -20,7 +20,7 @@
                         x-cloak
                         @click="isOpen = !isOpen"
                         type="button"
-                        class="text-background-500 hover:text-background-600 focus:text-background-600 dark:text-background-200 dark:hover:text-background-400 dark:focus:text-background-400 focus:outline-none"
+                        class="text-background-500 hover:text-background-600 focus:text-background-600 focus:outline-none dark:text-background-200 dark:hover:text-background-400 dark:focus:text-background-400"
                         aria-label="toggle menu"
                     >
                         <svg
@@ -65,37 +65,37 @@
             <div
                 x-cloak
                 :class="[isOpen ? 'translate-x-0 !opacity-100 ' : '!opacity-0 -translate-x-full']"
-                class="dark:bg-background-800 absolute inset-x-0 z-20 w-full bg-white transition-all duration-300 ease-in-out"
+                class="absolute inset-x-0 z-20 w-full bg-white transition-all duration-300 ease-in-out dark:bg-background-800"
                 style="opacity: 0"
             >
                 <div class="container mx-auto flex flex-col px-6 py-12">
                     <a
-                        class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                        class="my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
                         href="#"
                     >
                         Home
                     </a>
                     <a
-                        class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                        class="my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
                         href="#"
                     >
                         Shop
                     </a>
                     <a
-                        class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                        class="my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
                         href="#"
                     >
                         Contact
                     </a>
                     <a
-                        class="text-background-700 dark:text-background-200 dark:hover:text-theme-400 my-2 transform transition-colors duration-300 hover:text-theme-500"
+                        class="my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
                         href="#"
                     >
                         About
                     </a>
-                    <x-atoms.btn class="mt-4 w-full md:w-fit">
-                        Get started
-                    </x-atoms.btn>
+                    {{-- <x-atoms.btn class="mt-4 w-full md:w-fit"> --}}
+                    {{-- Get started --}}
+                    {{-- </x-atoms.btn> --}}
                 </div>
             </div>
         </div>
