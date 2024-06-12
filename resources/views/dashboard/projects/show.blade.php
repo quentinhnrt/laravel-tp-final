@@ -30,9 +30,14 @@
                             {{ $project->client->name }}
                         </a>
                     </p>
+                    @php
+                        $viewUrl = route('administration.projects.show', $project->projectManager);
+                    @endphp
                     <p class="mt-2 text-left text-sm text-background-600 dark:text-background-400">
-                        Chef de projet : {{ $project->projectManager->firstname }} {{ $project->projectManager->lastname }}
-                    </p>
+                        Chef de projet : <a href="{{ $viewUrl }}" class="text-blue-500 hover:text-blue-700">
+                            {{ $project->projectManager->firstname }} {{ $project->projectManager->lastname }}
+                        </a>
+                        </p>
                 </div>
             </div>
             <div class="grid grid-cols-3 gap-4">
