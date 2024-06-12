@@ -58,15 +58,29 @@ body, .theme-purple {
     --theme-950: #702424;
 }
 
-.section {
-    min-height: calc(100dvh - 249px);
+.theme-green {
+    --theme-50: #f0fdf4;
+    --theme-100: #dcfce7;
+    --theme-200: #bbf7d0;
+    --theme-300: #86efac;
+    --theme-400: #4ade80;
+    --theme-500: #22c55e;
+    --theme-600: #16a34a;
+    --theme-700: #15803d;
+    --theme-800: #166534;
+    --theme-900: #14532d;
+    --theme-950: #0d3328;
 }
 
-@media (min-width: 1024px) {
-    .section {
-        min-height: calc(100dvh - 249px);
-    }
-}
+/*.section {*/
+/*    min-height: calc(100dvh - 249px);*/
+/*}*/
+
+/*@media (min-width: 1024px) {*/
+/*    .section {*/
+/*        min-height: calc(100dvh - 249px);*/
+/*    }*/
+/*}*/
 
 select {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
@@ -75,6 +89,17 @@ select {
     background-size: 1.5em 1.5em;
     print-color-adjust: exact;
     -webkit-appearance: none;
+}
+
+@media (min-width: 1024px) {
+    body:has(.menu.isOpen) main,
+    body:has(.menu.isOpen) footer > div {
+        margin-left: calc(100vw / 5 + 3rem)
+    }
+}
+
+.\!underline-none {
+    text-decoration: none;
 }
 
 /* Tailwind UI Select field with Tom Select */

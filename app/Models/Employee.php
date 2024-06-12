@@ -47,6 +47,11 @@ class Employee extends Model
         return $this->belongsToMany(Task::class);
     }
 
+    public function getTasksByProject()
+    {
+        return $this->tasks->groupBy('project_id');
+    }
+
     public function projects()
     {
         if ($this->isProjectManager()) {
@@ -56,11 +61,16 @@ class Employee extends Model
         return false;
     }
 
+    public function getProjectsTasks($projectId)
+    {
+        return $this->tasks->where('project_id', $projectId);
+    }
+
     public function getRoles()
     {
         return [
             self::DEVELOPER_ROLE => self::DEVELOPER_ROLE_LABEL,
             self::PROJECT_MANAGER_ROLE => self::PROJECT_MANAGER_ROLE_LABEL,
-        ];;
+        ];
     }
 }

@@ -10,15 +10,17 @@ use App\Http\Controllers\Dashboard\TaskController;
 use App\Http\Middleware\DeveloperMiddleware;
 use App\Http\Middleware\ProjectManagerMiddleware;
 
-Route::get('/', function () {
+Route::get('welcome', function () {
     return view('welcome');
 });
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 
 // UI Kit
 Route::get('uikit', function () {
-    return view('uikit', ['title' => 'UI Kit', 'description' => 'UI Kit - Laravel 11', 'image' => 'https://picsum.photos/id/237/200/300'])->with('success', 'UI Kit - Laravel 11');
+    return view('uikit');
 });
 
 Route::prefix('developers')->name('developers.')->middleware(DeveloperMiddleware::class)->group(function () {
@@ -32,6 +34,10 @@ Route::prefix('project-managers')->name('project-managers.')->middleware(Project
 });
 
 Route::prefix('administration')->name('administration.')->group(function () {
+    Route::get('/', function () {
+        return view('dashboard.index');
+    })->name('index');
+
     Route::prefix('developers')->name('developers.')->middleware(DeveloperMiddleware::class)->group(function () {
         Route::get('/', [EmployeeController::class, 'index'])->name('index');
         Route::delete('/{employee:id}', [EmployeeController::class, 'destroy'])->name('destroy');

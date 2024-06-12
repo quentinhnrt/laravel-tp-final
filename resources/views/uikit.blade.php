@@ -1,6 +1,6 @@
-@extends("base")
+@extends('base')
 
-@section("content")
+@section('content')
     <x-organisms.container>
         <p class="text-background-500 dark:text-background-300">
             Lorem ipsum sit amet, consectetur adipiscing

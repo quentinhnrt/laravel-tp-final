@@ -2,9 +2,14 @@
     class="@yield('theme', 'theme-purple') min-h-screen bg-white font-roboto dark:bg-background-900"
 >
     {{-- Header --}}
-    <x-organisms.header />
+    @section('header')
+        <x-organisms.header-dash />
+    @endsection
+
+    @yield('header')
+
     {{-- Content --}}
-    <main id="main">
+    <main id="main" class="pt-[72px]">
         @section('breadcrumb')
             {{ Breadcrumbs::render('home') }}
         @endsection
@@ -22,7 +27,11 @@
         @yield('content')
     </main>
     {{-- Footer --}}
-    <x-organisms.footer />
+    @section('footer')
+        <x-organisms.footer />
+    @endsection
+
+    @yield('footer')
 
     {{-- Script --}}
     @vite('resources/js/app.js')
