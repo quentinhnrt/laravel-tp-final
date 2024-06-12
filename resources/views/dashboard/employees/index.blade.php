@@ -65,7 +65,7 @@
                                     class="flex flex-wrap items-center justify-end gap-3 sm:gap-x-5"
                                 >
                                     @php
-                                        $viewUrl = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('developers.show', $employee) : route('project-managers.show', $employee);
+                                        $viewUrl = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.show', $employee) : route('administration.project-managers.show', $employee);
                                         $editUrl = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.edit', $employee) : route('administration.project-managers.edit', $employee);
                                         $actionForm = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.destroy', $employee) : route('administration.project-managers.destroy', $employee);
                                     @endphp

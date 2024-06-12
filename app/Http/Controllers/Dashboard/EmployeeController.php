@@ -30,6 +30,14 @@ class EmployeeController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function show(Employee $employee)
+    {
+        return view('dashboard.employees.show', compact('employee'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create(Request $request)

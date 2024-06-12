@@ -73,6 +73,11 @@ Breadcrumbs::for('administration.developers', function (BreadcrumbTrail $trail) 
     $trail->push('Développeurs', route('administration.developers.index'));
 });
 
+Breadcrumbs::for('administration.developers.show', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('administration.developers');
+    $trail->push($variable->firstname . ' ' . $variable->lastname, route('developers.show', $variable));
+});
+
 // Administration > Developers > Create
 Breadcrumbs::for('administration.developers.create', function (BreadcrumbTrail $trail) {
     $trail->parent('administration.developers');
@@ -89,6 +94,11 @@ Breadcrumbs::for('administration.developers.edit', function (BreadcrumbTrail $tr
 Breadcrumbs::for('administration.project-managers', function (BreadcrumbTrail $trail) {
     $trail->parent('administration');
     $trail->push('Chefs de projet', route('administration.project-managers.index'));
+});
+
+Breadcrumbs::for('administration.project-managers.show', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('administration.project-managers');
+    $trail->push($variable->firstname . ' ' . $variable->lastname, route('project-managers.show', $variable));
 });
 
 // Administration > Project managers > Create

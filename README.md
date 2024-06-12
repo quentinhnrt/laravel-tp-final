@@ -91,7 +91,7 @@ Dans cette section, vous pouvez gérer les projets, les clients, les chefs de pr
     -   [x] Prénom
     -   [x] Fonction
 -   [x] Possibilité d'éditer les chefs de projet.
--   [ ] Accès à la page dédiée d'un projet depuis la fiche du chef de projet.
+-   [x] Accès à la page dédiée d'un projet depuis la fiche du chef de projet.
 
 #### Ajouter un développeur
 
@@ -101,7 +101,7 @@ Dans cette section, vous pouvez gérer les projets, les clients, les chefs de pr
     -   [x] Prénom
     -   [x] Fonction
 -   [x] Possibilité d'éditer les développeurs.
--   [ ] Accès à la page d'une tâche depuis la fiche du développeur.
+-   [x] Accès à la page d'une tâche depuis la fiche du développeur.
 
 #### Ajouter une tâche
 
