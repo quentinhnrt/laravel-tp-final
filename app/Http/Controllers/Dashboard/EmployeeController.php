@@ -17,11 +17,11 @@ class EmployeeController extends Controller
         $role = $request->attributes->get('role');
 
         if ($role === Employee::DEVELOPER_ROLE) {
-            $employees = Employee::developers()->paginate(10);
+            $employees = Employee::developers()->paginate(6);
         } elseif ($role === Employee::PROJECT_MANAGER_ROLE) {
-            $employees = Employee::projectManagers()->paginate(10);
+            $employees = Employee::projectManagers()->paginate(6);
         } else {
-            $employees = Employee::paginate(10);
+            $employees = Employee::paginate(6);
         }
 
         return view('dashboard.employees.index', [

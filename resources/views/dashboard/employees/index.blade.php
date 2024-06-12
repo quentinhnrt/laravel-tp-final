@@ -111,4 +111,8 @@
             @endif
         </div>
     </x-organisms.container>
+<!-- Pagination Links -->
+<div class="pagination">
+    {{ $employees->links() }}
+</div>
 @endsection
