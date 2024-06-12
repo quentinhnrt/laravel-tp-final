@@ -63,7 +63,7 @@ Dans cette section, vous pouvez gérer les projets, les clients, les chefs de pr
 
 #### Ajouter un projet
 
--   [ ] Affiche la liste des projets existants.
+-   [x] Affiche la liste des projets existants.
 -   [x] Permet d'ajouter un nouveau projet avec les champs suivants :
     -   [x] Nom
     -   [x] Description
