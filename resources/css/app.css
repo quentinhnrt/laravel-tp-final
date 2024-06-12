@@ -72,15 +72,15 @@ body, .theme-purple {
     --theme-950: #0d3328;
 }
 
-.section {
-    min-height: calc(100dvh - 249px);
-}
+/*.section {*/
+/*    min-height: calc(100dvh - 249px);*/
+/*}*/
 
-@media (min-width: 1024px) {
-    .section {
-        min-height: calc(100dvh - 249px);
-    }
-}
+/*@media (min-width: 1024px) {*/
+/*    .section {*/
+/*        min-height: calc(100dvh - 249px);*/
+/*    }*/
+/*}*/
 
 select {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
@@ -93,7 +93,7 @@ select {
 
 @media (min-width: 1024px) {
     body:has(.menu.isOpen) main,
-    body:has(.menu.isOpen) footer {
+    body:has(.menu.isOpen) footer > div {
         margin-left: calc(100vw / 5 + 3rem)
     }
 }

@@ -4,10 +4,10 @@
     $isDeveloper = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE;
 @endphp
 
-@section('title', 'Liste des ' . ($isDeveloper ? 'developpeurs' : 'chefs de projet'))
-@section('description', 'Liste des ' . ($isDeveloper ? 'developpeurs' : 'chefs de projet'))
+@section('title', 'Liste des ' . ($isDeveloper ? 'développeurs' : 'chefs de projet'))
+@section('description', 'Liste des ' . ($isDeveloper ? 'développeurs' : 'chefs de projet'))
 @section('image', asset('logo.svg'))
-@section('theme', 'theme-red')
+@section('theme', $isDeveloper ? 'theme-green' : 'theme-red')
 
 @section('breadcrumb')
     {{ Breadcrumbs::render($isDeveloper ? 'administration.developers' : 'administration.project-managers') }}
@@ -15,7 +15,7 @@
 
 @section('content')
     <x-organisms.container>
-        <div class="mx-auto max-w-lg">
+        <div class="max-w-lg">
             <h1
                 class="text-3xl font-semibold text-background-800 lg:text-4xl dark:text-white"
             >
@@ -111,4 +111,8 @@
             @endif
         </div>
     </x-organisms.container>
+<!-- Pagination Links -->
+<div class="pagination">
+    {{ $employees->links() }}
+</div>
 @endsection

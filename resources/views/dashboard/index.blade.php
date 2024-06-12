@@ -1,7 +1,7 @@
 @extends('base')
 
-@section('title', 'Accueil')
-@section('description', 'Page d\'accueil de l\'application Dash')
+@section('title', 'Dashboard')
+@section('description', 'Dashboard')
 @section('image', asset('logo.svg'))
 @section('theme', 'theme-blue')
 
@@ -11,7 +11,7 @@
 
 @section('content')
     <x-organisms.container>
-        <div class="mx-auto max-w-lg">
+        <div class="mx-auto max-w-lg text-center">
             <h1
                 class="text-3xl font-semibold text-background-800 lg:text-4xl dark:text-white"
             >

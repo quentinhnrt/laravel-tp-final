@@ -1,6 +1,8 @@
 @section('footer')
-    <footer class="bg-white dark:bg-background-900">
-        <div class="container mx-auto px-6 py-8">
+    <footer
+        class="fixed bottom-0 right-0 w-full bg-white dark:bg-background-900"
+    >
+        <div class="px-6 py-8">
             <hr
                 class="mb-10 mt-0 border-background-200 dark:border-background-700"
             />
