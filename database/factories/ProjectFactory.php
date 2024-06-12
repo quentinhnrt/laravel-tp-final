@@ -23,7 +23,7 @@ class ProjectFactory extends Factory
         }
 
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->sentence(2),
             'description' => $this->faker->text,
             'client_id' => $client->id,
             'project_manager_id' => \App\Models\Employee::projectManagers()->get()->random()->id,

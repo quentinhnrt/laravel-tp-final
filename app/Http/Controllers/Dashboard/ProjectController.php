@@ -13,8 +13,7 @@ class ProjectController extends Controller
 {
     public function index(): View
     {
-        $projects = Project::all();
-        return view('dashboard.projects.index', ['projects' => $projects]);
+        return view('dashboard.projects.index', ['projects' => Project::paginate(6)]);
     }
 
     public function show(Project $project): View

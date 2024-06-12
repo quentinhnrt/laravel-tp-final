@@ -104,5 +104,8 @@
                 </p>
             @endif
         </div>
+        <div class="pagination mt-8">
+            {{ $projects->links() }}
+        </div>
     </x-organisms.container>
 @endsection
