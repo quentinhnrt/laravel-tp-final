@@ -31,7 +31,7 @@
                         </a>
                     </p>
                     @php
-                        $viewUrl = route('administration.projects.show', $project->projectManager);
+                        $viewUrl = route('administration.project-managers.show', $project->projectManager);
                     @endphp
                     <p class="mt-2 text-left text-sm text-background-600 dark:text-background-400">
                         Chef de projet : <a href="{{ $viewUrl }}" class="text-blue-500 hover:text-blue-700">
