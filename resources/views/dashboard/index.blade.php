@@ -3,14 +3,10 @@
 @section('title', 'Accueil')
 @section('description', 'Page d\'accueil de l\'application Dash')
 @section('image', asset('logo.svg'))
-@section('theme', 'theme-purple')
+@section('theme', 'theme-blue')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render('home') }}
-@endsection
-
-@section('header')
-    <x-organisms.header-front />
+    {{ Breadcrumbs::render('administration') }}
 @endsection
 
 @section('content')
@@ -26,36 +22,13 @@
                 <strong>Dash</strong>
                 et grandissez avec nous. Nous sommes là pour vous aider.
             </p>
-            <x-atoms.link
-                class="mx-auto mt-6"
-                href="{{ route('administration.index') }}"
-            >
-                Commencer
-            </x-atoms.link>
         </div>
 
         <div
-            class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-16 xl:grid-cols-3"
+            class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-16 xl:grid-cols-2"
         >
             <a
-                href="{{ route('administration.index') }}"
-                class="theme-blue group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
-            >
-                <div
-                    class="flex h-32 w-32 items-center justify-center rounded-full bg-background-700 p-6 group-hover:bg-theme-600"
-                >
-                    <x-atoms.logo
-                        class="h-full w-full fill-white"
-                    ></x-atoms.logo>
-                </div>
-                <h2
-                    class="mt-4 text-2xl font-semibold text-background-700 dark:text-white"
-                >
-                    Administration
-                </h2>
-            </a>
-            <a
-                href="{{ route('project-managers.index') }}"
+                href="{{ route('administration.project-managers.index') }}"
                 class="theme-red group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
             >
                 <div
@@ -72,7 +45,7 @@
                 </h2>
             </a>
             <a
-                href="{{ route('developers.index') }}"
+                href="{{ route('administration.developers.index') }}"
                 class="theme-green group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
             >
                 <div

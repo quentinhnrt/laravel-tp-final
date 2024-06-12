@@ -7,10 +7,14 @@
 @section('title', $employee->firstname . ' ' . $employee->lastname)
 @section('description', $employee->firstname . ' ' . $employee->lastname)
 @section('image', asset('logo.svg'))
-@section('theme', 'theme-blue')
+@section('theme', $isDeveloper ? 'theme-green' : 'theme-red')
 
 @section('breadcrumb')
     {{ Breadcrumbs::render($isDeveloper ? 'developers.show' : 'project-managers.show', $employee) }}
+@endsection
+
+@section('header')
+    <x-organisms.header-front />
 @endsection
 
 @section('content')

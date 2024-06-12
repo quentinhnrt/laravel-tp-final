@@ -5,7 +5,7 @@
     >
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="#" class="flex items-center">
+                <a href="{{ route('home') }}" class="flex items-center">
                     <x-atoms.logo class="h-7 w-auto fill-theme-500" />
                     <span
                         class="mx-2 my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
@@ -70,28 +70,28 @@
             >
                 <div class="container mx-auto flex flex-col px-6 py-12">
                     <a
-                        class="my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
-                        href="#"
+                        class="theme-purple my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
+                        href="{{ route('home') }}"
                     >
-                        Home
+                        Accueil
                     </a>
                     <a
-                        class="my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
-                        href="#"
+                        class="theme-blue my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
+                        href="{{ route('administration.index') }}"
                     >
-                        Shop
+                        Administration
                     </a>
                     <a
-                        class="my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
-                        href="#"
+                        class="theme-red my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
+                        href="{{ route('project-managers.index') }}"
                     >
-                        Contact
+                        Chefs de projet
                     </a>
                     <a
-                        class="my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
-                        href="#"
+                        class="theme-green my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
+                        href="{{ route('developers.index') }}"
                     >
-                        About
+                        Développeurs
                     </a>
                     {{-- <x-atoms.btn class="mt-4 w-full md:w-fit"> --}}
                     {{-- Get started --}}

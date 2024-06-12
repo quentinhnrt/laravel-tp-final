@@ -66,10 +66,10 @@
                 <div class="mt-10 space-y-6">
                     <div>
                         <a
-                            href="{{ route('administration.projects.index') }}"
-                            class="inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
+                            href="{{ route('administration.index') }}"
+                            class="theme-blue inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
                         >
-                            <span>Les projets</span>
+                            <span>Administration</span>
 
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -90,44 +90,14 @@
                         <p
                             class="mt-2 text-sm text-background-500 dark:text-background-400"
                         >
-                            Plongez pour tout savoir sur les projets.
-                        </p>
-                    </div>
-
-                    <div>
-                        <a
-                            href="{{ route('developers.index') }}"
-                            class="inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
-                        >
-                            <span>Les développeurs</span>
-
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                class="h-5 w-5 rtl:rotate-180"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                                />
-                            </svg>
-                        </a>
-
-                        <p
-                            class="mt-2 text-sm text-background-500 dark:text-background-400"
-                        >
-                            Voir l'ensemble des développeurs.
+                            Plongez pour tout savoir.
                         </p>
                     </div>
 
                     <div>
                         <a
                             href="{{ route('project-managers.index') }}"
-                            class="inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
+                            class="theme-red inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
                         >
                             <span>Les chefs de projets</span>
 
@@ -151,6 +121,36 @@
                             class="mt-2 text-sm text-background-500 dark:text-background-400"
                         >
                             Voir l'ensemble des chefs de projets.
+                        </p>
+                    </div>
+
+                    <div>
+                        <a
+                            href="{{ route('developers.index') }}"
+                            class="theme-green inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
+                        >
+                            <span>Les développeurs</span>
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="h-5 w-5 rtl:rotate-180"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                                />
+                            </svg>
+                        </a>
+
+                        <p
+                            class="mt-2 text-sm text-background-500 dark:text-background-400"
+                        >
+                            Voir l'ensemble des développeurs.
                         </p>
                     </div>
                 </div>

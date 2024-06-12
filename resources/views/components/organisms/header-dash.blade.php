@@ -1,11 +1,14 @@
 <header id="header" class="header-dash fixed z-50 w-screen">
     <nav
-        x-data="{ isOpen: false }"
+        x-data="{ isOpen: true }"
         class="relative bg-white shadow dark:bg-background-800"
     >
         <div class="mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="#" class="flex items-center">
+                <a
+                    href="{{ route('administration.index') }}"
+                    class="flex items-center"
+                >
                     <x-atoms.logo class="h-7 w-auto fill-theme-500" />
                     <span
                         class="mx-2 my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
@@ -72,71 +75,111 @@
                     class="mt-6 flex flex-1 flex-col justify-between px-6 py-12 pt-2"
                 >
                     <nav class="-mx-3 space-y-6">
-                        <div class="space-y-3">
+                        <div class="space-y-0">
                             <label
-                                class="px-3 text-xs uppercase text-background-500 dark:text-background-400"
-                            >
-                                Développeurs
-                            </label>
-
-                            <x-atoms.link
-                                href="#"
-                                type="link"
-                                class="!underline-none flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
-                            >
-                                <span class="mx-2 text-sm font-medium">
-                                    Lien
-                                </span>
-                            </x-atoms.link>
-                        </div>
-                        <div class="space-y-3">
-                            <label
-                                class="px-3 text-xs uppercase text-background-500 dark:text-background-400"
-                            >
-                                Chefs de projet
-                            </label>
-
-                            <x-atoms.link
-                                href="#"
-                                type="link"
-                                class="!underline-none flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
-                            >
-                                <span class="mx-2 text-sm font-medium">
-                                    Liens
-                                </span>
-                            </x-atoms.link>
-                        </div>
-                        <div class="space-y-3">
-                            <label
-                                class="px-3 text-xs uppercase text-background-500 dark:text-background-400"
+                                class="mb-3 inline-block px-3 text-xs uppercase text-background-500 dark:text-background-400"
                             >
                                 Projets
                             </label>
 
                             <x-atoms.link
-                                href="#"
+                                href="{{ route('administration.projects.index') }}"
                                 type="link"
-                                class="!underline-none flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
                                 <span class="mx-2 text-sm font-medium">
-                                    Liens
+                                    Liste des projets
+                                </span>
+                            </x-atoms.link>
+
+                            <x-atoms.link
+                                href="{{ route('administration.projects.create') }}"
+                                type="link"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                            >
+                                <span class="mx-2 text-sm font-medium">
+                                    Créer un projet
                                 </span>
                             </x-atoms.link>
                         </div>
                         <div class="space-y-3">
                             <label
-                                class="px-3 text-xs uppercase text-background-500 dark:text-background-400"
+                                class="mb-3 inline-block px-3 text-xs uppercase text-background-500 dark:text-background-400"
                             >
                                 Tâches
                             </label>
 
                             <x-atoms.link
-                                href="#"
+                                {{-- href="{{ route('administration.tasks.index') }}" --}}
                                 type="link"
-                                class="!underline-none flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
                                 <span class="mx-2 text-sm font-medium">
-                                    Liens
+                                    Liste des tâches
+                                </span>
+                            </x-atoms.link>
+
+                            <x-atoms.link
+                                href="{{ route('administration.tasks.create') }}"
+                                type="link"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                            >
+                                <span class="mx-2 text-sm font-medium">
+                                    Créer une tâche
+                                </span>
+                            </x-atoms.link>
+                        </div>
+                        <div class="theme-red space-y-3">
+                            <label
+                                class="mb-3 inline-block px-3 text-xs uppercase text-background-500 dark:text-background-400"
+                            >
+                                Chefs de projet
+                            </label>
+
+                            <x-atoms.link
+                                href="{{ route('administration.project-managers.index') }}"
+                                type="link"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                            >
+                                <span class="mx-2 text-sm font-medium">
+                                    Liste des chefs de projet
+                                </span>
+                            </x-atoms.link>
+
+                            <x-atoms.link
+                                href="{{ route('administration.project-managers.create') }}"
+                                type="link"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                            >
+                                <span class="mx-2 text-sm font-medium">
+                                    Créer un chef de projet
+                                </span>
+                            </x-atoms.link>
+                        </div>
+                        <div class="theme-green space-y-3">
+                            <label
+                                class="mb-3 inline-block px-3 text-xs uppercase text-background-500 dark:text-background-400"
+                            >
+                                Développeurs
+                            </label>
+
+                            <x-atoms.link
+                                href="{{ route('administration.developers.index') }}"
+                                type="link"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                            >
+                                <span class="mx-2 text-sm font-medium">
+                                    Liste des développeur
+                                </span>
+                            </x-atoms.link>
+
+                            <x-atoms.link
+                                href="{{ route('administration.developers.create') }}"
+                                type="link"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                            >
+                                <span class="mx-2 text-sm font-medium">
+                                    Créer un développeur
                                 </span>
                             </x-atoms.link>
                         </div>

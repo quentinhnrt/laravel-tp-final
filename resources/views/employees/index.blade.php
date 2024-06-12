@@ -7,10 +7,14 @@
 @section('title', 'Liste des ' . ($isDeveloper ? 'developpeurs' : 'chefs de projet'))
 @section('description', 'Liste des ' . ($isDeveloper ? 'developpeurs' : 'chefs de projet'))
 @section('image', asset('logo.svg'))
-@section('theme', 'theme-blue')
+@section('theme', $isDeveloper ? 'theme-green' : 'theme-red')
 
 @section('breadcrumb')
     {{ Breadcrumbs::render($isDeveloper ? 'developers' : 'project-managers') }}
+@endsection
+
+@section('header')
+    <x-organisms.header-front />
 @endsection
 
 @section('content')
@@ -82,8 +86,8 @@
             @endif
         </div>
     </x-organisms.container>
-<!-- Pagination Links -->
-<div class="pagination">
-    {{ $employees->links() }}
-</div>
+    <!-- Pagination Links -->
+    <div class="pagination">
+        {{ $employees->links() }}
+    </div>
 @endsection
