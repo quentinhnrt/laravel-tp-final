@@ -118,16 +118,16 @@ Dans cette section, vous pouvez gérer les projets, les clients, les chefs de pr
 ### Chef de projet
 
 -   [x] Affiche une liste des chefs de projet.
--   [ ] En cliquant sur un chef de projet, on accède à une vue détaillée comprenant :
-    -   [ ] Informations sur les projets auxquels le chef de projet est affilié : Nom du projet, liste des tâches affiliées.
--   [ ] En cliquant sur une tâche, on accède à la page dédiée à la tâche.
+-   [x] En cliquant sur un chef de projet, on accède à une vue détaillée comprenant :
+    -   [x] Informations sur les projets auxquels le chef de projet est affilié : Nom du projet, liste des tâches affiliées.
+-   [x] En cliquant sur une tâche, on accède à la page dédiée à la tâche.
 
 ### Développeur
 
 -   [x] Affiche une liste des développeurs.
--   [ ] En cliquant sur un développeur, on accède à une vue détaillée comprenant :
-    -   [ ] Liste des tâches affiliées, rangées par projet.
--   [ ] En cliquant sur une tâche, on accède à la page dédiée à la tâche.
+-   [x] En cliquant sur un développeur, on accède à une vue détaillée comprenant :
+    -   [x] Liste des tâches affiliées, rangées par projet.
+-   [x] En cliquant sur une tâche, on accède à la page dédiée à la tâche.
 
 ## Bonus
 
