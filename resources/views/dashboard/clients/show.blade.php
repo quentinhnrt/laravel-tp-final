@@ -24,28 +24,31 @@
         <p class="text-background-600 dark:text-background-400 mt-2 text-sm">
             {!! $client->website !!}
         </p>
-        <p class="text-background-600 dark:text-background-400 mt-2 text-sm">
-            <x-atoms.link
-                type="button"
-                variant="outline"
-                :href="route('administration.clients.edit', ['client' => $client])">
+        <div class="flex items-center gap-4">
+            <p class="text-background-600 dark:text-background-400 mt-2 text-sm">
+                <x-atoms.link
+                    type="button"
+                    variant="outline"
+                    :href="route('administration.clients.edit', ['client' => $client])">
 
-                Modifier le client
-            </x-atoms.link>
-        <form action="{{ route('administration.clients.destroy', ['client' => $client]) }}" method="POST"
-              style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');">
-            @csrf
-            @method('DELETE')
-            <x-atoms.btn
-                type="submit"
-                color="red"
-                class="theme-red"
-            >
-                Supprimer le client
-            </x-atoms.btn>
-        </form>
+                    Modifier le client
+                </x-atoms.link>
+            <form class="mt-2" action="{{ route('administration.clients.destroy', ['client' => $client]) }}" method="POST"
+                  style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');">
+                @csrf
+                @method('DELETE')
+                <x-atoms.btn
+                    type="submit"
+                    color="red"
+                    class="theme-red"
+                >
+                    Supprimer le client
+                </x-atoms.btn>
+            </form>
+        </div>
+
         </p>
-        <h2>Projets</h2>
+        <h2 class="text-white text-3xl my-4 ">Projets</h2>
         <div class="grid grid-cols-4 gap-4">
             @forelse($client->projects as $project)
                 <a href="{{ route('administration.projects.show', $project) }}" class="p-4 border border-gray-200 rounded-lg text-white">
