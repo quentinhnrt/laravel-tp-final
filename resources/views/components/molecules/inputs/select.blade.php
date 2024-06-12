@@ -37,7 +37,7 @@
     >
         {{ $slot }}
     </select>
-    @error("{{ $name }}")
+    @error($name)
         <p class="mt-3 text-xs text-red-400">
             {{ $message }}
         </p>

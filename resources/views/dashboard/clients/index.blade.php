@@ -98,5 +98,8 @@
                 @endforeach
             @endif
         </ul>
+        <div class="pagination mt-8">
+            {{ $clients->links() }}
+        </div>
     </x-organisms.container>
 @endsection

@@ -13,8 +13,7 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $clients = Client::all();
-        return view('dashboard.clients.index', ['clients' => $clients]);
+        return view('dashboard.clients.index', ['clients' => Client::paginate(6)]);
     }
 
 

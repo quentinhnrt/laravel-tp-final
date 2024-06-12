@@ -27,6 +27,7 @@
         name="client_id"
         class="w-full px-2 md:w-1/2"
     >
+        <option value="">Choisir un client</option>
         @foreach ($clients as $client)
             <option
                 value="{{ $client->id }}"
@@ -42,6 +43,7 @@
         name="project_manager_id"
         class="w-full px-2 md:w-1/2"
     >
+        <option value="">Choisir un chef de projet</option>
         @foreach ($projectManagers as $projectManager)
             <option
                 value="{{ $projectManager->id }}"
