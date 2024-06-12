@@ -45,5 +45,16 @@
             </x-atoms.btn>
         </form>
         </p>
+        <h2>Projets</h2>
+        <div class="grid grid-cols-4 gap-4">
+            @forelse($client->projects as $project)
+                <a href="{{ route('administration.projects.show', $project) }}" class="p-4 border border-gray-200 rounded-lg text-white">
+                    <h3 class="text-lg font-semibold">{{ $project->name }}</h3>
+                    <p>{{ $project->description }}</p>
+                </a>
+            @empty
+                <p>Aucun projets</p>
+            @endforelse
+        </div>
     </x-organisms.container>
 @endsection

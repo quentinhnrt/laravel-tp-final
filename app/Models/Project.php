@@ -30,4 +30,8 @@ class Project extends Model
     {
         return $this->hasMany(Task::class);
     }
+    public function scopeNotHavingClient($query)
+    {
+        return $query->whereNull('client_id');
+    }
 }
