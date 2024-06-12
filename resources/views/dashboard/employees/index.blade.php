@@ -110,9 +110,9 @@
                 @endforeach
             @endif
         </div>
+        <!-- Pagination Links -->
+        <div class="pagination mt-8">
+            {{ $employees->links() }}
+        </div>
     </x-organisms.container>
-<!-- Pagination Links -->
-<div class="pagination">
-    {{ $employees->links() }}
-</div>
 @endsection
