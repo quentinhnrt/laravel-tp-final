@@ -1,6 +1,6 @@
 @section('footer')
     <footer
-        class="fixed bottom-0 right-0 w-full bg-white dark:bg-background-900"
+        class="fixed bottom-0 right-0 w-full bg-white/10 backdrop-blur dark:bg-background-900"
     >
         <div class="px-6 py-8">
             <hr

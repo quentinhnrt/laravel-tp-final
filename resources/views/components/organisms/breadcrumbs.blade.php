@@ -2,7 +2,7 @@
 
 @unless ($breadcrumbs->isEmpty())
     <ol
-        class="container mx-auto flex items-center overflow-x-auto whitespace-nowrap px-6 py-4"
+        class="container mx-auto flex items-center overflow-x-auto whitespace-nowrap px-6 pb-4 pt-8"
     >
         @foreach ($breadcrumbs as $breadcrumb)
             @if (! is_null($breadcrumb->url) && $loop->first)
