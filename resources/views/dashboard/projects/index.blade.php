@@ -1,9 +1,9 @@
 @extends('base')
 
-@section('title', 'Accueil des Projets')
-@section('description', 'Liste des projets')
+@section('title', 'Listes des projets')
+@section('description', 'Listes des projets')
 @section('image', asset('logo.svg'))
-@section('theme', 'theme-red')
+@section('theme', 'theme-blue')
 
 @section('breadcrumb')
     {{ Breadcrumbs::render('administration.projects') }}

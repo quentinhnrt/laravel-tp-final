@@ -102,22 +102,12 @@
                                 </span>
                             </x-atoms.link>
                         </div>
-                        <div class="space-y-3">
+                        <div class="space-y-0">
                             <label
                                 class="mb-3 inline-block px-3 text-xs uppercase text-background-500 dark:text-background-400"
                             >
                                 Tâches
                             </label>
-
-                            <x-atoms.link
-                                {{-- href="{{ route('administration.tasks.index') }}" --}}
-                                type="link"
-                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
-                            >
-                                <span class="mx-2 text-sm font-medium">
-                                    Liste des tâches
-                                </span>
-                            </x-atoms.link>
 
                             <x-atoms.link
                                 href="{{ route('administration.tasks.create') }}"
@@ -129,7 +119,34 @@
                                 </span>
                             </x-atoms.link>
                         </div>
-                        <div class="theme-red space-y-3">
+                        <div class="space-y-0">
+                            <label
+                                class="mb-3 inline-block px-3 text-xs uppercase text-background-500 dark:text-background-400"
+                            >
+                                Clients
+                            </label>
+
+                            <x-atoms.link
+                                href="{{ route('administration.clients.index') }}"
+                                type="link"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                            >
+                                <span class="mx-2 text-sm font-medium">
+                                    Liste des clients
+                                </span>
+                            </x-atoms.link>
+
+                            <x-atoms.link
+                                href="{{ route('administration.clients.create') }}"
+                                type="link"
+                                class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
+                            >
+                                <span class="mx-2 text-sm font-medium">
+                                    Créer un client
+                                </span>
+                            </x-atoms.link>
+                        </div>
+                        <div class="theme-red space-y-0">
                             <label
                                 class="mb-3 inline-block px-3 text-xs uppercase text-background-500 dark:text-background-400"
                             >
@@ -156,7 +173,7 @@
                                 </span>
                             </x-atoms.link>
                         </div>
-                        <div class="theme-green space-y-3">
+                        <div class="theme-green space-y-0">
                             <label
                                 class="mb-3 inline-block px-3 text-xs uppercase text-background-500 dark:text-background-400"
                             >
