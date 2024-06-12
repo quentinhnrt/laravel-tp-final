@@ -6,7 +6,7 @@
 @section('theme', 'theme-blue')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render('administration.projects.show', $project) }}
+    {{ Breadcrumbs::render('dashboard.projects.show', $project) }}
 @endsection
 
 @section('content')
@@ -22,7 +22,7 @@
             <div>
                 <div>
                     @php
-                        $viewUrl = route('administration.clients.show', $project->client);
+                        $viewUrl = route('dashboard.clients.show', $project->client);
                     @endphp
 
                     <p
@@ -37,7 +37,7 @@
                         </a>
                     </p>
                     @php
-                        $viewUrl = route('administration.project-managers.show', $project->projectManager);
+                        $viewUrl = route('dashboard.project-managers.show', $project->projectManager);
                     @endphp
 
                     <p
@@ -115,7 +115,7 @@
                                         <x-atoms.link
                                             type="button"
                                             variant="outline"
-                                            href="{{ route('administration.tasks.show', $task) }}"
+                                            href="{{ route('dashboard.tasks.show', $task) }}"
                                             class="!h-auto flex-1 text-sm"
                                         >
                                             Voir la tâche
@@ -123,7 +123,7 @@
                                         <x-atoms.link
                                             type="button"
                                             variant="outline"
-                                            href="{{ route('administration.tasks.edit', $task) }}"
+                                            href="{{ route('dashboard.tasks.edit', $task) }}"
                                             class="!h-auto flex-1 text-sm"
                                         >
                                             Modifier la tâche
@@ -131,7 +131,7 @@
                                     </div>
 
                                     <form
-                                        action="{{ route('administration.tasks.destroy', $task) }}"
+                                        action="{{ route('dashboard.tasks.destroy', $task) }}"
                                         method="POST"
                                         class="flex"
                                     >

@@ -57,11 +57,11 @@ class EmployeeController extends Controller
         $role = $request->attributes->get('role');
 
         if ($role === Employee::DEVELOPER_ROLE) {
-            return redirect()->route('administration.developers.index');
+            return redirect()->route('dashboard.developers.index');
         } elseif ($role === Employee::PROJECT_MANAGER_ROLE) {
-            return redirect()->route('administration.project-managers.index');
+            return redirect()->route('dashboard.project-managers.index');
         } else {
-            return redirect()->route('administration.developers.index');
+            return redirect()->route('dashboard.developers.index');
         }
     }
 
@@ -83,11 +83,11 @@ class EmployeeController extends Controller
         $role = $request->attributes->get('role');
 
         if ($role === Employee::DEVELOPER_ROLE) {
-            return redirect()->route('administration.developers.index');
+            return redirect()->route('dashboard.developers.index');
         } elseif ($role === Employee::PROJECT_MANAGER_ROLE) {
-            return redirect()->route('administration.project-managers.index');
+            return redirect()->route('dashboard.project-managers.index');
         } else {
-            return redirect()->route('administration.developers.index');
+            return redirect()->route('dashboard.developers.index');
         }
     }
 

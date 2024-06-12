@@ -6,7 +6,7 @@
 @section('theme', 'theme-blue')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render('administration.tasks.show', $task) }}
+    {{ Breadcrumbs::render('dashboard.tasks.show', $task) }}
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
                     {{ $task->name }} -
                     <a
                         class="text-theme-500"
-                        href="{{ route('administration.projects.show', $task->project) }}"
+                        href="{{ route('dashboard.projects.show', $task->project) }}"
                     >
                         {{ $task->project->name }}
                     </a>

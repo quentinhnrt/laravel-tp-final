@@ -28,7 +28,7 @@
             </p>
             <x-atoms.link
                 class="mx-auto mt-6"
-                href="{{ route('administration.index') }}"
+                href="{{ route('dashboard.index') }}"
             >
                 Commencer
             </x-atoms.link>
@@ -38,7 +38,7 @@
             class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-16 xl:grid-cols-3"
         >
             <a
-                href="{{ route('administration.index') }}"
+                href="{{ route('dashboard.index') }}"
                 class="theme-blue group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
             >
                 <div
@@ -51,7 +51,7 @@
                 <h2
                     class="mt-4 text-2xl font-semibold text-background-700 dark:text-white"
                 >
-                    Administration
+                    dashboard
                 </h2>
             </a>
             <a

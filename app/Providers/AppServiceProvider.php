@@ -32,18 +32,18 @@ class AppServiceProvider extends ServiceProvider
             }
 
             // set action based on if the employee is being created or updated and the role
-            $action = route('administration.developers.store');
+            $action = route('dashboard.developers.store');
             if ($employee) {
                 if ($employee->role === Employee::DEVELOPER_ROLE) {
-                    $action = route('administration.developers.update', $employee);
+                    $action = route('dashboard.developers.update', $employee);
                 } elseif ($employee->role === Employee::PROJECT_MANAGER_ROLE) {
-                    $action = route('administration.project-managers.update', $employee);
+                    $action = route('dashboard.project-managers.update', $employee);
                 }
             } else {
                 if ($role === Employee::DEVELOPER_ROLE) {
-                    $action = route('administration.developers.store');
+                    $action = route('dashboard.developers.store');
                 } elseif ($role === Employee::PROJECT_MANAGER_ROLE) {
-                    $action = route('administration.project-managers.store');
+                    $action = route('dashboard.project-managers.store');
                 }
             }
 

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Dashboard\EmployeeController;
-use App\Http\Controllers\HomeController;
 use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\ClientController;
@@ -33,7 +32,7 @@ Route::prefix('project-managers')->name('project-managers.')->middleware(Project
     Route::get('/{employee:slug}', [App\Http\Controllers\EmployeeController::class, 'show'])->name('show');
 });
 
-Route::prefix('administration')->name('administration.')->group(function () {
+Route::prefix('dashboard')->name('dashboard.')->group(function () {
     Route::get('/', function () {
         return view('dashboard.index');
     })->name('index');

@@ -6,7 +6,7 @@
 @section('theme', 'theme-blue')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render('administration') }}
+    {{ Breadcrumbs::render('dashboard') }}
 @endsection
 
 @section('content')
@@ -28,7 +28,7 @@
             class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-16 xl:grid-cols-4"
         >
             <a
-                href="{{ route('administration.projects.index') }}"
+                href="{{ route('dashboard.projects.index') }}"
                 class="theme-blue group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
             >
                 <div
@@ -45,7 +45,7 @@
                 </h2>
             </a>
             <a
-                href="{{ route('administration.clients.index') }}"
+                href="{{ route('dashboard.clients.index') }}"
                 class="theme-blue group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
             >
                 <div
@@ -62,7 +62,7 @@
                 </h2>
             </a>
             <a
-                href="{{ route('administration.project-managers.index') }}"
+                href="{{ route('dashboard.project-managers.index') }}"
                 class="theme-red group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
             >
                 <div
@@ -79,7 +79,7 @@
                 </h2>
             </a>
             <a
-                href="{{ route('administration.developers.index') }}"
+                href="{{ route('dashboard.developers.index') }}"
                 class="theme-green group flex transform cursor-pointer flex-col items-center rounded-xl border p-8 transition-colors duration-300 hover:border-theme-600 dark:border-background-700"
             >
                 <div

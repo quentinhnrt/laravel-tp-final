@@ -6,7 +6,7 @@
         <div class="mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a
-                    href="{{ route('administration.index') }}"
+                    href="{{ route('dashboard.index') }}"
                     class="flex items-center"
                 >
                     <x-atoms.logo class="h-7 w-auto fill-theme-500" />
@@ -83,7 +83,7 @@
                             </label>
 
                             <x-atoms.link
-                                href="{{ route('administration.projects.index') }}"
+                                href="{{ route('dashboard.projects.index') }}"
                                 type="link"
                                 class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
@@ -93,7 +93,7 @@
                             </x-atoms.link>
 
                             <x-atoms.link
-                                href="{{ route('administration.projects.create') }}"
+                                href="{{ route('dashboard.projects.create') }}"
                                 type="link"
                                 class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
@@ -110,7 +110,7 @@
                             </label>
 
                             <x-atoms.link
-                                href="{{ route('administration.tasks.create') }}"
+                                href="{{ route('dashboard.tasks.create') }}"
                                 type="link"
                                 class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
@@ -127,7 +127,7 @@
                             </label>
 
                             <x-atoms.link
-                                href="{{ route('administration.clients.index') }}"
+                                href="{{ route('dashboard.clients.index') }}"
                                 type="link"
                                 class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
@@ -137,7 +137,7 @@
                             </x-atoms.link>
 
                             <x-atoms.link
-                                href="{{ route('administration.clients.create') }}"
+                                href="{{ route('dashboard.clients.create') }}"
                                 type="link"
                                 class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
@@ -154,7 +154,7 @@
                             </label>
 
                             <x-atoms.link
-                                href="{{ route('administration.project-managers.index') }}"
+                                href="{{ route('dashboard.project-managers.index') }}"
                                 type="link"
                                 class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
@@ -164,7 +164,7 @@
                             </x-atoms.link>
 
                             <x-atoms.link
-                                href="{{ route('administration.project-managers.create') }}"
+                                href="{{ route('dashboard.project-managers.create') }}"
                                 type="link"
                                 class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
@@ -181,7 +181,7 @@
                             </label>
 
                             <x-atoms.link
-                                href="{{ route('administration.developers.index') }}"
+                                href="{{ route('dashboard.developers.index') }}"
                                 type="link"
                                 class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >
@@ -191,7 +191,7 @@
                             </x-atoms.link>
 
                             <x-atoms.link
-                                href="{{ route('administration.developers.create') }}"
+                                href="{{ route('dashboard.developers.create') }}"
                                 type="link"
                                 class="!underline-none mt-0 flex transform px-3 py-2 !text-background-700 transition-colors duration-300 hover:!text-theme-500 dark:!text-background-200 dark:hover:!text-theme-400"
                             >

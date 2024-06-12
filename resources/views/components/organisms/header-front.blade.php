@@ -77,7 +77,7 @@
                     </a>
                     <a
                         class="theme-blue my-2 transform text-background-700 transition-colors duration-300 hover:text-theme-500 dark:text-background-200 dark:hover:text-theme-400"
-                        href="{{ route('administration.index') }}"
+                        href="{{ route('dashboard.index') }}"
                     >
                         Administration
                     </a>

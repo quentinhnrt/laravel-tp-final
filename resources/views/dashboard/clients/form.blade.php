@@ -10,22 +10,25 @@
         class="w-full px-2 md:w-1/2"
         :value="isset($client) ? $client->name : old('name')"
         required="true"
+        placeholder="Nom du client"
     />
 
     <x-molecules.inputs.text
-        label="Address:"
+        label="Adresse:"
         name="address"
         class="w-full px-2 md:w-1/2"
         :value="isset($client) ? $client->address : old('address')"
         required="true"
+        placeholder="Adresse"
     />
 
     <x-molecules.inputs.text
-        label="Website:"
+        label="Site web:"
         name="website"
         class="w-full px-2"
         :value="isset($client) ? $client->website : old('website')"
         required="true"
+        placeholder="https://"
     />
 
     <x-atoms.btn type="submit" class="mx-2 mt-4 w-full">

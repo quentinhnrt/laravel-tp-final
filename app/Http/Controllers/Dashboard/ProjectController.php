@@ -30,7 +30,7 @@ class ProjectController extends Controller
     {
         $project = Project::create($request->validated());
 
-        return redirect()->route('administration.projects.show', ['project' => $project->id])
+        return redirect()->route('dashboard.projects.show', ['project' => $project->id])
             ->with('success', "Le projet a bien été créé");
     }
 
@@ -44,7 +44,7 @@ class ProjectController extends Controller
         $validated = $request->validated();
         $project->update($validated);
 
-        return redirect()->route('administration.projects.show', ['project' => $project->id])
+        return redirect()->route('dashboard.projects.show', ['project' => $project->id])
             ->with('success', "Le projet a bien été modifié");
     }
 
@@ -52,7 +52,7 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('administration.projects.index')
+        return redirect()->route('dashboard.projects.index')
             ->with('success', "Le projet a bien été supprimé");
     }
 }

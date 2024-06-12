@@ -32,7 +32,7 @@ class ClientController extends Controller
     {
         $client = Client::create($request->validated());
 
-        return redirect()->route('administration.clients.show', ['client' => $client->id])
+        return redirect()->route('dashboard.clients.show', ['client' => $client->id])
             ->with('success', "Le client a bien été créé");
     }
 
@@ -47,7 +47,7 @@ class ClientController extends Controller
     {
         $client->update($request->validated());
 
-        return redirect()->route('administration.clients.show', ['client' => $client->id])
+        return redirect()->route('dashboard.clients.show', ['client' => $client->id])
             ->with('success', "Le client a bien été modifié");
     }
 
@@ -55,7 +55,7 @@ class ClientController extends Controller
     {
         $client->delete();
 
-        return redirect()->route('administration.clients.index')
+        return redirect()->route('dashboard.clients.index')
             ->with('success', "Le client a bien été supprimé");
     }
 }

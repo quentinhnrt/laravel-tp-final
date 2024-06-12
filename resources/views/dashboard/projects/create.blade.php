@@ -6,7 +6,7 @@
 @section('theme', 'theme-blue')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render('administration.projects.create') }}
+    {{ Breadcrumbs::render('dashboard.projects.create') }}
 @endsection
 
 @section('content')

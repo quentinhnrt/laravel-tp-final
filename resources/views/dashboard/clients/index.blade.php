@@ -6,7 +6,7 @@
 @section('theme', 'theme-blue')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render('administration.clients') }}
+    {{ Breadcrumbs::render('dashboard.clients') }}
 @endsection
 
 @section('content')
@@ -58,9 +58,9 @@
                                     class="flex flex-wrap items-center justify-end gap-3 sm:gap-x-5"
                                 >
                                     @php
-                                        $viewUrl = route('administration.clients.show', $client);
-                                        $editUrl = route('administration.clients.edit', $client);
-                                        $actionForm = route('administration.clients.destroy', $client);
+                                        $viewUrl = route('dashboard.clients.show', $client);
+                                        $editUrl = route('dashboard.clients.edit', $client);
+                                        $actionForm = route('dashboard.clients.destroy', $client);
                                     @endphp
 
                                     <x-atoms.link

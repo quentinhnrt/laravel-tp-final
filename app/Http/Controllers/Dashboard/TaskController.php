@@ -46,7 +46,7 @@ class TaskController extends Controller
             $task->tags()->attach($validated['status_id']);
         }
 
-        return redirect()->route('administration.projects.show', ['project' => $validated['project_id']])
+        return redirect()->route('dashboard.projects.show', ['project' => $validated['project_id']])
             ->with('success', "Le projet a bien été créé");
     }
 
@@ -87,7 +87,7 @@ class TaskController extends Controller
         $task->tags()->sync($tags);
         $task->employees()->sync($employees);
 
-        return redirect()->route('administration.projects.show', ['project' => $validated['project_id']])
+        return redirect()->route('dashboard.projects.show', ['project' => $validated['project_id']])
             ->with('success', "Le projet a bien été modifié");
     }
 
@@ -95,7 +95,7 @@ class TaskController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('administration.projects.index')
+        return redirect()->route('dashboard.projects.index')
             ->with('success', "Le projet a bien été supprimé");
     }
 }

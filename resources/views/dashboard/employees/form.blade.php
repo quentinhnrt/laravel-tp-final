@@ -21,6 +21,7 @@
         class="w-full px-2 md:w-1/2"
         :value="$firstname"
         required="true"
+        placeholder="Prénom"
     />
     <x-molecules.inputs.text
         label="Nom:"
@@ -28,6 +29,7 @@
         class="w-full px-2 md:w-1/2"
         :value="$lastname"
         required="true"
+        placeholder="Nom de famille"
     />
     <x-molecules.inputs.text
         label="Fonction:"
@@ -35,6 +37,7 @@
         class="w-full px-2"
         :value="$function"
         required="true"
+        placeholder="Fonction"
     />
     <input
         type="hidden"

@@ -11,9 +11,9 @@
 
 @section('breadcrumb')
     @if ($employee->isDeveloper())
-        {{ Breadcrumbs::render('administration.developers.show', $employee) }}
+        {{ Breadcrumbs::render('dashboard.developers.show', $employee) }}
     @else
-        {{ Breadcrumbs::render('administration.project-managers.show', $employee) }}
+        {{ Breadcrumbs::render('dashboard.project-managers.show', $employee) }}
     @endif
 @endsection
 
@@ -65,7 +65,7 @@
                         <div>
                             @foreach ($tasks as $task)
                                 <a
-                                    href="{{ route('administration.tasks.show', $task) }}"
+                                    href="{{ route('dashboard.tasks.show', $task) }}"
                                     @class([
                                         'block border-background-400 px-3 py-2 text-background-500 duration-200 hover:bg-theme-200 hover:text-background-700 dark:text-background-300',
                                         'border-b' => ! $loop->last,
@@ -108,7 +108,7 @@
             @else
                 @forelse ($employee->projects()->get() as $project)
                     <a
-                        href="{{ route('administration.project-managers.show', $employee) }}"
+                        href="{{ route('dashboard.project-managers.show', $employee) }}"
                         class="bg-background-600 py-2 text-background-500 dark:text-background-300"
                     >
                         <p>{{ $project->name }}</p>

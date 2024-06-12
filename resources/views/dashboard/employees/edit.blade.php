@@ -10,7 +10,7 @@
 @section('theme', $isDeveloper ? 'theme-green' : 'theme-red')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render($isDeveloper ? 'administration.developers.edit' : 'administration.project-managers.edit', $employee) }}
+    {{ Breadcrumbs::render($isDeveloper ? 'dashboard.developers.edit' : 'dashboard.project-managers.edit', $employee) }}
 @endsection
 
 @section('content')

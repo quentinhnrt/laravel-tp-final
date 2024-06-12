@@ -6,7 +6,7 @@
 @section('theme', 'theme-blue')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render('administration.clients.show', $client) }}
+    {{ Breadcrumbs::render('dashboard.clients.show', $client) }}
 @endsection
 
 @section('content')
@@ -37,12 +37,12 @@
             <x-atoms.link
                 type="button"
                 variant="outline"
-                :href="route('administration.clients.edit', ['client' => $client])"
+                :href="route('dashboard.clients.edit', ['client' => $client])"
             >
                 Modifier le client
             </x-atoms.link>
             <form
-                action="{{ route('administration.clients.destroy', ['client' => $client]) }}"
+                action="{{ route('dashboard.clients.destroy', ['client' => $client]) }}"
                 method="POST"
                 style="display: inline"
                 onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');"
@@ -61,7 +61,7 @@
         >
             @forelse ($client->projects as $project)
                 <a
-                    href="{{ route('administration.projects.show', $project) }}"
+                    href="{{ route('dashboard.projects.show', $project) }}"
                     class="w-full rounded-lg border bg-white text-left shadow-md hover:border-theme-600 dark:border-background-700 dark:bg-background-800"
                 >
                     <div class="relative flex h-full flex-col p-6">

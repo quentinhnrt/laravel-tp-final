@@ -10,7 +10,7 @@
 @section('theme', $isDeveloper ? 'theme-green' : 'theme-red')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render($isDeveloper ? 'administration.developers' : 'administration.project-managers') }}
+    {{ Breadcrumbs::render($isDeveloper ? 'dashboard.developers' : 'dashboard.project-managers') }}
 @endsection
 
 @section('content')
@@ -65,9 +65,9 @@
                                     class="flex flex-wrap items-center justify-end gap-3 sm:gap-x-5"
                                 >
                                     @php
-                                        $viewUrl = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.show', $employee) : route('administration.project-managers.show', $employee);
-                                        $editUrl = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.edit', $employee) : route('administration.project-managers.edit', $employee);
-                                        $actionForm = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('administration.developers.destroy', $employee) : route('administration.project-managers.destroy', $employee);
+                                        $viewUrl = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('dashboard.developers.show', $employee) : route('dashboard.project-managers.show', $employee);
+                                        $editUrl = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('dashboard.developers.edit', $employee) : route('dashboard.project-managers.edit', $employee);
+                                        $actionForm = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE ? route('dashboard.developers.destroy', $employee) : route('dashboard.project-managers.destroy', $employee);
                                     @endphp
 
                                     <x-atoms.link

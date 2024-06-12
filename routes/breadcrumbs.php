@@ -15,26 +15,26 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
 
 // Home > Clients
 Breadcrumbs::for('clients', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration');
-    $trail->push('Clients', route('administration.clients.index'));
+    $trail->parent('dashboard');
+    $trail->push('Clients', route('dashboard.clients.index'));
 });
 
 // Home > Clients > [Client]
-Breadcrumbs::for('administration.clients.show', function (BreadcrumbTrail $trail, $variable) {
+Breadcrumbs::for('dashboard.clients.show', function (BreadcrumbTrail $trail, $variable) {
     $trail->parent('clients');
-    $trail->push($variable->name, route('administration.clients.show', $variable));
+    $trail->push($variable->name, route('dashboard.clients.show', $variable));
 });
 
 // Home > Projects
 Breadcrumbs::for('projects', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration');
-    $trail->push('Projets', route('administration.projects.index'));
+    $trail->parent('dashboard');
+    $trail->push('Projets', route('dashboard.projects.index'));
 });
 
 // Home > Projects > [Project]
-Breadcrumbs::for('administration.projects.show', function (BreadcrumbTrail $trail, $variable) {
+Breadcrumbs::for('dashboard.projects.show', function (BreadcrumbTrail $trail, $variable) {
     $trail->parent('projects');
-    $trail->push($variable->name, route('administration.projects.show', $variable));
+    $trail->push($variable->name, route('dashboard.projects.show', $variable));
 });
 
 // Home > Developers
@@ -61,113 +61,113 @@ Breadcrumbs::for('project-managers.show', function (BreadcrumbTrail $trail, $var
     $trail->push($variable->firstname . ' ' . $variable->lastname, route('project-managers.show', $variable));
 });
 
-// Administration
-Breadcrumbs::for('administration', function (BreadcrumbTrail $trail) {
+// dashboard
+Breadcrumbs::for('dashboard', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push('Administration', route('administration.index'));
+    $trail->push('Dashboard', route('dashboard.index'));
 });
 
-// Administration > Developers
-Breadcrumbs::for('administration.developers', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration');
-    $trail->push('Développeurs', route('administration.developers.index'));
+// dashboard > Developers
+Breadcrumbs::for('dashboard.developers', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Développeurs', route('dashboard.developers.index'));
 });
 
-Breadcrumbs::for('administration.developers.show', function (BreadcrumbTrail $trail, $variable) {
-    $trail->parent('administration.developers');
+Breadcrumbs::for('dashboard.developers.show', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('dashboard.developers');
     $trail->push($variable->firstname . ' ' . $variable->lastname, route('developers.show', $variable));
 });
 
-// Administration > Developers > Create
-Breadcrumbs::for('administration.developers.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration.developers');
-    $trail->push('Ajout', route('administration.developers.create'));
+// dashboard > Developers > Create
+Breadcrumbs::for('dashboard.developers.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard.developers');
+    $trail->push('Ajout', route('dashboard.developers.create'));
 });
 
-// Administration > Developers > [Developer]
-Breadcrumbs::for('administration.developers.edit', function (BreadcrumbTrail $trail, $variable) {
-    $trail->parent('administration.developers');
-    $trail->push($variable->firstname . ' ' . $variable->lastname, route('administration.developers.edit', $variable));
+// dashboard > Developers > [Developer]
+Breadcrumbs::for('dashboard.developers.edit', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('dashboard.developers');
+    $trail->push($variable->firstname . ' ' . $variable->lastname, route('dashboard.developers.edit', $variable));
 });
 
-// Administration > Project managers
-Breadcrumbs::for('administration.project-managers', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration');
-    $trail->push('Chefs de projet', route('administration.project-managers.index'));
+// dashboard > Project managers
+Breadcrumbs::for('dashboard.project-managers', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Chefs de projet', route('dashboard.project-managers.index'));
 });
 
-Breadcrumbs::for('administration.project-managers.show', function (BreadcrumbTrail $trail, $variable) {
-    $trail->parent('administration.project-managers');
+Breadcrumbs::for('dashboard.project-managers.show', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('dashboard.project-managers');
     $trail->push($variable->firstname . ' ' . $variable->lastname, route('project-managers.show', $variable));
 });
 
-// Administration > Project managers > Create
-Breadcrumbs::for('administration.project-managers.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration.project-managers');
-    $trail->push('Ajout', route('administration.project-managers.create'));
+// dashboard > Project managers > Create
+Breadcrumbs::for('dashboard.project-managers.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard.project-managers');
+    $trail->push('Ajout', route('dashboard.project-managers.create'));
 });
 
-// Administration > Project managers > [Project managers]
-Breadcrumbs::for('administration.project-managers.edit', function (BreadcrumbTrail $trail, $variable) {
-    $trail->parent('administration.project-managers');
-    $trail->push($variable->firstname . ' ' . $variable->lastname, route('administration.project-managers.edit', $variable));
+// dashboard > Project managers > [Project managers]
+Breadcrumbs::for('dashboard.project-managers.edit', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('dashboard.project-managers');
+    $trail->push($variable->firstname . ' ' . $variable->lastname, route('dashboard.project-managers.edit', $variable));
 });
 
-// Administration > Projects
-Breadcrumbs::for('administration.projects', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration');
-    $trail->push('Projets', route('administration.projects.index'));
+// dashboard > Projects
+Breadcrumbs::for('dashboard.projects', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Projets', route('dashboard.projects.index'));
 });
 
-// Administration > Projects > Create
-Breadcrumbs::for('administration.projects.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration.projects');
-    $trail->push('Ajout', route('administration.projects.create'));
+// dashboard > Projects > Create
+Breadcrumbs::for('dashboard.projects.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard.projects');
+    $trail->push('Ajout', route('dashboard.projects.create'));
 });
 
-// Administration > Projects > [Project]
-Breadcrumbs::for('administration.projects.edit', function (BreadcrumbTrail $trail, $variable) {
-    $trail->parent('administration.projects');
-    $trail->push($variable->name, route('administration.projects.edit', $variable));
+// dashboard > Projects > [Project]
+Breadcrumbs::for('dashboard.projects.edit', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('dashboard.projects');
+    $trail->push($variable->name, route('dashboard.projects.edit', $variable));
 });
 
-// Administration > Clients
-Breadcrumbs::for('administration.clients', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration');
-    $trail->push('Clients', route('administration.clients.index'));
+// dashboard > Clients
+Breadcrumbs::for('dashboard.clients', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Clients', route('dashboard.clients.index'));
 });
 
-// Administration > Clients > Create
-Breadcrumbs::for('administration.clients.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration.clients');
-    $trail->push('Ajout', route('administration.clients.create'));
+// dashboard > Clients > Create
+Breadcrumbs::for('dashboard.clients.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard.clients');
+    $trail->push('Ajout', route('dashboard.clients.create'));
 });
 
-// Administration > Clients > [Project]
-Breadcrumbs::for('administration.clients.edit', function (BreadcrumbTrail $trail, $variable) {
-    $trail->parent('administration.clients');
-    $trail->push($variable->name, route('administration.clients.edit', $variable));
+// dashboard > Clients > [Project]
+Breadcrumbs::for('dashboard.clients.edit', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('dashboard.clients');
+    $trail->push($variable->name, route('dashboard.clients.edit', $variable));
 });
 
-// Administration > Task
-Breadcrumbs::for('administration.tasks', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration');
-    $trail->push('Tâche', route('administration.tasks.create'));
+// dashboard > Task
+Breadcrumbs::for('dashboard.tasks', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Tâche', route('dashboard.tasks.create'));
 });
 
-// Administration > Task > Create
-Breadcrumbs::for('administration.tasks.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('administration.tasks');
-    $trail->push('Ajout', route('administration.tasks.create'));
+// dashboard > Task > Create
+Breadcrumbs::for('dashboard.tasks.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard.tasks');
+    $trail->push('Ajout', route('dashboard.tasks.create'));
 });
 
-// Administration > Task > [Task]
-Breadcrumbs::for('administration.tasks.edit', function (BreadcrumbTrail $trail, $variable) {
-    $trail->parent('administration.tasks');
-    $trail->push($variable->name, route('administration.tasks.edit', $variable));
+// dashboard > Task > [Task]
+Breadcrumbs::for('dashboard.tasks.edit', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('dashboard.tasks');
+    $trail->push($variable->name, route('dashboard.tasks.edit', $variable));
 });
 
-Breadcrumbs::for('administration.tasks.show', function (BreadcrumbTrail $trail, $variable) {
-    $trail->parent('administration.tasks');
-    $trail->push($variable->name . ' ' . $variable->project->name, route('administration.tasks.show', $variable));
+Breadcrumbs::for('dashboard.tasks.show', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('dashboard.tasks');
+    $trail->push($variable->name . ' ' . $variable->project->name, route('dashboard.tasks.show', $variable));
 });

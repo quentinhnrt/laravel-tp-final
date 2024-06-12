@@ -6,7 +6,7 @@
 @section('theme', 'theme-blue')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render('administration.projects') }}
+    {{ Breadcrumbs::render('dashboard.projects') }}
 @endsection
 
 @section('content')
@@ -48,7 +48,7 @@
                                     Description : {{ $project->description }}
                                 </p>
                                 @php
-                                    $viewUrl = route('administration.clients.show', $project->client);
+                                    $viewUrl = route('dashboard.clients.show', $project->client);
                                 @endphp
 
                                 <p
@@ -63,7 +63,7 @@
                                     </a>
                                 </p>
                                 @php
-                                    $viewUrl = route('administration.project-managers.show', $project->projectManager);
+                                    $viewUrl = route('dashboard.project-managers.show', $project->projectManager);
                                 @endphp
 
                                 <p
@@ -87,19 +87,19 @@
                                     <x-atoms.link
                                         type="button"
                                         variant="outline"
-                                        :href="route('administration.projects.show', ['project' => $project])"
+                                        :href="route('dashboard.projects.show', ['project' => $project])"
                                     >
                                         Voir les détails
                                     </x-atoms.link>
                                     <x-atoms.link
                                         type="button"
                                         variant="outline"
-                                        :href="route('administration.projects.edit', ['project' => $project])"
+                                        :href="route('dashboard.projects.edit', ['project' => $project])"
                                     >
                                         Éditer
                                     </x-atoms.link>
                                     <form
-                                        action="{{ route('administration.projects.destroy', ['project' => $project]) }}"
+                                        action="{{ route('dashboard.projects.destroy', ['project' => $project]) }}"
                                         method="POST"
                                     >
                                         @csrf

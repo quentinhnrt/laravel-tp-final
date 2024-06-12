@@ -66,10 +66,10 @@
                 <div class="mt-10 space-y-6">
                     <div>
                         <a
-                            href="{{ route('administration.index') }}"
+                            href="{{ route('dashboard.index') }}"
                             class="theme-blue inline-flex items-center gap-x-2 text-sm text-theme-500 hover:underline dark:text-theme-400"
                         >
-                            <span>Administration</span>
+                            <span>dashboard</span>
 
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
