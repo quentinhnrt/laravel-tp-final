@@ -21,22 +21,17 @@
             </div>
             <div>
                 <div>
-                    <p
-                        class="mt-2 text-left text-sm text-background-600 dark:text-background-400"
-                    >
-                        {{ $project->description }}
-                    </p>
                     @php
                         $viewUrl = route('administration.clients.show', $project->client);
                     @endphp
 
                     <p
-                        class="mt-2 text-left text-sm text-background-600 dark:text-background-400"
+                        class="mt-4 text-left text-background-600 xl:text-lg dark:text-background-400"
                     >
                         Client :
                         <a
                             href="{{ $viewUrl }}"
-                            class="text-blue-500 hover:text-blue-700"
+                            class="text-theme-500 hover:text-theme-700"
                         >
                             {{ $project->client->name }}
                         </a>
@@ -46,83 +41,110 @@
                     @endphp
 
                     <p
-                        class="mt-2 text-left text-sm text-background-600 dark:text-background-400"
+                        class="mt-1 text-left text-background-600 md:mt-0 xl:text-lg dark:text-background-400"
                     >
                         Chef de projet :
                         <a
                             href="{{ $viewUrl }}"
-                            class="text-blue-500 hover:text-blue-700"
+                            class="text-theme-500 hover:text-theme-700"
                         >
                             {{ $project->projectManager->firstname }}
                             {{ $project->projectManager->lastname }}
                         </a>
                     </p>
+                    <p
+                        class="mt-4 text-left text-background-600 xl:text-lg dark:text-background-400"
+                    >
+                        {{ $project->description }}
+                    </p>
                 </div>
             </div>
             <div
-                class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:mt-8 xl:grid-cols-4"
+                class="mt-4 grid grid-cols-1 gap-4 overflow-hidden md:grid-cols-2 lg:grid-cols-3 xl:mt-8 xl:grid-cols-4"
             >
                 @foreach ($project->tasks as $task)
                     <div
                         class="w-full rounded-lg border bg-white text-left shadow-md hover:border-theme-600 dark:border-background-700 dark:bg-background-800"
                     >
-                        <div class="p-6">
+                        <div class="relative flex h-full flex-col p-6">
+                            <div class="mb-4 flex justify-between">
+                                <p
+                                    @class([
+                                        'w-fit rounded bg-theme-100 px-2.5 py-0.5 text-xs font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300',
+                                        'theme-blue' => $task->getNature()?->label === 'Front',
+                                        'theme-red' => $task->getNature()?->label === 'Back',
+                                    ])
+                                >
+                                    {{ $task->getNature()?->label }}
+                                </p>
+                            </div>
                             <h2
-                                class="text-lg font-semibold text-background-800 dark:text-white"
+                                class="text-lg font-semibold text-background-800 md:text-xl dark:text-white"
                             >
                                 {{ $task->name }}
                             </h2>
                             <p
-                                class="mt-2 text-sm text-background-600 dark:text-background-400"
+                                class="mt-4 text-sm text-background-600 dark:text-background-400"
                             >
                                 {{ $task->description }}
                             </p>
                             <p
-                                class="mt-2 text-sm text-background-600 dark:text-background-400"
+                                class="mt-4 text-sm text-background-600 dark:text-background-400"
                             >
-                                {{ $task->getStatus()?->label }}
-                            </p>
-                            <p
-                                class="mt-2 text-sm text-background-600 dark:text-background-400"
-                            >
-                                {{ $task->getNature()?->label }}
-                            </p>
-                            <div class="mt-4 flex w-full flex-col gap-2">
-                                <div
-                                    class="flex flex-1 flex-col flex-wrap justify-end gap-2 lg:flex-row"
+                                Statut :
+                                <span
+                                    @class([
+                                        'w-fit rounded bg-theme-100 px-2.5 py-0.5 text-xs font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300',
+                                        'theme-purple' => $task->getStatus()?->id === 1,
+                                        'theme-green' => $task->getStatus()?->id === 5,
+                                        'theme-red' => $task->getStatus()?->id === 3,
+                                        'theme-yellow' => $task->getStatus()?->id === 4,
+                                        'theme-blue' => $task->getStatus()?->id === 2,
+                                        'theme-brown' => $task->getStatus()?->id === 6,
+                                        'theme-pink' => $task->getStatus()?->id === 7,
+                                    ])
                                 >
-                                    <x-atoms.link
-                                        type="button"
-                                        variant="outline"
-                                        href="{{ route('administration.tasks.show', $task) }}"
-                                        class="!h-auto flex-1 text-sm"
+                                    {{ $task->getStatus()?->label }}
+                                </span>
+                            </p>
+                            <div class="flex h-full flex-col justify-end">
+                                <div class="mt-6 flex w-full flex-col gap-2">
+                                    <div
+                                        class="flex flex-1 flex-col flex-wrap justify-end gap-2 lg:flex-row"
                                     >
-                                        Voir la tâche
-                                    </x-atoms.link>
-                                    <x-atoms.link
-                                        type="button"
-                                        variant="outline"
-                                        href="{{ route('administration.tasks.edit', $task) }}"
-                                        class="!h-auto flex-1 text-sm"
-                                    >
-                                        Modifier la tâche
-                                    </x-atoms.link>
-                                </div>
+                                        <x-atoms.link
+                                            type="button"
+                                            variant="outline"
+                                            href="{{ route('administration.tasks.show', $task) }}"
+                                            class="!h-auto flex-1 text-sm"
+                                        >
+                                            Voir la tâche
+                                        </x-atoms.link>
+                                        <x-atoms.link
+                                            type="button"
+                                            variant="outline"
+                                            href="{{ route('administration.tasks.edit', $task) }}"
+                                            class="!h-auto flex-1 text-sm"
+                                        >
+                                            Modifier la tâche
+                                        </x-atoms.link>
+                                    </div>
 
-                                <form
-                                    action="{{ route('administration.tasks.destroy', $task) }}"
-                                    method="POST"
-                                    class="flex"
-                                >
-                                    @csrf
-                                    @method('DELETE')
-                                    <x-atoms.btn
-                                        type="submit"
-                                        class="theme-red !h-auto flex-1 text-sm"
+                                    <form
+                                        action="{{ route('administration.tasks.destroy', $task) }}"
+                                        method="POST"
+                                        class="flex"
                                     >
-                                        Supprimer la tâche
-                                    </x-atoms.btn>
-                                </form>
+                                        @csrf
+                                        @method('DELETE')
+                                        <x-atoms.btn
+                                            type="submit"
+                                            class="theme-red !h-auto flex-1 text-sm"
+                                        >
+                                            Supprimer la tâche
+                                        </x-atoms.btn>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

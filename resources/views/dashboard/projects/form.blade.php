@@ -7,19 +7,10 @@
     <x-molecules.inputs.text
         label="Nom:"
         name="name"
-        class="w-full px-2 md:w-1/2"
+        class="w-full px-2"
         :value="isset($project) ? $project->name : old('name')"
         required="true"
         placeholder="Nom du projet"
-    />
-
-    <x-molecules.inputs.text
-        label="Description:"
-        name="description"
-        class="w-full px-2 md:w-1/2"
-        :value="isset($project) ? $project->description : old('description')"
-        required="true"
-        placeholder="Description du projet"
     />
 
     <x-molecules.inputs.select
@@ -54,6 +45,15 @@
             </option>
         @endforeach
     </x-molecules.inputs.select>
+
+    <x-molecules.inputs.textarea
+        label="Description:"
+        name="description"
+        class="w-full px-2"
+        :value="isset($project) ? $project->description : old('description')"
+        required="true"
+        placeholder="Description du projet"
+    />
 
     <x-atoms.btn type="submit" class="mx-2 mt-4 w-full">
         @if (isset($project))

@@ -4,8 +4,8 @@
     $isDeveloper = request()->attributes->get('role') === App\Models\Employee::DEVELOPER_ROLE;
 @endphp
 
-@section('title', 'Liste des ' . ($isDeveloper ? 'developpeurs' : 'chefs de projet'))
-@section('description', 'Liste des ' . ($isDeveloper ? 'developpeurs' : 'chefs de projet'))
+@section('title', 'Liste des ' . ($isDeveloper ? 'développeurs' : 'chefs de projet'))
+@section('description', 'Liste des ' . ($isDeveloper ? 'développeurs' : 'chefs de projet'))
 @section('image', asset('logo.svg'))
 @section('theme', $isDeveloper ? 'theme-green' : 'theme-red')
 
@@ -58,9 +58,9 @@
                                     {{ $employee->lastname }}
                                 </span>
                                 <p
-                                    class="mt-2 text-sm text-background-600 dark:text-background-400"
+                                    class="mt-2 w-fit rounded bg-theme-100 px-2.5 py-0.5 text-sm font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300"
                                 >
-                                    Fonction : {{ $employee->function }}
+                                    {{ $employee->function }}
                                 </p>
                             </div>
 
@@ -90,5 +90,4 @@
             {{ $employees->links() }}
         </div>
     </x-organisms.container>
-
 @endsection

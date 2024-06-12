@@ -166,3 +166,8 @@ Breadcrumbs::for('administration.tasks.edit', function (BreadcrumbTrail $trail, 
     $trail->parent('administration.tasks');
     $trail->push($variable->name, route('administration.tasks.edit', $variable));
 });
+
+Breadcrumbs::for('administration.tasks.show', function (BreadcrumbTrail $trail, $variable) {
+    $trail->parent('administration.tasks');
+    $trail->push($variable->name . ' ' . $variable->project->name, route('administration.tasks.show', $variable));
+});

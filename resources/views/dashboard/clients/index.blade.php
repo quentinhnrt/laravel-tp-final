@@ -29,23 +29,28 @@
                         <div class="p-6">
                             <div>
                                 <span
-                                    class="mt-2 block transform text-xl font-semibold text-background-800 transition-colors duration-300 dark:text-white"
+                                    class="mt-0 block transform text-xl font-semibold text-background-800 transition-colors duration-300 dark:text-white"
                                     tabindex="0"
                                     role="link"
                                 >
                                     {{ $client->name }}
                                 </span>
+                                <a
+                                    href="{{ $client->website }}"
+                                    class="mt-2 inline-block text-sm text-background-600 dark:text-background-400"
+                                >
+                                    Website :
+                                    <span
+                                        class="truncate text-theme-500 hover:text-theme-700"
+                                    >
+                                        {{ $client->website }}
+                                    </span>
+                                </a>
                                 <p
-                                    class="mt-2 text-sm text-background-600 dark:text-background-400"
+                                    class="mt-1 text-sm text-background-600 dark:text-background-400"
                                 >
                                     {{ $client->address }}
                                 </p>
-                                <a
-                                    href="{{ $client->website }}"
-                                    class="mt-2 text-sm text-background-600 dark:text-background-400"
-                                >
-                                    Website : {{ $client->website }}
-                                </a>
                             </div>
 
                             <div class="mt-4">

@@ -13,47 +13,69 @@
     <x-organisms.container>
         <div class="max-w-lg">
             <h1
-                class="text-background-800 text-3xl font-semibold lg:text-4xl dark:text-white"
+                class="text-3xl font-semibold text-background-800 lg:text-4xl dark:text-white"
             >
                 {{ $client->name }}
             </h1>
         </div>
-
-        <h2 class="text-background-600 dark:text-background-400 mt-2 text-sm"> {{ $client->address }}</h2>
-
-        <p class="text-background-600 dark:text-background-400 mt-2 text-sm">
-            {!! $client->website !!}
+        <p
+            class="mt-4 text-left text-background-600 xl:text-lg dark:text-background-400"
+        >
+            Website :
+            <span class="truncate text-theme-500 hover:text-theme-700">
+                {!! $client->website !!}
+            </span>
         </p>
-        <div class="flex items-center gap-4">
-            <p class="text-background-600 dark:text-background-400 mt-2 text-sm">
-                <x-atoms.link
-                    type="button"
-                    variant="outline"
-                    :href="route('administration.clients.edit', ['client' => $client])">
-
-                    Modifier le client
-                </x-atoms.link>
-            <form class="mt-2" action="{{ route('administration.clients.destroy', ['client' => $client]) }}" method="POST"
-                  style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');">
+        <p
+            class="mt-1 text-left text-background-600 md:mt-0 xl:text-lg dark:text-background-400"
+        >
+            {{ $client->address }}
+        </p>
+        <div
+            class="mt-4 flex items-center gap-4 text-background-600 md:mt-6 dark:text-background-400"
+        >
+            <x-atoms.link
+                type="button"
+                variant="outline"
+                :href="route('administration.clients.edit', ['client' => $client])"
+            >
+                Modifier le client
+            </x-atoms.link>
+            <form
+                action="{{ route('administration.clients.destroy', ['client' => $client]) }}"
+                method="POST"
+                style="display: inline"
+                onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');"
+            >
                 @csrf
                 @method('DELETE')
-                <x-atoms.btn
-                    type="submit"
-                    color="red"
-                    class="theme-red"
-                >
+                <x-atoms.btn type="submit" color="red" class="theme-red">
                     Supprimer le client
                 </x-atoms.btn>
             </form>
         </div>
 
-        </p>
-        <h2 class="text-white text-3xl my-4 ">Projets</h2>
-        <div class="grid grid-cols-4 gap-4">
-            @forelse($client->projects as $project)
-                <a href="{{ route('administration.projects.show', $project) }}" class="p-4 border border-gray-200 rounded-lg text-white">
-                    <h3 class="text-lg font-semibold">{{ $project->name }}</h3>
-                    <p>{{ $project->description }}</p>
+        <h2 class="mb-4 mt-8 text-3xl text-white md:mt-12">Projets</h2>
+        <div
+            class="grid grid-cols-1 gap-4 overflow-hidden md:grid-cols-2 lg:grid-cols-3 xl:mt-8 xl:grid-cols-4"
+        >
+            @forelse ($client->projects as $project)
+                <a
+                    href="{{ route('administration.projects.show', $project) }}"
+                    class="w-full rounded-lg border bg-white text-left shadow-md hover:border-theme-600 dark:border-background-700 dark:bg-background-800"
+                >
+                    <div class="relative flex h-full flex-col p-6">
+                        <h3
+                            class="text-lg font-semibold text-background-800 md:text-xl dark:text-white"
+                        >
+                            {{ $project->name }}
+                        </h3>
+                        <p
+                            class="mt-4 text-sm text-background-600 dark:text-background-400"
+                        >
+                            {{ $project->description }}
+                        </p>
+                    </div>
                 </a>
             @empty
                 <p>Aucun projets</p>

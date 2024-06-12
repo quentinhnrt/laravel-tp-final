@@ -36,7 +36,7 @@
                         <div class="p-6">
                             <div>
                                 <span
-                                    class="mt-2 block transform text-xl font-semibold text-background-800 transition-colors duration-300 dark:text-white"
+                                    class="mt-0 block transform text-xl font-semibold text-background-800 transition-colors duration-300 dark:text-white"
                                     tabindex="0"
                                     role="link"
                                 >
@@ -47,17 +47,36 @@
                                 >
                                     Description : {{ $project->description }}
                                 </p>
+                                @php
+                                    $viewUrl = route('administration.clients.show', $project->client);
+                                @endphp
+
                                 <p
-                                    class="mt-2 text-sm text-background-600 dark:text-background-400"
+                                    class="mt-4 text-sm text-background-600 dark:text-background-400"
                                 >
-                                    Client : {{ $project->client->name }}
+                                    Client :
+                                    <a
+                                        href="{{ $viewUrl }}"
+                                        class="text-theme-500 hover:text-theme-700"
+                                    >
+                                        {{ $project->client->name }}
+                                    </a>
                                 </p>
+                                @php
+                                    $viewUrl = route('administration.project-managers.show', $project->projectManager);
+                                @endphp
+
                                 <p
-                                    class="mt-2 text-sm text-background-600 dark:text-background-400"
+                                    class="mt-1 text-sm text-background-600 dark:text-background-400"
                                 >
                                     Chef de projet :
-                                    {{ $project->projectManager->firstname }}
-                                    {{ $project->projectManager->lastname }}
+                                    <a
+                                        href="{{ $viewUrl }}"
+                                        class="text-theme-500 hover:text-theme-700"
+                                    >
+                                        {{ $project->projectManager->firstname }}
+                                        {{ $project->projectManager->lastname }}
+                                    </a>
                                 </p>
                             </div>
 

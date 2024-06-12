@@ -72,6 +72,49 @@ body, .theme-purple {
     --theme-950: #0d3328;
 }
 
+.theme-yellow {
+    --theme-50: #fffbeb;
+    --theme-100: #fef3c7;
+    --theme-200: #fde68a;
+    --theme-300: #fcd34d;
+    --theme-400: #fbbf24;
+    --theme-500: #f59e0b;
+    --theme-600: #d97706;
+    --theme-700: #b45309;
+    --theme-800: #92400e;
+    --theme-900: #78350f;
+    --theme-950: #572508;
+}
+
+.theme-pink {
+    --theme-50: #fdf2f8;
+    --theme-100: #fce7f3;
+    --theme-200: #fbcfe8;
+    --theme-300: #f9a8d4;
+    --theme-400: #f472b6;
+    --theme-500: #ec4899;
+    --theme-600: #db2777;
+    --theme-700: #be185d;
+    --theme-800: #9d174d;
+    --theme-900: #831843;
+    --theme-950: #6f1d2e;
+}
+
+.theme-brown {
+    --theme-50: #faf3eb;
+    --theme-100: #f5e9e2;
+    --theme-200: #fed7aa;
+    --theme-300: #f9ae85;
+    --theme-400: #f0a075;
+    --theme-500: #e76a4f;
+    --theme-600: #d6452c;
+    --theme-700: #ba4a2b;
+    --theme-800: #8a3e36;
+    --theme-900: #69302d;
+    --theme-950: #4e2724;
+
+}
+
 /*.section {*/
 /*    min-height: calc(100dvh - 249px);*/
 /*}*/

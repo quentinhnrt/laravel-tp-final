@@ -54,9 +54,9 @@
                                     {{ $employee->lastname }}
                                 </span>
                                 <p
-                                    class="mt-2 text-sm text-background-600 dark:text-background-400"
+                                    class="mt-2 w-fit rounded bg-theme-100 px-2.5 py-0.5 text-sm font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300"
                                 >
-                                    Fonction : {{ $employee->function }}
+                                    {{ $employee->function }}
                                 </p>
                             </div>
 
