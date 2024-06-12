@@ -15,7 +15,7 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
 
 // Home > Clients
 Breadcrumbs::for('clients', function (BreadcrumbTrail $trail) {
-    $trail->parent('home');
+    $trail->parent('administration');
     $trail->push('Clients', route('administration.clients.index'));
 });
 
