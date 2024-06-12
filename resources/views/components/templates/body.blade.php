@@ -9,7 +9,7 @@
     @yield('header')
 
     {{-- Content --}}
-    <main id="main" class="pt-[72px]">
+    <main id="main" class="pb-24 pt-[72px]">
         @section('breadcrumb')
             {{ Breadcrumbs::render('home') }}
         @endsection
