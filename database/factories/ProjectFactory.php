@@ -19,14 +19,14 @@ class ProjectFactory extends Factory
         $client = \App\Models\Client::notHavingProjects()->get()->random();
 
         if (!$client) {
-            $client = \App\Models\Employee::all()->random();
+            $client = \App\Models\Client::all()->random();
         }
 
         return [
             'name' => $this->faker->name,
             'description' => $this->faker->text,
-            'client_id' => \App\Models\Client::all()->random()->id,
-            'project_manager_id' => $client->id,
+            'client_id' => $client->id,
+            'project_manager_id' => \App\Models\Employee::projectManagers()->get()->random()->id,
         ];
     }
 }
