@@ -53,9 +53,9 @@
 
 La page de garde vous permet d'accéder aux différentes sections de l'application :
 
--   [ ] Administration
--   [ ] Chef de projet
--   [ ] Développeur
+-   [x] Administration
+-   [x] Chef de projet
+-   [x] Développeur
 
 ### Administration
 
@@ -75,13 +75,13 @@ Dans cette section, vous pouvez gérer les projets, les clients, les chefs de pr
 #### Ajouter un client
 
 -   [x] Affiche la liste des clients existants.
--   [ ] Permet d'ajouter un nouveau client avec les champs suivants :
+-   [x] Permet d'ajouter un nouveau client avec les champs suivants :
     -   [x] Nom de la société
     -   [x] Adresse
     -   [x] Site web
-    -   [ ] Liste de ses projets
--   [ ] Possibilité d'éditer les clients.
--   [ ] Accès à la page dédiée d'un projet depuis la fiche du client.
+    -   [x] Liste de ses projets
+-   [x] Possibilité d'éditer les clients.
+-   [x] Accès à la page dédiée d'un projet depuis la fiche du client.
 
 #### Ajouter un chef de projet
 

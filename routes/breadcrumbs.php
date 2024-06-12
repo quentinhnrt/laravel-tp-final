@@ -20,7 +20,7 @@ Breadcrumbs::for('clients', function (BreadcrumbTrail $trail) {
 });
 
 // Home > Clients > [Client]
-Breadcrumbs::for('clients.show', function (BreadcrumbTrail $trail, $variable) {
+Breadcrumbs::for('administration.clients.show', function (BreadcrumbTrail $trail, $variable) {
     $trail->parent('clients');
     $trail->push($variable->name, route('administration.clients.show', $variable));
 });
