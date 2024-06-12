@@ -69,7 +69,7 @@ Dans cette section, vous pouvez gérer les projets, les clients, les chefs de pr
     -   [x] Description
     -   [x] Client
     -   [x] Chef de projet
--   [ ] Possibilité d'éditer les projets.
+-   [x] Possibilité d'éditer les projets.
 -   [ ] Accès à la page dédiée du client et du chef de projet depuis la fiche du projet.
 
 #### Ajouter un client
@@ -86,24 +86,21 @@ Dans cette section, vous pouvez gérer les projets, les clients, les chefs de pr
 #### Ajouter un chef de projet
 
 -   [x] Affiche la liste des chefs de projet existants.
--   [ ] Permet d'ajouter un nouveau chef de projet avec les champs suivants :
+-   [x] Permet d'ajouter un nouveau chef de projet avec les champs suivants :
     -   [x] Nom
     -   [x] Prénom
     -   [x] Fonction
-    -   [ ] Liste des projets qu'il gère
-    -   [ ] Liste des tâches qui lui sont affiliées
--   [ ] Possibilité d'éditer les chefs de projet.
+-   [x] Possibilité d'éditer les chefs de projet.
 -   [ ] Accès à la page dédiée d'un projet depuis la fiche du chef de projet.
 
 #### Ajouter un développeur
 
 -   [x] Affiche la liste des développeurs existants.
--   [ ] Permet d'ajouter un nouveau développeur avec les champs suivants :
+-   [x] Permet d'ajouter un nouveau développeur avec les champs suivants :
     -   [x] Nom
     -   [x] Prénom
     -   [x] Fonction
-    -   [ ] Liste des tâches auxquelles il est affilié
--   [ ] Possibilité d'éditer les développeurs.
+-   [x] Possibilité d'éditer les développeurs.
 -   [ ] Accès à la page d'une tâche depuis la fiche du développeur.
 
 #### Ajouter une tâche
