@@ -27,7 +27,7 @@ Breadcrumbs::for('administration.clients.show', function (BreadcrumbTrail $trail
 
 // Home > Projects
 Breadcrumbs::for('projects', function (BreadcrumbTrail $trail) {
-    $trail->parent('home');
+    $trail->parent('administration');
     $trail->push('Projets', route('administration.projects.index'));
 });
 
