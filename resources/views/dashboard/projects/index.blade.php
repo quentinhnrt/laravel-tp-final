@@ -26,6 +26,13 @@
                     <article
                         class="w-full rounded-lg border bg-white text-left shadow-md hover:border-theme-600 dark:border-background-700 dark:bg-background-800"
                     >
+                        <img
+                            class="h-32 w-full rounded-t-lg object-cover"
+                            src="https://picsum.photos/id/{{ $project->id }}/725/150"
+                            alt="Article"
+                            loading="lazy"
+                        />
+
                         <div class="p-6">
                             <div>
                                 <span
