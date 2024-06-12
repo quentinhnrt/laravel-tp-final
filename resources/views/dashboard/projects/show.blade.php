@@ -22,16 +22,14 @@
                     <p class="mt-2 text-left text-sm text-background-600 dark:text-background-400">
                         {{ $project->description }}
                     </p>
-                    <p class="mt-2 text-left text-sm text-background-600 dark:text-background-400">
-                        Client : {{ $project->client->name }}
-                    </p>
                     @php
                         $viewUrl = route('administration.clients.show', $project->client);
                     @endphp
-
-                    <x-atoms.link type="button" variant="outline" :href="$viewUrl">
-                        Voir
-                    </x-atoms.link>
+                    <p class="mt-2 text-left text-sm text-background-600 dark:text-background-400">
+                        Client : <a href="{{ $viewUrl }}" class="text-blue-500 hover:text-blue-700">
+                            {{ $project->client->name }}
+                        </a>
+                    </p>
                     <p class="mt-2 text-left text-sm text-background-600 dark:text-background-400">
                         Chef de projet : {{ $project->projectManager->firstname }} {{ $project->projectManager->lastname }}
                     </p>
