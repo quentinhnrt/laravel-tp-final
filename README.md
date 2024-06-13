@@ -40,16 +40,18 @@ Versions utilisées :
 4. Lancer la compilation
     ```bash
     npm run dev
-    ```
-5. Lancer les migrations
+   
+5. Copier le fichier .env.example et le renommer en .env
+
+6. Lancer les migrations
     ```bash
     php artisan migrate --seed
     ```
-6. Lancer les migrations
+7. Lancer les migrations
     ```bash
     php artisan key:generate
     ```
-7. Lancer le serveur
+8. Lancer le serveur
     ```bash
     php artisan serve
     ```
