@@ -51,7 +51,7 @@
                 <h2
                     class="mt-4 text-2xl font-semibold text-background-700 dark:text-white"
                 >
-                    dashboard
+                    Dashboard
                 </h2>
             </a>
             <a
