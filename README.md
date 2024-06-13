@@ -1,5 +1,7 @@
 # Dashboard de Gestion de Projet
 
+Ce projet comprend un dark mode
+
 ## Table des Matières
 
 1. [Installation](#installation)
@@ -16,6 +18,11 @@
 4. [Bonus](#bonus)
 
 ## Installation
+
+Versions utilisées :
+
+-   PHP Min 8.2
+-   Node Min 20
 
 1. Clonez le repository.
     ```bash
@@ -36,7 +43,7 @@
     ```
 5. Lancer les migrations
     ```bash
-    php artisan migrate
+    php artisan migrate --seed
     ```
 6. Lancer les migrations
     ```bash
