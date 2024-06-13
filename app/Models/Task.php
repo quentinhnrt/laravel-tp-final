@@ -73,14 +73,14 @@ class Task extends Model
     public function getDevelopersList()
     {
         return $this->developers->implode(function ($developer) {
-            return $developer->firstname . ' ' . $developer->lastname;
+            return sprintf('<a href="%s">%s %s</a>', route('dashboard.developers.show', $developer), $developer->firstname, $developer->lastname);
         }, ', ');
     }
 
     public function getManagersList()
     {
         return $this->projectManagers->implode(function ($manager) {
-            return $manager->firstname . ' ' . $manager->lastname;
+            return sprintf('<a href="%s">%s %s</a>', route('dashboard.project-managers.show', $manager), $manager->firstname, $manager->lastname);
         }, ', ');
     }
 }

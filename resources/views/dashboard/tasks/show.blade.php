@@ -75,7 +75,7 @@
             >
                 Développeurs :
                 <span class="text-background-800 dark:text-background-200">
-                    {{ $task->getDevelopersList() }}
+                    {!! $task->getDevelopersList() !!}
                 </span>
             </p>
             <p
@@ -83,7 +83,7 @@
             >
                 Chefs de projets :
                 <span class="text-background-800 dark:text-background-200">
-                    {{ $task->getManagersList() }}
+                    {!! $task->getManagersList() !!}
                 </span>
             </p>
         </div>
