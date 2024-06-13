@@ -1,6 +1,6 @@
 <header id="header" class="header-dash fixed z-50 w-screen">
     <nav
-        x-data="{ isOpen: true }"
+        x-data="{ isOpen: window.innerWidth > 1024 ? true : false }"
         class="relative bg-white shadow dark:bg-background-800"
     >
         <div class="mx-auto px-6 py-4">
