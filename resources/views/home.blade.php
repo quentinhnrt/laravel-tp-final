@@ -6,7 +6,7 @@
 @section('theme', 'theme-purple')
 
 @section('breadcrumb')
-    {{ Breadcrumbs::render('home') }}
+
 @endsection
 
 @section('header')
