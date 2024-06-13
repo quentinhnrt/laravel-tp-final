@@ -40,7 +40,7 @@ class Task extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    public function  natureTags(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function natureTags(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->tags()->nature();
     }
@@ -73,14 +73,14 @@ class Task extends Model
     public function getDevelopersList()
     {
         return $this->developers->implode(function ($developer) {
-            return sprintf('<a href="%s">%s %s</a>', route('dashboard.developers.show', $developer), $developer->firstname, $developer->lastname);
+            return sprintf('<a href="%s" class="text-theme-500 hover:text-theme-700">%s %s</a>', route('dashboard.developers.show', $developer), $developer->firstname, $developer->lastname);
         }, ', ');
     }
 
     public function getManagersList()
     {
         return $this->projectManagers->implode(function ($manager) {
-            return sprintf('<a href="%s">%s %s</a>', route('dashboard.project-managers.show', $manager), $manager->firstname, $manager->lastname);
+            return sprintf('<a href="%s" class="text-theme-500 hover:text-theme-700">%s %s</a>', route('dashboard.project-managers.show', $manager), $manager->firstname, $manager->lastname);
         }, ', ');
     }
 }

@@ -51,16 +51,16 @@
                         class="mt-1 text-left text-background-600 md:mt-0 xl:text-lg dark:text-background-400"
                     >
                         Catégorie :
-                        @foreach($task->getNature() as $nature)
+                        @foreach ($task->getNature() as $nature)
                             <span
-                            @class([
-                                'xl:text-md w-fit rounded bg-theme-100 px-2.5 py-0.5 text-xs font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300 mr-2',
-                                'theme-blue' => $nature->label === 'Front',
-                                'theme-red' => $nature->label === 'Back',
-                            ])
-                        >
-                            {{ $nature->label }}
-                        </span>
+                                @class([
+                                    'xl:text-md mr-2 w-fit rounded bg-theme-100 px-2.5 py-0.5 text-xs font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300',
+                                    'theme-blue' => $nature->label === 'Front',
+                                    'theme-red' => $nature->label === 'Back',
+                                ])
+                            >
+                                {{ $nature->label }}
+                            </span>
                         @endforeach
                     </p>
                     <p
@@ -74,7 +74,9 @@
                 class="mt-8 text-left text-background-600 xl:text-lg dark:text-background-400"
             >
                 Développeurs :
-                <span class="text-background-800 dark:text-background-200">
+                <span
+                    class="theme-green text-background-800 dark:text-background-200"
+                >
                     {!! $task->getDevelopersList() !!}
                 </span>
             </p>
@@ -82,7 +84,9 @@
                 class="mt-1 text-left text-background-600 xl:text-lg dark:text-background-400"
             >
                 Chefs de projets :
-                <span class="text-background-800 dark:text-background-200">
+                <span
+                    class="theme-red text-background-800 dark:text-background-200"
+                >
                     {!! $task->getManagersList() !!}
                 </span>
             </p>
