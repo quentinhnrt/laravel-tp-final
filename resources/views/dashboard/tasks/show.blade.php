@@ -51,15 +51,17 @@
                         class="mt-1 text-left text-background-600 md:mt-0 xl:text-lg dark:text-background-400"
                     >
                         Catégorie :
-                        <span
+                        @foreach($task->getNature() as $nature)
+                            <span
                             @class([
-                                'xl:text-md w-fit rounded bg-theme-100 px-2.5 py-0.5 text-xs font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300',
-                                'theme-blue' => $task->getNature()?->label === 'Front',
-                                'theme-red' => $task->getNature()?->label === 'Back',
+                                'xl:text-md w-fit rounded bg-theme-100 px-2.5 py-0.5 text-xs font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300 mr-2',
+                                'theme-blue' => $nature->label === 'Front',
+                                'theme-red' => $nature->label === 'Back',
                             ])
                         >
-                            {{ $task->getNature()?->label }}
+                            {{ $nature->label }}
                         </span>
+                        @endforeach
                     </p>
                     <p
                         class="mt-4 text-left text-background-600 xl:text-lg dark:text-background-400"

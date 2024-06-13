@@ -68,15 +68,17 @@
                     >
                         <div class="relative flex h-full flex-col p-6">
                             <div class="mb-4 flex justify-between">
-                                <p
-                                    @class([
-                                        'w-fit rounded bg-theme-100 px-2.5 py-0.5 text-xs font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300',
-                                        'theme-blue' => $task->getNature()?->label === 'Front',
-                                        'theme-red' => $task->getNature()?->label === 'Back',
-                                    ])
-                                >
-                                    {{ $task->getNature()?->label }}
-                                </p>
+                                @foreach($task->getNature() as $nature)
+                                    <p
+                                        @class([
+                                            'w-fit rounded bg-theme-100 px-2.5 py-0.5 text-xs font-medium text-theme-800 dark:bg-theme-900 dark:text-theme-300',
+                                            'theme-blue' => $nature->label === 'Front',
+                                            'theme-red' => $nature->label === 'Back',
+                                        ])
+                                    >
+                                        {{ $nature->label }}
+                                    </p>
+                                @endforeach
                             </div>
                             <h2
                                 class="text-lg font-semibold text-background-800 md:text-xl dark:text-white"

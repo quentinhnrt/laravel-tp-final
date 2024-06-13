@@ -60,9 +60,9 @@ class Task extends Model
         return $this->statusTag()->first();
     }
 
-    public function getNature(): ?Tag
+    public function getNature()
     {
-        return $this->natureTags()->first();
+        return $this->natureTags()->get();
     }
 
     public function project(): \Illuminate\Database\Eloquent\Relations\BelongsTo

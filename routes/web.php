@@ -39,20 +39,20 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
 
     Route::prefix('developers')->name('developers.')->middleware(DeveloperMiddleware::class)->group(function () {
         Route::get('/', [EmployeeController::class, 'index'])->name('index');
-        Route::get('/{employee:slug}', [EmployeeController::class, 'show'])->name('show');
-        Route::delete('/{employee:id}', [EmployeeController::class, 'destroy'])->name('destroy');
         Route::get('/create', [EmployeeController::class, 'create'])->name('create');
         Route::post('/store', [EmployeeController::class, 'store'])->name('store');
+        Route::get('/{employee:slug}', [EmployeeController::class, 'show'])->name('show');
+        Route::delete('/{employee:id}', [EmployeeController::class, 'destroy'])->name('destroy');
         Route::get('/edit/{employee:slug}', [EmployeeController::class, 'edit'])->name('edit');
         Route::put('/update/{employee:slug}', [EmployeeController::class, 'update'])->name('update');
     });
 
     Route::prefix('project-managers')->name('project-managers.')->middleware(ProjectManagerMiddleware::class)->group(function () {
         Route::get('/', [EmployeeController::class, 'index'])->name('index');
-        Route::get('/{employee:slug}', [EmployeeController::class, 'show'])->name('show');
-        Route::delete('/{employee:id}', [EmployeeController::class, 'destroy'])->name('destroy');
         Route::get('/create', [EmployeeController::class, 'create'])->name('create');
         Route::post('/store', [EmployeeController::class, 'store'])->name('store');
+        Route::get('/{employee:slug}', [EmployeeController::class, 'show'])->name('show');
+        Route::delete('/{employee:id}', [EmployeeController::class, 'destroy'])->name('destroy');
         Route::get('/edit/{employee:slug}', [EmployeeController::class, 'edit'])->name('edit');
         Route::put('/update/{employee:slug}', [EmployeeController::class, 'update'])->name('update');
     });
