@@ -2,9 +2,9 @@
     <footer
         class="fixed bottom-0 right-0 w-full bg-white/10 backdrop-blur dark:bg-background-900"
     >
-        <div class="px-6 py-8">
+        <div class="px-6 py-4">
             <hr
-                class="mb-10 mt-0 border-background-200 dark:border-background-700"
+                class="mb-4 mt-0 border-background-200 dark:border-background-700"
             />
 
             <div class="flex items-center justify-between">
